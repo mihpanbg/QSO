@@ -2,13 +2,14 @@ import requests
 import os
 import re
 import folium
+import html
 
 # QRZ API credentials
 API_KEY = os.environ['QRZ_API_KEY']
 CALLSIGN = os.environ['QRZ_USERNAME']
 
 def grid_to_latlon(grid):
-    """Convert Maidenhead grid square to lat/lon"""
+    """Convert Maidenhead grid to lat/lon"""
     if not grid or len(grid) < 4:
         return None, None
     
@@ -43,61 +44,54 @@ if response.status_code != 200:
     print(f"❌ ERROR: HTTP {response.status_code}")
     exit(1)
 
-adif_data = response.text
+# CRITICAL: Decode HTML entities!
+adif_data = html.unescape(response.text)
 print(f"✅ Downloaded {len(adif_data)} bytes")
 
-# Debug: Show first 1000 chars
-print(f"\n🔍 First 1000 chars of ADIF:")
-print(adif_data[:1000])
-print("...")
-
-# Parse ADIF - flexible approach
+# Parse ADIF
 print(f"\n📋 Parsing ADIF...")
 qsos = []
 
-# Try different split methods
-for separator in ['<eor>', '<EOR>', '<eor', '<EOR']:
-    parts = adif_data.lower().split(separator.lower())
-    if len(parts) > 1:
-        print(f"   Found {len(parts)-1} records using separator '{separator}'")
-        
-        for i, record in enumerate(parts):
-            if i == 0 or not record.strip():
-                continue
-            
-            qso = {}
-            
-            # Extract fields with flexible regex
-            for field, pattern in [
-                ('call', r'<call:(\d+)>([^<\n]+)'),
-                ('gridsquare', r'<gridsquare:(\d+)>([^<\n]+)'),
-                ('qso_date', r'<qso_date:(\d+)>(\d+)'),
-                ('band', r'<band:(\d+)>([^<\n]+)'),
-                ('country', r'<country:(\d+)>([^<\n]+)'),
-            ]:
-                match = re.search(pattern, record, re.IGNORECASE)
-                if match:
-                    length = int(match.group(1))
-                    value = match.group(2).strip()[:length]
-                    if field == 'gridsquare':
-                        qso['grid'] = value.upper()
-                    elif field == 'qso_date':
-                        qso['date'] = value[:8]
-                    else:
-                        qso[field] = value
-            
-            if 'call' in qso:
-                qsos.append(qso)
-                if len(qsos) <= 3:
-                    print(f"   QSO #{len(qsos)}: {qso}")
-        
-        if len(qsos) > 0:
-            break
+records = re.split(r'<eor>|<EOR>', adif_data, flags=re.IGNORECASE)
 
-print(f"\n✅ Parsed {len(qsos)} QSO records")
+for record in records:
+    if not record.strip() or len(record) < 20:
+        continue
+    
+    qso = {}
+    
+    # Extract fields
+    call_match = re.search(r'<call:(\d+)>([^<\n]+)', record, re.IGNORECASE)
+    if call_match:
+        length = int(call_match.group(1))
+        qso['call'] = call_match.group(2).strip()[:length].upper()
+    
+    grid_match = re.search(r'<gridsquare:(\d+)>([^<\n]+)', record, re.IGNORECASE)
+    if grid_match:
+        length = int(grid_match.group(1))
+        qso['grid'] = grid_match.group(2).strip()[:length].upper()
+    
+    date_match = re.search(r'<qso_date:(\d+)>(\d+)', record, re.IGNORECASE)
+    if date_match:
+        qso['date'] = date_match.group(2)[:8]
+    
+    band_match = re.search(r'<band:(\d+)>([^<\n]+)', record, re.IGNORECASE)
+    if band_match:
+        length = int(band_match.group(1))
+        qso['band'] = band_match.group(2).strip()[:length]
+    
+    country_match = re.search(r'<country:(\d+)>([^<\n]+)', record, re.IGNORECASE)
+    if country_match:
+        length = int(country_match.group(1))
+        qso['country'] = country_match.group(2).strip()[:length]
+    
+    if 'call' in qso:
+        qsos.append(qso)
+
+print(f"✅ Parsed {len(qsos)} QSO records")
 
 if len(qsos) == 0:
-    print("❌ ERROR: No QSOs found! Check ADIF format above.")
+    print("❌ ERROR: No QSOs found!")
     exit(1)
 
 # Convert grids to coordinates
@@ -115,11 +109,10 @@ for qso in qsos:
 print(f"✅ {len(enriched_qsos)} QSOs with coordinates")
 
 if len(enriched_qsos) == 0:
-    print("❌ ERROR: No valid grid squares!")
-    print(f"   Total QSOs: {len(qsos)}")
-    print(f"   With 'grid' field: {sum(1 for q in qsos if 'grid' in q)}")
+    print(f"❌ ERROR: No valid grid squares!")
+    print(f"   QSOs with grid field: {sum(1 for q in qsos if 'grid' in q)}")
     if qsos:
-        print(f"   Sample QSO: {qsos[0]}")
+        print(f"   Sample: {qsos[0]}")
     exit(1)
 
 # Create map
@@ -134,13 +127,20 @@ home_lat, home_lon = 41.03, 29.0
 
 folium.Marker(
     [home_lat, home_lon],
-    popup="<b>TA1ZMP/LZ1MPN</b><br>Istanbul",
+    popup="<b>TA1ZMP/LZ1MPN</b><br>Istanbul<br>Grid: KM40",
     icon=folium.Icon(color='green', icon='home')
 ).add_to(m)
 
 for qso in enriched_qsos:
-    popup = f"<b>{qso['call']}</b><br>{qso.get('grid', '')}<br>"
-    popup += f"{qso.get('country', '')}<br>{qso.get('date', '')}"
+    popup = f"<b>{qso['call']}</b><br>Grid: {qso['grid']}<br>"
+    if 'country' in qso:
+        popup += f"{qso['country']}<br>"
+    if 'date' in qso:
+        d = qso['date']
+        if len(d) == 8:
+            popup += f"{d[0:4]}-{d[4:6]}-{d[6:8]}<br>"
+    if 'band' in qso:
+        popup += f"{qso['band']}"
     
     folium.Marker(
         [qso['lat'], qso['lon']],
@@ -157,5 +157,7 @@ os.makedirs('output', exist_ok=True)
 m.save('output/index.html')
 
 print(f"✅ Map saved!")
-print(f"\n📊 Stats: {len(qsos)} QSOs, {len(enriched_qsos)} on map ({len(enriched_qsos)/len(qsos)*100:.0f}%)")
+print(f"\n📊 Stats:")
+print(f"   Total QSOs: {len(qsos)}")
+print(f"   On map: {len(enriched_qsos)} ({len(enriched_qsos)/len(qsos)*100:.0f}%)")
 print("=" * 70)
