@@ -26,7 +26,7 @@ jobs:
     
     - name: Generate QSO Map
       env:
-        QRZ_API_KEY: ${{ secrets.QRZ_API_KEY }}
+        QRZ_API_KEY: "4787-2471-B31D-85BC"
         QRZ_USERNAME: LZ1MPN
       run: |
         python generate_map.py
