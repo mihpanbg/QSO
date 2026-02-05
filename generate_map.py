@@ -2,7 +2,9 @@ import requests
 import os
 import re
 import folium
+from folium import plugins
 import html
+from collections import defaultdict
 
 # QRZ API credentials
 API_KEY = os.environ['QRZ_API_KEY']
@@ -44,7 +46,7 @@ if response.status_code != 200:
     print(f"❌ ERROR: HTTP {response.status_code}")
     exit(1)
 
-# CRITICAL: Decode HTML entities!
+# Decode HTML entities
 adif_data = html.unescape(response.text)
 print(f"✅ Downloaded {len(adif_data)} bytes")
 
@@ -60,7 +62,6 @@ for record in records:
     
     qso = {}
     
-    # Extract fields
     call_match = re.search(r'<call:(\d+)>([^<\n]+)', record, re.IGNORECASE)
     if call_match:
         length = int(call_match.group(1))
@@ -85,6 +86,11 @@ for record in records:
         length = int(country_match.group(1))
         qso['country'] = country_match.group(2).strip()[:length]
     
+    mode_match = re.search(r'<mode:(\d+)>([^<\n]+)', record, re.IGNORECASE)
+    if mode_match:
+        length = int(mode_match.group(1))
+        qso['mode'] = mode_match.group(2).strip()[:length]
+    
     if 'call' in qso:
         qsos.append(qso)
 
@@ -94,9 +100,9 @@ if len(qsos) == 0:
     print("❌ ERROR: No QSOs found!")
     exit(1)
 
-# Convert grids to coordinates
+# Convert grids to coordinates and group by location
 print(f"\n🌍 Converting grid squares...")
-enriched_qsos = []
+location_groups = defaultdict(list)
 
 for qso in qsos:
     if 'grid' in qso and len(qso['grid']) >= 4:
@@ -104,60 +110,138 @@ for qso in qsos:
         if lat and lon:
             qso['lat'] = lat
             qso['lon'] = lon
-            enriched_qsos.append(qso)
+            # Group by grid square to handle multiple QSOs from same location
+            location_groups[qso['grid']].append(qso)
 
-print(f"✅ {len(enriched_qsos)} QSOs with coordinates")
+total_with_coords = sum(len(qsos) for qsos in location_groups.values())
+print(f"✅ {total_with_coords} QSOs with coordinates in {len(location_groups)} unique locations")
 
-if len(enriched_qsos) == 0:
-    print(f"❌ ERROR: No valid grid squares!")
-    print(f"   QSOs with grid field: {sum(1 for q in qsos if 'grid' in q)}")
-    if qsos:
-        print(f"   Sample: {qsos[0]}")
+if len(location_groups) == 0:
+    print("❌ ERROR: No valid grid squares!")
     exit(1)
+
+# Calculate statistics
+countries = set(q.get('country', 'Unknown') for qsos in location_groups.values() for q in qsos)
+bands = set(q.get('band', 'Unknown') for qsos in location_groups.values() for q in qsos)
+modes = set(q.get('mode', 'Unknown') for qsos in location_groups.values() for q in qsos)
 
 # Create map
 print(f"\n🗺️  Creating map...")
 
-avg_lat = sum(q['lat'] for q in enriched_qsos) / len(enriched_qsos)
-avg_lon = sum(q['lon'] for q in enriched_qsos) / len(enriched_qsos)
+# Calculate center
+all_lats = [q['lat'] for qsos in location_groups.values() for q in qsos]
+all_lons = [q['lon'] for qsos in location_groups.values() for q in qsos]
+avg_lat = sum(all_lats) / len(all_lats)
+avg_lon = sum(all_lons) / len(all_lons)
 
-m = folium.Map(location=[avg_lat, avg_lon], zoom_start=4, tiles='OpenStreetMap')
+m = folium.Map(
+    location=[avg_lat, avg_lon], 
+    zoom_start=4, 
+    tiles='OpenStreetMap'
+)
 
+# Add home marker
 home_lat, home_lon = 41.03, 29.0
 
 folium.Marker(
     [home_lat, home_lon],
-    popup="<b>TA1ZMP/LZ1MPN</b><br>Istanbul<br>Grid: KM40",
-    icon=folium.Icon(color='green', icon='home')
+    popup="<b style='font-size:16px'>🏠 TA1ZMP / LZ1MPN</b><br>Istanbul, Turkey<br>Grid: KM40",
+    tooltip="Home QTH",
+    icon=folium.Icon(color='green', icon='home', prefix='fa')
 ).add_to(m)
 
-for qso in enriched_qsos:
-    popup = f"<b>{qso['call']}</b><br>Grid: {qso['grid']}<br>"
-    if 'country' in qso:
-        popup += f"{qso['country']}<br>"
-    if 'date' in qso:
-        d = qso['date']
-        if len(d) == 8:
-            popup += f"{d[0:4]}-{d[4:6]}-{d[6:8]}<br>"
-    if 'band' in qso:
-        popup += f"{qso['band']}"
+# Add markers for each unique location
+for grid, qsos_at_location in location_groups.items():
+    lat = qsos_at_location[0]['lat']
+    lon = qsos_at_location[0]['lon']
+    
+    # Build popup with ALL QSOs at this location
+    popup_html = f"<div style='width:250px'>"
+    popup_html += f"<b style='font-size:14px'>📍 Grid: {grid}</b><br>"
+    popup_html += f"<b>{len(qsos_at_location)} QSO(s) from this location:</b><br><br>"
+    
+    # Show up to 10 QSOs
+    for i, qso in enumerate(qsos_at_location[:10]):
+        popup_html += f"<b>{qso['call']}</b>"
+        if 'country' in qso:
+            popup_html += f" ({qso['country']})"
+        popup_html += "<br>"
+        if 'date' in qso:
+            d = qso['date']
+            if len(d) == 8:
+                popup_html += f"📅 {d[0:4]}-{d[4:6]}-{d[6:8]} "
+        if 'band' in qso:
+            popup_html += f"📻 {qso['band']} "
+        if 'mode' in qso:
+            popup_html += f"🔊 {qso['mode']}"
+        popup_html += "<br>"
+    
+    if len(qsos_at_location) > 10:
+        popup_html += f"<i>... and {len(qsos_at_location) - 10} more</i><br>"
+    
+    popup_html += "</div>"
+    
+    # Marker color based on number of QSOs
+    if len(qsos_at_location) >= 5:
+        color = 'red'
+        icon = 'star'
+    elif len(qsos_at_location) >= 2:
+        color = 'orange'
+        icon = 'certificate'
+    else:
+        color = 'blue'
+        icon = 'info-sign'
     
     folium.Marker(
-        [qso['lat'], qso['lon']],
-        popup=popup,
-        icon=folium.Icon(color='red', icon='info-sign')
+        [lat, lon],
+        popup=folium.Popup(popup_html, max_width=300),
+        tooltip=f"{len(qsos_at_location)} QSO(s) from {grid}",
+        icon=folium.Icon(color=color, icon=icon)
     ).add_to(m)
     
+    # Draw line to home
     folium.PolyLine(
-        [[home_lat, home_lon], [qso['lat'], qso['lon']]],
-        color='blue', weight=1, opacity=0.5
+        [[home_lat, home_lon], [lat, lon]],
+        color='blue', 
+        weight=1, 
+        opacity=0.4
     ).add_to(m)
 
+# Add layer control
+folium.LayerControl().add_to(m)
+
+# Add fullscreen button
+plugins.Fullscreen().add_to(m)
+
+# Add statistics box
+stats_html = f"""
+<div style="position: fixed; 
+     top: 10px; right: 10px; width: 200px; 
+     background-color: white; z-index:9999; 
+     padding: 10px; border: 2px solid grey; border-radius: 5px;
+     font-family: Arial;">
+<h4 style="margin-top:0">📊 Statistics</h4>
+<b>Total QSOs:</b> {len(qsos)}<br>
+<b>Unique Grids:</b> {len(location_groups)}<br>
+<b>Countries:</b> {len(countries)}<br>
+<b>Bands:</b> {len(bands)}<br>
+<b>Modes:</b> {len(modes)}<br>
+<hr style="margin: 5px 0">
+<small>Last updated: {qsos[0].get('date', 'N/A') if qsos else 'N/A'}</small>
+</div>
+"""
+
+m.get_root().html.add_child(folium.Element(stats_html))
+
+# Save
 os.makedirs('output', exist_ok=True)
 m.save('output/index.html')
 
 print(f"✅ Map saved!")
-print(f"\n📊 Stats:")
+print(f"\n📊 Final Statistics:")
 print(f"   Total QSOs: {len(qsos)}")
-print(f"   On map: {len(enriched_qsos)} ({len(enriched_qsos)/len(qsos)*100:.0f}%)")
+print(f"   Unique locations: {len(location_groups)}")
+print(f"   Countries: {len(countries)}")
+print(f"   Bands: {', '.join(sorted(bands))}")
+print(f"   Modes: {', '.join(sorted(modes))}")
 print("=" * 70)
