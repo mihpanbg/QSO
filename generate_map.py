@@ -25,8 +25,8 @@ BAND_COLORS = {
     '10M': '#FF69B4', '6M': '#00CED1', '2M': '#FF4500'
 }
 
-MY_LAT = 41.065550
-MY_LON = 29.029100
+MY_LAT = 41.06555
+MY_LON = 29.02910
 
 def fetch_logbook_adif():
     """Fetch ADIF directly using QRZ export URL"""
