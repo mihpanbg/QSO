@@ -2,35 +2,35 @@ name: Update QSO Map
 
 on:
   schedule:
-    - cron: '0 */6 * * *'
-  workflow_dispatch:
+    - cron: '0 */6 * * *'  # Every 6 hours
+  workflow_dispatch:  # Manual trigger
   push:
     branches: [ main ]
 
 jobs:
   update-map:
     runs-on: ubuntu-latest
-    
+
     steps:
     - name: Checkout repository
       uses: actions/checkout@v3
-    
+
     - name: Set up Python
       uses: actions/setup-python@v4
       with:
         python-version: '3.11'
-    
+
     - name: Install dependencies
       run: |
         pip install requests pandas
-    
+
     - name: Generate QSO Map
       env:
         QRZ_API_KEY: ${{ secrets.QRZ_API_KEY }}
         QRZ_USERNAME: TA1ZMP
       run: |
         python generate_map.py
-    
+
     - name: Deploy to GitHub Pages
       uses: peaceiris/actions-gh-pages@v3
       with:
