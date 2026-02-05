@@ -22,7 +22,7 @@ jobs:
     
     - name: Install dependencies
       run: |
-        pip install requests pandas numpy
+        pip install -r requirements.txt
     
     - name: Generate QSO Map
       env:
