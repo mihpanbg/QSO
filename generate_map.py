@@ -8,27 +8,21 @@ API_KEY = os.environ['QRZ_API_KEY']
 CALLSIGN = os.environ['QRZ_USERNAME']
 
 def grid_to_latlon(grid):
-    """Convert Maidenhead grid square to lat/lon (center of grid)"""
+    """Convert Maidenhead grid square to lat/lon"""
     if not grid or len(grid) < 4:
         return None, None
     
-    grid = grid.upper()
+    grid = grid.upper().strip()
     
     try:
-        # Field (first 2 chars) - 20° longitude, 10° latitude
         lon = (ord(grid[0]) - ord('A')) * 20 - 180
         lat = (ord(grid[1]) - ord('A')) * 10 - 90
-        
-        # Square (next 2 chars) - 2° longitude, 1° latitude  
         lon += int(grid[2]) * 2
         lat += int(grid[3]) * 1
+        lon += 1
+        lat += 0.5
         
-        # Center of square
-        lon += 1  # +1° to center
-        lat += 0.5  # +0.5° to center
-        
-        # If 6-character grid (subsquare)
-        if len(grid) >= 6:
+        if len(grid) >= 6 and grid[4].isalpha() and grid[5].isalpha():
             lon += (ord(grid[4]) - ord('A')) * (2/24) + (1/24)
             lat += (ord(grid[5]) - ord('A')) * (1/24) + (1/48)
         
@@ -37,141 +31,131 @@ def grid_to_latlon(grid):
         return None, None
 
 print("=" * 70)
-print(f"TA1ZMP / LZ1MPN QSO Map Generator")
+print("TA1ZMP / LZ1MPN QSO Map Generator")
 print("=" * 70)
 
-# Step 1: Download ADIF from QRZ Logbook
+# Download ADIF
 url = f"https://logbook.qrz.com/api?KEY={API_KEY}&ACTION=FETCH&OPTION=TYPE:ADIF"
-print(f"\n📥 Downloading logbook for {CALLSIGN}...")
+print(f"\n📥 Downloading logbook...")
 
 response = requests.get(url)
 if response.status_code != 200:
-    print(f"❌ ERROR: Failed to download! Status: {response.status_code}")
+    print(f"❌ ERROR: HTTP {response.status_code}")
     exit(1)
 
 adif_data = response.text
 print(f"✅ Downloaded {len(adif_data)} bytes")
 
-# Step 2: Parse ADIF
-print(f"\n🔍 Parsing ADIF records...")
+# Debug: Show first 1000 chars
+print(f"\n🔍 First 1000 chars of ADIF:")
+print(adif_data[:1000])
+print("...")
+
+# Parse ADIF - flexible approach
+print(f"\n📋 Parsing ADIF...")
 qsos = []
 
-records = re.split(r'<eor>|<EOR>', adif_data, flags=re.IGNORECASE)
+# Try different split methods
+for separator in ['<eor>', '<EOR>', '<eor', '<EOR']:
+    parts = adif_data.lower().split(separator.lower())
+    if len(parts) > 1:
+        print(f"   Found {len(parts)-1} records using separator '{separator}'")
+        
+        for i, record in enumerate(parts):
+            if i == 0 or not record.strip():
+                continue
+            
+            qso = {}
+            
+            # Extract fields with flexible regex
+            for field, pattern in [
+                ('call', r'<call:(\d+)>([^<\n]+)'),
+                ('gridsquare', r'<gridsquare:(\d+)>([^<\n]+)'),
+                ('qso_date', r'<qso_date:(\d+)>(\d+)'),
+                ('band', r'<band:(\d+)>([^<\n]+)'),
+                ('country', r'<country:(\d+)>([^<\n]+)'),
+            ]:
+                match = re.search(pattern, record, re.IGNORECASE)
+                if match:
+                    length = int(match.group(1))
+                    value = match.group(2).strip()[:length]
+                    if field == 'gridsquare':
+                        qso['grid'] = value.upper()
+                    elif field == 'qso_date':
+                        qso['date'] = value[:8]
+                    else:
+                        qso[field] = value
+            
+            if 'call' in qso:
+                qsos.append(qso)
+                if len(qsos) <= 3:
+                    print(f"   QSO #{len(qsos)}: {qso}")
+        
+        if len(qsos) > 0:
+            break
 
-for record in records:
-    if not record.strip() or len(record) < 20:
-        continue
-    
-    qso = {}
-    
-    # Extract CALL
-    call_match = re.search(r'<call:\d+>([^<\n]+)', record, re.IGNORECASE)
-    if call_match:
-        qso['call'] = call_match.group(1).strip().upper()
-    
-    # Extract GRIDSQUARE
-    grid_match = re.search(r'<gridsquare:\d+>([^<\n]+)', record, re.IGNORECASE)
-    if grid_match:
-        qso['grid'] = grid_match.group(1).strip().upper()
-    
-    # Extract QSO_DATE
-    date_match = re.search(r'<qso_date:\d+>(\d+)', record, re.IGNORECASE)
-    if date_match:
-        qso['date'] = date_match.group(1)[:8]
-    
-    # Extract BAND
-    band_match = re.search(r'<band:\d+>([^<\n]+)', record, re.IGNORECASE)
-    if band_match:
-        qso['band'] = band_match.group(1).strip()
-    
-    # Extract COUNTRY
-    country_match = re.search(r'<country:\d+>([^<\n]+)', record, re.IGNORECASE)
-    if country_match:
-        qso['country'] = country_match.group(1).strip()
-    
-    if 'call' in qso:
-        qsos.append(qso)
-
-print(f"✅ Parsed {len(qsos)} QSO records")
+print(f"\n✅ Parsed {len(qsos)} QSO records")
 
 if len(qsos) == 0:
-    print("❌ ERROR: No QSOs found!")
+    print("❌ ERROR: No QSOs found! Check ADIF format above.")
     exit(1)
 
-# Step 3: Convert grid squares to coordinates
-print(f"\n🌍 Converting grid squares to coordinates...")
-
+# Convert grids to coordinates
+print(f"\n🌍 Converting grid squares...")
 enriched_qsos = []
+
 for qso in qsos:
-    if 'grid' in qso:
+    if 'grid' in qso and len(qso['grid']) >= 4:
         lat, lon = grid_to_latlon(qso['grid'])
         if lat and lon:
             qso['lat'] = lat
             qso['lon'] = lon
             enriched_qsos.append(qso)
 
-print(f"✅ {len(enriched_qsos)} QSOs have valid grid squares")
+print(f"✅ {len(enriched_qsos)} QSOs with coordinates")
 
 if len(enriched_qsos) == 0:
-    print("❌ ERROR: No QSOs with grid squares!")
+    print("❌ ERROR: No valid grid squares!")
+    print(f"   Total QSOs: {len(qsos)}")
+    print(f"   With 'grid' field: {sum(1 for q in qsos if 'grid' in q)}")
+    if qsos:
+        print(f"   Sample QSO: {qsos[0]}")
     exit(1)
 
-# Step 4: Create map
-print(f"\n🗺️  Generating interactive map...")
+# Create map
+print(f"\n🗺️  Creating map...")
 
 avg_lat = sum(q['lat'] for q in enriched_qsos) / len(enriched_qsos)
 avg_lon = sum(q['lon'] for q in enriched_qsos) / len(enriched_qsos)
 
-m = folium.Map(
-    location=[avg_lat, avg_lon],
-    zoom_start=4,
-    tiles='OpenStreetMap'
-)
+m = folium.Map(location=[avg_lat, avg_lon], zoom_start=4, tiles='OpenStreetMap')
 
-# Home location (Istanbul - KM40)
-home_lat = 41.03
-home_lon = 29.0
+home_lat, home_lon = 41.03, 29.0
 
-# Add home marker
 folium.Marker(
-    location=[home_lat, home_lon],
-    popup="<b>TA1ZMP / LZ1MPN</b><br>Home QTH<br>Istanbul, Turkey<br>Grid: KM40",
+    [home_lat, home_lon],
+    popup="<b>TA1ZMP/LZ1MPN</b><br>Istanbul",
     icon=folium.Icon(color='green', icon='home')
 ).add_to(m)
 
-# Add QSO markers and lines
 for qso in enriched_qsos:
-    popup_text = f"<b>{qso['call']}</b><br>"
-    popup_text += f"Grid: {qso['grid']}<br>"
-    if 'country' in qso:
-        popup_text += f"{qso['country']}<br>"
-    if 'date' in qso:
-        date_str = qso['date']
-        if len(date_str) == 8:
-            popup_text += f"{date_str[0:4]}-{date_str[4:6]}-{date_str[6:8]}<br>"
-    if 'band' in qso:
-        popup_text += f"{qso['band']}"
+    popup = f"<b>{qso['call']}</b><br>{qso.get('grid', '')}<br>"
+    popup += f"{qso.get('country', '')}<br>{qso.get('date', '')}"
     
     folium.Marker(
-        location=[qso['lat'], qso['lon']],
-        popup=popup_text,
+        [qso['lat'], qso['lon']],
+        popup=popup,
         icon=folium.Icon(color='red', icon='info-sign')
     ).add_to(m)
     
     folium.PolyLine(
-        locations=[[home_lat, home_lon], [qso['lat'], qso['lon']]],
-        color='blue',
-        weight=1,
-        opacity=0.5
+        [[home_lat, home_lon], [qso['lat'], qso['lon']]],
+        color='blue', weight=1, opacity=0.5
     ).add_to(m)
 
-# Save
 os.makedirs('output', exist_ok=True)
 m.save('output/index.html')
 
-print(f"✅ Map saved to output/index.html")
-print(f"\n📊 Statistics:")
-print(f"   Total QSOs: {len(qsos)}")
-print(f"   With grid squares: {len(enriched_qsos)}")
-print(f"   Coverage: {len(enriched_qsos)/len(qsos)*100:.1f}%")
+print(f"✅ Map saved!")
+print(f"\n📊 Stats: {len(qsos)} QSOs, {len(enriched_qsos)} on map ({len(enriched_qsos)/len(qsos)*100:.0f}%)")
 print("=" * 70)
