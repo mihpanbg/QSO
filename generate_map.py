@@ -63,10 +63,11 @@ def approximate_6char_grid(grid_4char):
 
 def enrich_grid_from_qrz(callsign, current_grid, session_key):
     """
-    Lookup full grid square from QRZ.com if we only have 4 chars
+    Lookup full grid square from QRZ.com
+    Returns: (enriched_grid, success_flag, source)
     """
     if len(current_grid) >= 6:
-        return current_grid, False  # Already have full grid
+        return current_grid, False, 'original'  # Already have full grid
     
     try:
         url = f"https://xmldata.qrz.com/xml/current/?s={session_key}&callsign={callsign}"
@@ -78,13 +79,20 @@ def enrich_grid_from_qrz(callsign, current_grid, session_key):
         if grid_elem is not None and grid_elem.text:
             qrz_grid = grid_elem.text.strip().upper()
             
-            # Verify it matches the 4-char we have
-            if len(qrz_grid) >= 6 and qrz_grid.startswith(current_grid):
-                return qrz_grid, True  # Successfully enriched
+            # Validate: must be 4 or 6 chars
+            if len(qrz_grid) >= 4:
+                # Check if it's in the same area (first 4 chars match or close)
+                if len(current_grid) == 4:
+                    # Accept if starts with same 4 chars
+                    if qrz_grid[:4] == current_grid[:4]:
+                        return qrz_grid[:6] if len(qrz_grid) >= 6 else qrz_grid, True, 'qrz'
+                    # Or if completely different, use QRZ version (more reliable)
+                    else:
+                        return qrz_grid[:6] if len(qrz_grid) >= 6 else qrz_grid, True, 'qrz_override'
         
-        return current_grid, False
-    except:
-        return current_grid, False
+        return current_grid, False, 'original'
+    except Exception as e:
+        return current_grid, False, 'error'
 
 print("=" * 70)
 print("TA1ZMP QSO Map Generator")
@@ -172,6 +180,7 @@ except Exception as e:
 # Enrich grids
 enriched_count = 0
 approximated_count = 0
+errors_count = 0
 
 for i, qso in enumerate(qsos):
     if 'grid' not in qso:
@@ -180,12 +189,13 @@ for i, qso in enumerate(qsos):
     original_grid = qso['grid']
     
     if len(original_grid) >= 6:
+        qso['grid_source'] = 'original_6char'
         continue  # Already good
     
     if len(original_grid) == 4:
         # Try QRZ lookup first
         if qrz_session:
-            enriched_grid, success = enrich_grid_from_qrz(
+            enriched_grid, success, source = enrich_grid_from_qrz(
                 qso['call'], 
                 original_grid, 
                 qrz_session
@@ -193,19 +203,26 @@ for i, qso in enumerate(qsos):
             
             if success:
                 qso['grid'] = enriched_grid
+                qso['grid_source'] = source
+                qso['grid_original'] = original_grid
                 enriched_count += 1
-                if enriched_count <= 5:  # Show first 5
-                    print(f"   ✓ {qso['call']}: {original_grid} → {enriched_grid} (from QRZ)")
+                if enriched_count <= 10:  # Show first 10
+                    print(f"   ✓ {qso['call']}: {original_grid} → {enriched_grid} ({source})")
                 time.sleep(0.15)  # Rate limiting
                 continue
+            else:
+                errors_count += 1
         
         # Fallback: approximate center
         qso['grid'] = approximate_6char_grid(original_grid)
+        qso['grid_source'] = 'approximated'
+        qso['grid_original'] = original_grid
         approximated_count += 1
 
 print(f"✅ Grid enrichment complete:")
-print(f"   QRZ lookups: {enriched_count}")
-print(f"   Approximations: {approximated_count}")
+print(f"   From QRZ: {enriched_count}")
+print(f"   Approximated: {approximated_count}")
+print(f"   Lookup errors: {errors_count}")
 
 # Convert grids to coordinates and group by location
 print(f"\n🌍 Converting grid squares to coordinates...")
@@ -270,7 +287,12 @@ for grid, qsos_at_location in location_groups.items():
         popup_html += f"<b>{qso['call']}</b>"
         if 'country' in qso:
             popup_html += f" ({qso['country']})"
+            
+        # Show grid source if enriched
+        if 'grid_original' in qso:
+            popup_html += f" <small>[{qso['grid_original']}→{qso['grid'][:6]}]</small>"
         popup_html += "<br>"
+        
         if 'date' in qso:
             d = qso['date']
             if len(d) == 8:
