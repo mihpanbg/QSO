@@ -5,6 +5,8 @@ import folium
 from folium import plugins
 import html
 from collections import defaultdict
+import xml.etree.ElementTree as ET
+import time
 
 # QRZ API credentials
 API_KEY = os.environ['QRZ_API_KEY']
@@ -31,7 +33,6 @@ def grid_to_latlon(grid):
         
         if len(grid) >= 6:
             # Subsquare (characters 4,5) - 5' lon × 2.5' lat (minutes)
-            # Convert minutes to degrees: minutes / 60
             lon += (ord(grid[4]) - ord('A')) * (5.0 / 60.0)
             lat += (ord(grid[5]) - ord('A')) * (2.5 / 60.0)
             
@@ -47,8 +48,46 @@ def grid_to_latlon(grid):
     except Exception as e:
         return None, None
 
+def approximate_6char_grid(grid_4char):
+    """
+    Approximate 6-char grid by adding center subsquare
+    """
+    if len(grid_4char) >= 6:
+        return grid_4char
+    
+    if len(grid_4char) == 4:
+        # Add "LL" for approximate center (L = 11, middle of 0-23 range)
+        return grid_4char + "LL"
+    
+    return grid_4char
+
+def enrich_grid_from_qrz(callsign, current_grid, session_key):
+    """
+    Lookup full grid square from QRZ.com if we only have 4 chars
+    """
+    if len(current_grid) >= 6:
+        return current_grid, False  # Already have full grid
+    
+    try:
+        url = f"https://xmldata.qrz.com/xml/current/?s={session_key}&callsign={callsign}"
+        response = requests.get(url, timeout=5)
+        root = ET.fromstring(response.text)
+        
+        # Check for grid in profile
+        grid_elem = root.find('.//grid')
+        if grid_elem is not None and grid_elem.text:
+            qrz_grid = grid_elem.text.strip().upper()
+            
+            # Verify it matches the 4-char we have
+            if len(qrz_grid) >= 6 and qrz_grid.startswith(current_grid):
+                return qrz_grid, True  # Successfully enriched
+        
+        return current_grid, False
+    except:
+        return current_grid, False
+
 print("=" * 70)
-print("TA1ZMP / LZ1MPN QSO Map Generator")
+print("TA1ZMP QSO Map Generator")
 print("=" * 70)
 
 # Download ADIF
@@ -114,8 +153,62 @@ if len(qsos) == 0:
     print("❌ ERROR: No QSOs found!")
     exit(1)
 
+# Enrich grid squares
+print(f"\n🔍 Enriching 4-char grid squares...")
+
+# Login to QRZ XML API for grid lookups
+qrz_session = None
+try:
+    login_url = f"https://xmldata.qrz.com/xml/current/?username={CALLSIGN}&password={API_KEY}"
+    login_response = requests.get(login_url, timeout=10)
+    root = ET.fromstring(login_response.text)
+    session_elem = root.find('.//Key')
+    if session_elem is not None:
+        qrz_session = session_elem.text
+        print(f"✅ QRZ XML session established for grid enrichment")
+except Exception as e:
+    print(f"⚠️  QRZ XML login failed, will use approximations only")
+
+# Enrich grids
+enriched_count = 0
+approximated_count = 0
+
+for i, qso in enumerate(qsos):
+    if 'grid' not in qso:
+        continue
+    
+    original_grid = qso['grid']
+    
+    if len(original_grid) >= 6:
+        continue  # Already good
+    
+    if len(original_grid) == 4:
+        # Try QRZ lookup first
+        if qrz_session:
+            enriched_grid, success = enrich_grid_from_qrz(
+                qso['call'], 
+                original_grid, 
+                qrz_session
+            )
+            
+            if success:
+                qso['grid'] = enriched_grid
+                enriched_count += 1
+                if enriched_count <= 5:  # Show first 5
+                    print(f"   ✓ {qso['call']}: {original_grid} → {enriched_grid} (from QRZ)")
+                time.sleep(0.15)  # Rate limiting
+                continue
+        
+        # Fallback: approximate center
+        qso['grid'] = approximate_6char_grid(original_grid)
+        approximated_count += 1
+
+print(f"✅ Grid enrichment complete:")
+print(f"   QRZ lookups: {enriched_count}")
+print(f"   Approximations: {approximated_count}")
+
 # Convert grids to coordinates and group by location
-print(f"\n🌍 Converting grid squares...")
+print(f"\n🌍 Converting grid squares to coordinates...")
 location_groups = defaultdict(list)
 
 for qso in qsos:
@@ -124,7 +217,6 @@ for qso in qsos:
         if lat and lon:
             qso['lat'] = lat
             qso['lon'] = lon
-            # Group by grid square to handle multiple QSOs from same location
             location_groups[qso['grid']].append(qso)
 
 total_with_coords = sum(len(qsos) for qsos in location_groups.values())
@@ -140,9 +232,8 @@ bands = set(q.get('band', 'Unknown') for qsos in location_groups.values() for q 
 modes = set(q.get('mode', 'Unknown') for qsos in location_groups.values() for q in qsos)
 
 # Create map
-print(f"\n🗺️  Creating map...")
+print(f"\n🗺️  Creating interactive map...")
 
-# Calculate center
 all_lats = [q['lat'] for qsos in location_groups.values() for q in qsos]
 all_lons = [q['lon'] for qsos in location_groups.values() for q in qsos]
 avg_lat = sum(all_lats) / len(all_lats)
@@ -159,7 +250,7 @@ home_lat, home_lon = 41.0653, 29.0291
 
 folium.Marker(
     [home_lat, home_lon],
-    popup="<b style='font-size:16px'>🏠 TA1ZMP</b><br>Istanbul, Turkey<br>Grid: KN41mb",
+    popup="<b style='font-size:16px'>🏠 TA1ZMP</b><br>Istanbul, Turkey<br>Grid: KM41mb",
     tooltip="Home QTH",
     icon=folium.Icon(color='green', icon='home', prefix='fa')
 ).add_to(m)
@@ -230,18 +321,19 @@ plugins.Fullscreen().add_to(m)
 # Add statistics box
 stats_html = f"""
 <div style="position: fixed; 
-     top: 10px; right: 10px; width: 200px; 
+     top: 10px; right: 10px; width: 220px; 
      background-color: white; z-index:9999; 
      padding: 10px; border: 2px solid grey; border-radius: 5px;
-     font-family: Arial;">
-<h4 style="margin-top:0">📊 Statistics</h4>
+     font-family: Arial; font-size: 12px;">
+<h4 style="margin-top:0">📊 QSO Statistics</h4>
 <b>Total QSOs:</b> {len(qsos)}<br>
 <b>Unique Grids:</b> {len(location_groups)}<br>
 <b>Countries:</b> {len(countries)}<br>
 <b>Bands:</b> {len(bands)}<br>
 <b>Modes:</b> {len(modes)}<br>
 <hr style="margin: 5px 0">
-<small>Last updated: {qsos[0].get('date', 'N/A') if qsos else 'N/A'}</small>
+<small>Grid enriched: {enriched_count} from QRZ<br>
+Approximated: {approximated_count}</small>
 </div>
 """
 
@@ -251,7 +343,7 @@ m.get_root().html.add_child(folium.Element(stats_html))
 os.makedirs('output', exist_ok=True)
 m.save('output/index.html')
 
-print(f"✅ Map saved!")
+print(f"✅ Map saved to output/index.html")
 print(f"\n📊 Final Statistics:")
 print(f"   Total QSOs: {len(qsos)}")
 print(f"   Unique locations: {len(location_groups)}")
