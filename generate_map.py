@@ -11,26 +11,40 @@ API_KEY = os.environ['QRZ_API_KEY']
 CALLSIGN = os.environ['QRZ_USERNAME']
 
 def grid_to_latlon(grid):
-    """Convert Maidenhead grid to lat/lon"""
+    """
+    Convert Maidenhead grid square to lat/lon (center coordinates)
+    Based on official Maidenhead standard
+    """
     if not grid or len(grid) < 4:
         return None, None
     
     grid = grid.upper().strip()
     
     try:
+        # Field (characters 0,1) - 20° lon × 10° lat
         lon = (ord(grid[0]) - ord('A')) * 20 - 180
         lat = (ord(grid[1]) - ord('A')) * 10 - 90
+        
+        # Square (characters 2,3) - 2° lon × 1° lat
         lon += int(grid[2]) * 2
         lat += int(grid[3]) * 1
-        lon += 1
-        lat += 0.5
         
-        if len(grid) >= 6 and grid[4].isalpha() and grid[5].isalpha():
-            lon += (ord(grid[4]) - ord('A')) * (2/24) + (1/24)
-            lat += (ord(grid[5]) - ord('A')) * (1/24) + (1/48)
+        if len(grid) >= 6:
+            # Subsquare (characters 4,5) - 5' lon × 2.5' lat (minutes)
+            # Convert minutes to degrees: minutes / 60
+            lon += (ord(grid[4]) - ord('A')) * (5.0 / 60.0)
+            lat += (ord(grid[5]) - ord('A')) * (2.5 / 60.0)
+            
+            # Center of subsquare
+            lon += (5.0 / 60.0) / 2.0  # +2.5 minutes
+            lat += (2.5 / 60.0) / 2.0  # +1.25 minutes
+        else:
+            # Center of 4-char square
+            lon += 1.0  # +1° (center of 2° square)
+            lat += 0.5  # +0.5° (center of 1° square)
         
         return lat, lon
-    except:
+    except Exception as e:
         return None, None
 
 print("=" * 70)
