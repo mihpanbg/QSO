@@ -141,11 +141,11 @@ m = folium.Map(
 )
 
 # Add home marker
-home_lat, home_lon = 41.03, 29.0
+home_lat, home_lon = 41.065, 29.029
 
 folium.Marker(
     [home_lat, home_lon],
-    popup="<b style='font-size:16px'>🏠 TA1ZMP / LZ1MPN</b><br>Istanbul, Turkey<br>Grid: KM40",
+    popup="<b style='font-size:16px'>🏠 TA1ZMP</b><br>Istanbul, Turkey<br>Grid: KM40",
     tooltip="Home QTH",
     icon=folium.Icon(color='green', icon='home', prefix='fa')
 ).add_to(m)
