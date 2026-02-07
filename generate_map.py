@@ -141,7 +141,7 @@ m = folium.Map(
 )
 
 # Add home marker
-home_lat, home_lon = 41.065, 29.029
+home_lat, home_lon = 41.0655, 29.0291
 
 folium.Marker(
     [home_lat, home_lon],
