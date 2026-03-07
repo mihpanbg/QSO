@@ -17,7 +17,7 @@
             <meta name="viewport" content="width=device-width,
                 initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
             <style>
-                #map_261692267b52cafa8e8e88c0491b48cd {
+                #map_8d6f74bfaaeb884dc03ad3ac95eeb934 {
                     position: relative;
                     width: 100.0%;
                     height: 100.0%;
@@ -62,26 +62,26 @@
      padding: 10px; border: 2px solid grey; border-radius: 5px;
      font-family: Arial; font-size: 12px;">
 <h4 style="margin-top:0">📊 QSO Statistics</h4>
-<b>Total QSOs:</b> 51<br>
-<b>Unique Grids:</b> 44<br>
-<b>Countries:</b> 22<br>
-<b>Bands:</b> 7<br>
+<b>Total QSOs:</b> 54<br>
+<b>Unique Grids:</b> 47<br>
+<b>Countries:</b> 23<br>
+<b>Bands:</b> 8<br>
 <b>Modes:</b> 4<br>
 <hr style="margin: 5px 0">
 <small>Grid enriched: 0 from QRZ<br>
-Approximated: 37</small>
+Approximated: 40</small>
 </div>
     
-            <div class="folium-map" id="map_261692267b52cafa8e8e88c0491b48cd" ></div>
+            <div class="folium-map" id="map_8d6f74bfaaeb884dc03ad3ac95eeb934" ></div>
         
 </body>
 <script>
     
     
-            var map_261692267b52cafa8e8e88c0491b48cd = L.map(
-                "map_261692267b52cafa8e8e88c0491b48cd",
+            var map_8d6f74bfaaeb884dc03ad3ac95eeb934 = L.map(
+                "map_8d6f74bfaaeb884dc03ad3ac95eeb934",
                 {
-                    center: [44.06004901960785, 16.56454248366014],
+                    center: [44.02777777777778, 17.438271604938283],
                     crs: L.CRS.EPSG3857,
                     ...{
   "zoom": 4,
@@ -96,7 +96,7 @@ Approximated: 37</small>
 
         
     
-            var tile_layer_558dabf3cdb8c6b2f42ff6e5f540afec = L.tileLayer(
+            var tile_layer_bd760f0ecb2c5055f1e55034d80baaad = L.tileLayer(
                 "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
                 {
   "minZoom": 0,
@@ -113,17 +113,17 @@ Approximated: 37</small>
             );
         
     
-            tile_layer_558dabf3cdb8c6b2f42ff6e5f540afec.addTo(map_261692267b52cafa8e8e88c0491b48cd);
+            tile_layer_bd760f0ecb2c5055f1e55034d80baaad.addTo(map_8d6f74bfaaeb884dc03ad3ac95eeb934);
         
     
-            var marker_9b90593fec4c50079cbe9983e7d74e30 = L.marker(
+            var marker_f83acb1ce8ae73a01dbab2bc7bb105c5 = L.marker(
                 [41.0653, 29.0291],
                 {
 }
-            ).addTo(map_261692267b52cafa8e8e88c0491b48cd);
+            ).addTo(map_8d6f74bfaaeb884dc03ad3ac95eeb934);
         
     
-            var icon_7a77ef8def4c2f78d11cb34b07b564dc = L.AwesomeMarkers.icon(
+            var icon_7f1c8eb9b23b0773db88276081ba78b4 = L.AwesomeMarkers.icon(
                 {
   "markerColor": "green",
   "iconColor": "white",
@@ -134,24 +134,24 @@ Approximated: 37</small>
             );
         
     
-        var popup_0c39a1ecbbde2101002303d60114007c = L.popup({
+        var popup_ada9053e8833f37d524857a9cf4b4046 = L.popup({
   "maxWidth": "100%",
 });
 
         
             
-                var html_f2278a5ebc3c725aeff26d7533b63738 = $(`<div id="html_f2278a5ebc3c725aeff26d7533b63738" style="width: 100.0%; height: 100.0%;"><b style='font-size:16px'>🏠 TA1ZMP</b><br>Istanbul, Turkey<br>Grid: KM41mb</div>`)[0];
-                popup_0c39a1ecbbde2101002303d60114007c.setContent(html_f2278a5ebc3c725aeff26d7533b63738);
+                var html_4763fa2249cf145bc1c7ff11eeb25e03 = $(`<div id="html_4763fa2249cf145bc1c7ff11eeb25e03" style="width: 100.0%; height: 100.0%;"><b style='font-size:16px'>🏠 TA1ZMP</b><br>Istanbul, Turkey<br>Grid: KM41mb</div>`)[0];
+                popup_ada9053e8833f37d524857a9cf4b4046.setContent(html_4763fa2249cf145bc1c7ff11eeb25e03);
             
         
 
-        marker_9b90593fec4c50079cbe9983e7d74e30.bindPopup(popup_0c39a1ecbbde2101002303d60114007c)
+        marker_f83acb1ce8ae73a01dbab2bc7bb105c5.bindPopup(popup_ada9053e8833f37d524857a9cf4b4046)
         ;
 
         
     
     
-            marker_9b90593fec4c50079cbe9983e7d74e30.bindTooltip(
+            marker_f83acb1ce8ae73a01dbab2bc7bb105c5.bindTooltip(
                 `<div>
                      Home QTH
                  </div>`,
@@ -161,17 +161,17 @@ Approximated: 37</small>
             );
         
     
-                marker_9b90593fec4c50079cbe9983e7d74e30.setIcon(icon_7a77ef8def4c2f78d11cb34b07b564dc);
+                marker_f83acb1ce8ae73a01dbab2bc7bb105c5.setIcon(icon_7f1c8eb9b23b0773db88276081ba78b4);
             
     
-            var marker_4c6abfb0370e883a97772921fcf1f22d = L.marker(
+            var marker_7d9561bcf3bda548171bd1351c5f8e51 = L.marker(
                 [40.97916666666667, 28.708333333333336],
                 {
 }
-            ).addTo(map_261692267b52cafa8e8e88c0491b48cd);
+            ).addTo(map_8d6f74bfaaeb884dc03ad3ac95eeb934);
         
     
-            var icon_3ba182bcf7c5f5749b90c9b745ce6fa2 = L.AwesomeMarkers.icon(
+            var icon_d8d5d1ebafe2eb57e792de3fb7b15f38 = L.AwesomeMarkers.icon(
                 {
   "markerColor": "blue",
   "iconColor": "white",
@@ -182,24 +182,24 @@ Approximated: 37</small>
             );
         
     
-        var popup_b9a1ab7911a8d216ac7d8efa78659113 = L.popup({
+        var popup_83c2727f36a9bbb6876969d308dd6534 = L.popup({
   "maxWidth": 300,
 });
 
         
             
-                var html_6c35542eedfec393cb72a5d3ff6a8b06 = $(`<div id="html_6c35542eedfec393cb72a5d3ff6a8b06" style="width: 100.0%; height: 100.0%;"><div style='width:250px'><b style='font-size:14px'>📍 Grid: KN40IX07</b><br><b>1 QSO(s) from this location:</b><br><br><b>TA1CQ</b> (Turkey)<br>📅 2026-01-28 📻 70cm 🔊 FM<br></div></div>`)[0];
-                popup_b9a1ab7911a8d216ac7d8efa78659113.setContent(html_6c35542eedfec393cb72a5d3ff6a8b06);
+                var html_2e01ade58a1093a370e0af4d3c7ec562 = $(`<div id="html_2e01ade58a1093a370e0af4d3c7ec562" style="width: 100.0%; height: 100.0%;"><div style='width:250px'><b style='font-size:14px'>📍 Grid: KN40IX07</b><br><b>1 QSO(s) from this location:</b><br><br><b>TA1CQ</b> (Turkey)<br>📅 2026-01-28 📻 70cm 🔊 FM<br></div></div>`)[0];
+                popup_83c2727f36a9bbb6876969d308dd6534.setContent(html_2e01ade58a1093a370e0af4d3c7ec562);
             
         
 
-        marker_4c6abfb0370e883a97772921fcf1f22d.bindPopup(popup_b9a1ab7911a8d216ac7d8efa78659113)
+        marker_7d9561bcf3bda548171bd1351c5f8e51.bindPopup(popup_83c2727f36a9bbb6876969d308dd6534)
         ;
 
         
     
     
-            marker_4c6abfb0370e883a97772921fcf1f22d.bindTooltip(
+            marker_7d9561bcf3bda548171bd1351c5f8e51.bindTooltip(
                 `<div>
                      1 QSO(s) from KN40IX07
                  </div>`,
@@ -209,23 +209,23 @@ Approximated: 37</small>
             );
         
     
-                marker_4c6abfb0370e883a97772921fcf1f22d.setIcon(icon_3ba182bcf7c5f5749b90c9b745ce6fa2);
+                marker_7d9561bcf3bda548171bd1351c5f8e51.setIcon(icon_d8d5d1ebafe2eb57e792de3fb7b15f38);
             
     
-            var poly_line_544fe1d49b17e9441519f848eab36f65 = L.polyline(
+            var poly_line_f47904bdacaddf81238eaebe0c72906b = L.polyline(
                 [[41.0653, 29.0291], [40.97916666666667, 28.708333333333336]],
                 {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.4, "smoothFactor": 1.0, "stroke": true, "weight": 1}
-            ).addTo(map_261692267b52cafa8e8e88c0491b48cd);
+            ).addTo(map_8d6f74bfaaeb884dc03ad3ac95eeb934);
         
     
-            var marker_1b82b265541e0ff94e4a765ceaf470e9 = L.marker(
+            var marker_cc9eb1d822804364e5e14c5f73da9b75 = L.marker(
                 [41.0625, 28.875],
                 {
 }
-            ).addTo(map_261692267b52cafa8e8e88c0491b48cd);
+            ).addTo(map_8d6f74bfaaeb884dc03ad3ac95eeb934);
         
     
-            var icon_4bc6c022a4982e96ddeb5f075fd13e17 = L.AwesomeMarkers.icon(
+            var icon_8449eeae67d2a1999d38edc32de6b650 = L.AwesomeMarkers.icon(
                 {
   "markerColor": "blue",
   "iconColor": "white",
@@ -236,24 +236,24 @@ Approximated: 37</small>
             );
         
     
-        var popup_a65b519236c728aa838c7621d0c69c96 = L.popup({
+        var popup_13d22578e2e683a006b392c45f1b05f8 = L.popup({
   "maxWidth": 300,
 });
 
         
             
-                var html_9be14f9015bf9c9b32c09ad549dcddd4 = $(`<div id="html_9be14f9015bf9c9b32c09ad549dcddd4" style="width: 100.0%; height: 100.0%;"><div style='width:250px'><b style='font-size:14px'>📍 Grid: KN41KB94</b><br><b>1 QSO(s) from this location:</b><br><br><b>TA1TLA</b> (Turkey)<br>📅 2026-01-28 📻 70cm 🔊 FM<br></div></div>`)[0];
-                popup_a65b519236c728aa838c7621d0c69c96.setContent(html_9be14f9015bf9c9b32c09ad549dcddd4);
+                var html_0b5cd1f68d56a725f65686a156464649 = $(`<div id="html_0b5cd1f68d56a725f65686a156464649" style="width: 100.0%; height: 100.0%;"><div style='width:250px'><b style='font-size:14px'>📍 Grid: KN41KB94</b><br><b>1 QSO(s) from this location:</b><br><br><b>TA1TLA</b> (Turkey)<br>📅 2026-01-28 📻 70cm 🔊 FM<br></div></div>`)[0];
+                popup_13d22578e2e683a006b392c45f1b05f8.setContent(html_0b5cd1f68d56a725f65686a156464649);
             
         
 
-        marker_1b82b265541e0ff94e4a765ceaf470e9.bindPopup(popup_a65b519236c728aa838c7621d0c69c96)
+        marker_cc9eb1d822804364e5e14c5f73da9b75.bindPopup(popup_13d22578e2e683a006b392c45f1b05f8)
         ;
 
         
     
     
-            marker_1b82b265541e0ff94e4a765ceaf470e9.bindTooltip(
+            marker_cc9eb1d822804364e5e14c5f73da9b75.bindTooltip(
                 `<div>
                      1 QSO(s) from KN41KB94
                  </div>`,
@@ -263,23 +263,23 @@ Approximated: 37</small>
             );
         
     
-                marker_1b82b265541e0ff94e4a765ceaf470e9.setIcon(icon_4bc6c022a4982e96ddeb5f075fd13e17);
+                marker_cc9eb1d822804364e5e14c5f73da9b75.setIcon(icon_8449eeae67d2a1999d38edc32de6b650);
             
     
-            var poly_line_72ba5ecf7a5b6931df9653d519871ffe = L.polyline(
+            var poly_line_646a7b5bff96269513f3efffcef7f2b4 = L.polyline(
                 [[41.0653, 29.0291], [41.0625, 28.875]],
                 {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.4, "smoothFactor": 1.0, "stroke": true, "weight": 1}
-            ).addTo(map_261692267b52cafa8e8e88c0491b48cd);
+            ).addTo(map_8d6f74bfaaeb884dc03ad3ac95eeb934);
         
     
-            var marker_3243296ab2e69f15f5939cbc69344306 = L.marker(
+            var marker_28f1db48b16d67776ae00c0196c6dd40 = L.marker(
                 [41.0625, 28.958333333333336],
                 {
 }
-            ).addTo(map_261692267b52cafa8e8e88c0491b48cd);
+            ).addTo(map_8d6f74bfaaeb884dc03ad3ac95eeb934);
         
     
-            var icon_729a21c8ef54e6e2a89056bf3a79e604 = L.AwesomeMarkers.icon(
+            var icon_a5df7db968f9912a87e6cc20ad1a18b8 = L.AwesomeMarkers.icon(
                 {
   "markerColor": "blue",
   "iconColor": "white",
@@ -290,24 +290,24 @@ Approximated: 37</small>
             );
         
     
-        var popup_6cef4df8feaf7d55476457ce96d05e93 = L.popup({
+        var popup_a098649fd7e15e5b589a5345ef696e43 = L.popup({
   "maxWidth": 300,
 });
 
         
             
-                var html_3e7781a86d8119dbf701e0ab942984e5 = $(`<div id="html_3e7781a86d8119dbf701e0ab942984e5" style="width: 100.0%; height: 100.0%;"><div style='width:250px'><b style='font-size:14px'>📍 Grid: KN41LB96</b><br><b>1 QSO(s) from this location:</b><br><br><b>TA1KRJ</b> (Turkey)<br>📅 2026-01-28 📻 70cm 🔊 FM<br></div></div>`)[0];
-                popup_6cef4df8feaf7d55476457ce96d05e93.setContent(html_3e7781a86d8119dbf701e0ab942984e5);
+                var html_93c9cc07677ae047d3fa57bf15705dae = $(`<div id="html_93c9cc07677ae047d3fa57bf15705dae" style="width: 100.0%; height: 100.0%;"><div style='width:250px'><b style='font-size:14px'>📍 Grid: KN41LB96</b><br><b>1 QSO(s) from this location:</b><br><br><b>TA1KRJ</b> (Turkey)<br>📅 2026-01-28 📻 70cm 🔊 FM<br></div></div>`)[0];
+                popup_a098649fd7e15e5b589a5345ef696e43.setContent(html_93c9cc07677ae047d3fa57bf15705dae);
             
         
 
-        marker_3243296ab2e69f15f5939cbc69344306.bindPopup(popup_6cef4df8feaf7d55476457ce96d05e93)
+        marker_28f1db48b16d67776ae00c0196c6dd40.bindPopup(popup_a098649fd7e15e5b589a5345ef696e43)
         ;
 
         
     
     
-            marker_3243296ab2e69f15f5939cbc69344306.bindTooltip(
+            marker_28f1db48b16d67776ae00c0196c6dd40.bindTooltip(
                 `<div>
                      1 QSO(s) from KN41LB96
                  </div>`,
@@ -317,23 +317,23 @@ Approximated: 37</small>
             );
         
     
-                marker_3243296ab2e69f15f5939cbc69344306.setIcon(icon_729a21c8ef54e6e2a89056bf3a79e604);
+                marker_28f1db48b16d67776ae00c0196c6dd40.setIcon(icon_a5df7db968f9912a87e6cc20ad1a18b8);
             
     
-            var poly_line_837a79a516107cfde484f8ce3c166094 = L.polyline(
+            var poly_line_462a32522330a70ab67226b92f3b5463 = L.polyline(
                 [[41.0653, 29.0291], [41.0625, 28.958333333333336]],
                 {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.4, "smoothFactor": 1.0, "stroke": true, "weight": 1}
-            ).addTo(map_261692267b52cafa8e8e88c0491b48cd);
+            ).addTo(map_8d6f74bfaaeb884dc03ad3ac95eeb934);
         
     
-            var marker_ad049f611cdd9a2d3a5d9e3463c7dc52 = L.marker(
+            var marker_e8b58da0e43c691c942a1e77299637df = L.marker(
                 [32.47916666666667, 34.95833333333333],
                 {
 }
-            ).addTo(map_261692267b52cafa8e8e88c0491b48cd);
+            ).addTo(map_8d6f74bfaaeb884dc03ad3ac95eeb934);
         
     
-            var icon_65f77e62fd71f06b4f92cfe7f130c1b5 = L.AwesomeMarkers.icon(
+            var icon_51c2603dee49fb7056ecd185737e6523 = L.AwesomeMarkers.icon(
                 {
   "markerColor": "orange",
   "iconColor": "white",
@@ -344,24 +344,24 @@ Approximated: 37</small>
             );
         
     
-        var popup_11c652ae368a41ccafa2fbd22eb5c398 = L.popup({
+        var popup_9d061e8cb8d0dc99e6d1a1cf2cca5b6a = L.popup({
   "maxWidth": 300,
 });
 
         
             
-                var html_565fb7922a6da09fe6129d118585f4d8 = $(`<div id="html_565fb7922a6da09fe6129d118585f4d8" style="width: 100.0%; height: 100.0%;"><div style='width:250px'><b style='font-size:14px'>📍 Grid: KM72LL</b><br><b>2 QSO(s) from this location:</b><br><br><b>4X1UF</b> (Israel) <small>[KM72→KM72LL]</small><br>📅 2026-01-28 📻 40M 🔊 FT8<br><b>4X6FB</b> (Israel) <small>[KM72→KM72LL]</small><br>📅 2026-02-03 📻 40M 🔊 FT8<br></div></div>`)[0];
-                popup_11c652ae368a41ccafa2fbd22eb5c398.setContent(html_565fb7922a6da09fe6129d118585f4d8);
+                var html_4965696a6c31a0d790c3295aa1717f03 = $(`<div id="html_4965696a6c31a0d790c3295aa1717f03" style="width: 100.0%; height: 100.0%;"><div style='width:250px'><b style='font-size:14px'>📍 Grid: KM72LL</b><br><b>2 QSO(s) from this location:</b><br><br><b>4X1UF</b> (Israel) <small>[KM72→KM72LL]</small><br>📅 2026-01-28 📻 40M 🔊 FT8<br><b>4X6FB</b> (Israel) <small>[KM72→KM72LL]</small><br>📅 2026-02-03 📻 40M 🔊 FT8<br></div></div>`)[0];
+                popup_9d061e8cb8d0dc99e6d1a1cf2cca5b6a.setContent(html_4965696a6c31a0d790c3295aa1717f03);
             
         
 
-        marker_ad049f611cdd9a2d3a5d9e3463c7dc52.bindPopup(popup_11c652ae368a41ccafa2fbd22eb5c398)
+        marker_e8b58da0e43c691c942a1e77299637df.bindPopup(popup_9d061e8cb8d0dc99e6d1a1cf2cca5b6a)
         ;
 
         
     
     
-            marker_ad049f611cdd9a2d3a5d9e3463c7dc52.bindTooltip(
+            marker_e8b58da0e43c691c942a1e77299637df.bindTooltip(
                 `<div>
                      2 QSO(s) from KM72LL
                  </div>`,
@@ -371,23 +371,23 @@ Approximated: 37</small>
             );
         
     
-                marker_ad049f611cdd9a2d3a5d9e3463c7dc52.setIcon(icon_65f77e62fd71f06b4f92cfe7f130c1b5);
+                marker_e8b58da0e43c691c942a1e77299637df.setIcon(icon_51c2603dee49fb7056ecd185737e6523);
             
     
-            var poly_line_e1b72a9e4dbea8a33d28feedb8a26c9e = L.polyline(
+            var poly_line_37b863148ce6a8c5f3881d8b212ccf66 = L.polyline(
                 [[41.0653, 29.0291], [32.47916666666667, 34.95833333333333]],
                 {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.4, "smoothFactor": 1.0, "stroke": true, "weight": 1}
-            ).addTo(map_261692267b52cafa8e8e88c0491b48cd);
+            ).addTo(map_8d6f74bfaaeb884dc03ad3ac95eeb934);
         
     
-            var marker_b3f4303d13df947d7b90ce319ae0ff4b = L.marker(
+            var marker_3c043d838763acd98be0023dae67e14a = L.marker(
                 [39.47916666666667, 16.958333333333336],
                 {
 }
-            ).addTo(map_261692267b52cafa8e8e88c0491b48cd);
+            ).addTo(map_8d6f74bfaaeb884dc03ad3ac95eeb934);
         
     
-            var icon_c7a9cdd4a05bdf70fd9162a1214782cf = L.AwesomeMarkers.icon(
+            var icon_ea1bea2be24b6beeac0e60e9bfdceb1c = L.AwesomeMarkers.icon(
                 {
   "markerColor": "blue",
   "iconColor": "white",
@@ -398,24 +398,24 @@ Approximated: 37</small>
             );
         
     
-        var popup_466c04c37176063a1c9d4476c7407a9e = L.popup({
+        var popup_8d2ca30fa657b63fb8a840276b4e2557 = L.popup({
   "maxWidth": 300,
 });
 
         
             
-                var html_2b75e9e6d85869cd5c6251f975b59f12 = $(`<div id="html_2b75e9e6d85869cd5c6251f975b59f12" style="width: 100.0%; height: 100.0%;"><div style='width:250px'><b style='font-size:14px'>📍 Grid: JM89LL</b><br><b>1 QSO(s) from this location:</b><br><br><b>IZ8EQF</b> (Italy) <small>[JM89→JM89LL]</small><br>📅 2026-01-29 📻 20M 🔊 FT8<br></div></div>`)[0];
-                popup_466c04c37176063a1c9d4476c7407a9e.setContent(html_2b75e9e6d85869cd5c6251f975b59f12);
+                var html_782bb619b1119eb2b9a58b1d012e563a = $(`<div id="html_782bb619b1119eb2b9a58b1d012e563a" style="width: 100.0%; height: 100.0%;"><div style='width:250px'><b style='font-size:14px'>📍 Grid: JM89LL</b><br><b>1 QSO(s) from this location:</b><br><br><b>IZ8EQF</b> (Italy) <small>[JM89→JM89LL]</small><br>📅 2026-01-29 📻 20M 🔊 FT8<br></div></div>`)[0];
+                popup_8d2ca30fa657b63fb8a840276b4e2557.setContent(html_782bb619b1119eb2b9a58b1d012e563a);
             
         
 
-        marker_b3f4303d13df947d7b90ce319ae0ff4b.bindPopup(popup_466c04c37176063a1c9d4476c7407a9e)
+        marker_3c043d838763acd98be0023dae67e14a.bindPopup(popup_8d2ca30fa657b63fb8a840276b4e2557)
         ;
 
         
     
     
-            marker_b3f4303d13df947d7b90ce319ae0ff4b.bindTooltip(
+            marker_3c043d838763acd98be0023dae67e14a.bindTooltip(
                 `<div>
                      1 QSO(s) from JM89LL
                  </div>`,
@@ -425,23 +425,23 @@ Approximated: 37</small>
             );
         
     
-                marker_b3f4303d13df947d7b90ce319ae0ff4b.setIcon(icon_c7a9cdd4a05bdf70fd9162a1214782cf);
+                marker_3c043d838763acd98be0023dae67e14a.setIcon(icon_ea1bea2be24b6beeac0e60e9bfdceb1c);
             
     
-            var poly_line_2ee6d32cd43c74a8e3b541be75c555ed = L.polyline(
+            var poly_line_cd9322c4f7cb04bea758fbd3c1de826d = L.polyline(
                 [[41.0653, 29.0291], [39.47916666666667, 16.958333333333336]],
                 {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.4, "smoothFactor": 1.0, "stroke": true, "weight": 1}
-            ).addTo(map_261692267b52cafa8e8e88c0491b48cd);
+            ).addTo(map_8d6f74bfaaeb884dc03ad3ac95eeb934);
         
     
-            var marker_fe19b9d245587f0f2ce2b20234b2bd3c = L.marker(
+            var marker_2b84a020c6e8840a928170a050bf08d7 = L.marker(
                 [52.47916666666667, 14.958333333333332],
                 {
 }
-            ).addTo(map_261692267b52cafa8e8e88c0491b48cd);
+            ).addTo(map_8d6f74bfaaeb884dc03ad3ac95eeb934);
         
     
-            var icon_828af866f89491e95721e4a0e38c3290 = L.AwesomeMarkers.icon(
+            var icon_8c90d3f7c0e65f1a41fa2e62b41caff6 = L.AwesomeMarkers.icon(
                 {
   "markerColor": "blue",
   "iconColor": "white",
@@ -452,24 +452,24 @@ Approximated: 37</small>
             );
         
     
-        var popup_fb004fa5442bce9e414a1d1eb28b189b = L.popup({
+        var popup_18b46d3d7881e9a54911028e82e24204 = L.popup({
   "maxWidth": 300,
 });
 
         
             
-                var html_b5126512262cb7e6330f8130ce31c128 = $(`<div id="html_b5126512262cb7e6330f8130ce31c128" style="width: 100.0%; height: 100.0%;"><div style='width:250px'><b style='font-size:14px'>📍 Grid: JO72LL</b><br><b>1 QSO(s) from this location:</b><br><br><b>SQ3PMX</b> (Poland) <small>[JO72→JO72LL]</small><br>📅 2026-01-29 📻 20M 🔊 FT8<br></div></div>`)[0];
-                popup_fb004fa5442bce9e414a1d1eb28b189b.setContent(html_b5126512262cb7e6330f8130ce31c128);
+                var html_bd7a786ee362fdcbe7f2d385c88b9c01 = $(`<div id="html_bd7a786ee362fdcbe7f2d385c88b9c01" style="width: 100.0%; height: 100.0%;"><div style='width:250px'><b style='font-size:14px'>📍 Grid: JO72LL</b><br><b>1 QSO(s) from this location:</b><br><br><b>SQ3PMX</b> (Poland) <small>[JO72→JO72LL]</small><br>📅 2026-01-29 📻 20M 🔊 FT8<br></div></div>`)[0];
+                popup_18b46d3d7881e9a54911028e82e24204.setContent(html_bd7a786ee362fdcbe7f2d385c88b9c01);
             
         
 
-        marker_fe19b9d245587f0f2ce2b20234b2bd3c.bindPopup(popup_fb004fa5442bce9e414a1d1eb28b189b)
+        marker_2b84a020c6e8840a928170a050bf08d7.bindPopup(popup_18b46d3d7881e9a54911028e82e24204)
         ;
 
         
     
     
-            marker_fe19b9d245587f0f2ce2b20234b2bd3c.bindTooltip(
+            marker_2b84a020c6e8840a928170a050bf08d7.bindTooltip(
                 `<div>
                      1 QSO(s) from JO72LL
                  </div>`,
@@ -479,23 +479,23 @@ Approximated: 37</small>
             );
         
     
-                marker_fe19b9d245587f0f2ce2b20234b2bd3c.setIcon(icon_828af866f89491e95721e4a0e38c3290);
+                marker_2b84a020c6e8840a928170a050bf08d7.setIcon(icon_8c90d3f7c0e65f1a41fa2e62b41caff6);
             
     
-            var poly_line_4d607268610d5a4a838cb6fde908982c = L.polyline(
+            var poly_line_6e1e2753f06db4f5003708540b8bf5b5 = L.polyline(
                 [[41.0653, 29.0291], [52.47916666666667, 14.958333333333332]],
                 {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.4, "smoothFactor": 1.0, "stroke": true, "weight": 1}
-            ).addTo(map_261692267b52cafa8e8e88c0491b48cd);
+            ).addTo(map_8d6f74bfaaeb884dc03ad3ac95eeb934);
         
     
-            var marker_55ab5f9eccb4fabc6de1110e757c1edd = L.marker(
+            var marker_0c9686f7249887f776aeb8b0fb95e23f = L.marker(
                 [34.47916666666667, 34.95833333333333],
                 {
 }
-            ).addTo(map_261692267b52cafa8e8e88c0491b48cd);
+            ).addTo(map_8d6f74bfaaeb884dc03ad3ac95eeb934);
         
     
-            var icon_d215c4c0b1fe5431c1a5e8beb14ee6ee = L.AwesomeMarkers.icon(
+            var icon_23e65866969706c466e542bee638d8b7 = L.AwesomeMarkers.icon(
                 {
   "markerColor": "blue",
   "iconColor": "white",
@@ -506,24 +506,24 @@ Approximated: 37</small>
             );
         
     
-        var popup_4ea37c9fd0aa22a63ed62a2fac080182 = L.popup({
+        var popup_3f77dfcf412b63d61ca1f63eba3b477d = L.popup({
   "maxWidth": 300,
 });
 
         
             
-                var html_e1d4975df6f9b8ce3dcd45fb0c501e7f = $(`<div id="html_e1d4975df6f9b8ce3dcd45fb0c501e7f" style="width: 100.0%; height: 100.0%;"><div style='width:250px'><b style='font-size:14px'>📍 Grid: KM74LL</b><br><b>1 QSO(s) from this location:</b><br><br><b>OD5ZZ</b> (Lebanon) <small>[KM74→KM74LL]</small><br>📅 2026-01-29 📻 17M 🔊 FT8<br></div></div>`)[0];
-                popup_4ea37c9fd0aa22a63ed62a2fac080182.setContent(html_e1d4975df6f9b8ce3dcd45fb0c501e7f);
+                var html_499c57c92c3fcdccefa760e87807784b = $(`<div id="html_499c57c92c3fcdccefa760e87807784b" style="width: 100.0%; height: 100.0%;"><div style='width:250px'><b style='font-size:14px'>📍 Grid: KM74LL</b><br><b>1 QSO(s) from this location:</b><br><br><b>OD5ZZ</b> (Lebanon) <small>[KM74→KM74LL]</small><br>📅 2026-01-29 📻 17M 🔊 FT8<br></div></div>`)[0];
+                popup_3f77dfcf412b63d61ca1f63eba3b477d.setContent(html_499c57c92c3fcdccefa760e87807784b);
             
         
 
-        marker_55ab5f9eccb4fabc6de1110e757c1edd.bindPopup(popup_4ea37c9fd0aa22a63ed62a2fac080182)
+        marker_0c9686f7249887f776aeb8b0fb95e23f.bindPopup(popup_3f77dfcf412b63d61ca1f63eba3b477d)
         ;
 
         
     
     
-            marker_55ab5f9eccb4fabc6de1110e757c1edd.bindTooltip(
+            marker_0c9686f7249887f776aeb8b0fb95e23f.bindTooltip(
                 `<div>
                      1 QSO(s) from KM74LL
                  </div>`,
@@ -533,23 +533,23 @@ Approximated: 37</small>
             );
         
     
-                marker_55ab5f9eccb4fabc6de1110e757c1edd.setIcon(icon_d215c4c0b1fe5431c1a5e8beb14ee6ee);
+                marker_0c9686f7249887f776aeb8b0fb95e23f.setIcon(icon_23e65866969706c466e542bee638d8b7);
             
     
-            var poly_line_046772b0f5b23f5c6fd4c8a45eb9cb04 = L.polyline(
+            var poly_line_933adbef3c1eefc24aa4854f51da8f49 = L.polyline(
                 [[41.0653, 29.0291], [34.47916666666667, 34.95833333333333]],
                 {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.4, "smoothFactor": 1.0, "stroke": true, "weight": 1}
-            ).addTo(map_261692267b52cafa8e8e88c0491b48cd);
+            ).addTo(map_8d6f74bfaaeb884dc03ad3ac95eeb934);
         
     
-            var marker_87a398abfec8bec5180ba6889bde5e91 = L.marker(
+            var marker_da182c919b1bfb0f80b0dace1db167a0 = L.marker(
                 [48.47916666666667, 40.95833333333333],
                 {
 }
-            ).addTo(map_261692267b52cafa8e8e88c0491b48cd);
+            ).addTo(map_8d6f74bfaaeb884dc03ad3ac95eeb934);
         
     
-            var icon_522339376deae9d5f59d6d26ded9fce2 = L.AwesomeMarkers.icon(
+            var icon_c49b1711aa5c7f403f4d3adb08653080 = L.AwesomeMarkers.icon(
                 {
   "markerColor": "blue",
   "iconColor": "white",
@@ -560,24 +560,24 @@ Approximated: 37</small>
             );
         
     
-        var popup_21589823aedb7f079042cf00a231f85a = L.popup({
+        var popup_f9be2b246068d3be46d53503d4ed67d6 = L.popup({
   "maxWidth": 300,
 });
 
         
             
-                var html_98a217222c7e53b682aaf353c8594793 = $(`<div id="html_98a217222c7e53b682aaf353c8594793" style="width: 100.0%; height: 100.0%;"><div style='width:250px'><b style='font-size:14px'>📍 Grid: LN08LL</b><br><b>1 QSO(s) from this location:</b><br><br><b>RL6MT</b> (Russia) <small>[LN08→LN08LL]</small><br>📅 2026-01-29 📻 17M 🔊 FT8<br></div></div>`)[0];
-                popup_21589823aedb7f079042cf00a231f85a.setContent(html_98a217222c7e53b682aaf353c8594793);
+                var html_03a3f34d7e53415e462580a31143e5da = $(`<div id="html_03a3f34d7e53415e462580a31143e5da" style="width: 100.0%; height: 100.0%;"><div style='width:250px'><b style='font-size:14px'>📍 Grid: LN08LL</b><br><b>1 QSO(s) from this location:</b><br><br><b>RL6MT</b> (Russia) <small>[LN08→LN08LL]</small><br>📅 2026-01-29 📻 17M 🔊 FT8<br></div></div>`)[0];
+                popup_f9be2b246068d3be46d53503d4ed67d6.setContent(html_03a3f34d7e53415e462580a31143e5da);
             
         
 
-        marker_87a398abfec8bec5180ba6889bde5e91.bindPopup(popup_21589823aedb7f079042cf00a231f85a)
+        marker_da182c919b1bfb0f80b0dace1db167a0.bindPopup(popup_f9be2b246068d3be46d53503d4ed67d6)
         ;
 
         
     
     
-            marker_87a398abfec8bec5180ba6889bde5e91.bindTooltip(
+            marker_da182c919b1bfb0f80b0dace1db167a0.bindTooltip(
                 `<div>
                      1 QSO(s) from LN08LL
                  </div>`,
@@ -587,23 +587,23 @@ Approximated: 37</small>
             );
         
     
-                marker_87a398abfec8bec5180ba6889bde5e91.setIcon(icon_522339376deae9d5f59d6d26ded9fce2);
+                marker_da182c919b1bfb0f80b0dace1db167a0.setIcon(icon_c49b1711aa5c7f403f4d3adb08653080);
             
     
-            var poly_line_98ad8d3f9e63c50bc2699499ecd7fa02 = L.polyline(
+            var poly_line_9a8c163b3366ce9ece548e63912b48f3 = L.polyline(
                 [[41.0653, 29.0291], [48.47916666666667, 40.95833333333333]],
                 {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.4, "smoothFactor": 1.0, "stroke": true, "weight": 1}
-            ).addTo(map_261692267b52cafa8e8e88c0491b48cd);
+            ).addTo(map_8d6f74bfaaeb884dc03ad3ac95eeb934);
         
     
-            var marker_6cde795d553ed9f655dd5cbc3be23fc8 = L.marker(
+            var marker_81f4c7f2047c06c36071b9a8a4bd221c = L.marker(
                 [46.47916666666667, 16.958333333333336],
                 {
 }
-            ).addTo(map_261692267b52cafa8e8e88c0491b48cd);
+            ).addTo(map_8d6f74bfaaeb884dc03ad3ac95eeb934);
         
     
-            var icon_f335348fa3bd92a2dd9817eae0209024 = L.AwesomeMarkers.icon(
+            var icon_22949cb0b2a06be4f99e600f5a192428 = L.AwesomeMarkers.icon(
                 {
   "markerColor": "blue",
   "iconColor": "white",
@@ -614,24 +614,24 @@ Approximated: 37</small>
             );
         
     
-        var popup_68d7449c8510480fb5ebc93e34a02637 = L.popup({
+        var popup_a3e22116c526dbd6d5c456edf559f854 = L.popup({
   "maxWidth": 300,
 });
 
         
             
-                var html_34209bb61c3a849a7664290318826231 = $(`<div id="html_34209bb61c3a849a7664290318826231" style="width: 100.0%; height: 100.0%;"><div style='width:250px'><b style='font-size:14px'>📍 Grid: JN86LL</b><br><b>1 QSO(s) from this location:</b><br><br><b>HA1BF</b> (Hungary) <small>[JN86→JN86LL]</small><br>📅 2026-01-29 📻 30M 🔊 FT8<br></div></div>`)[0];
-                popup_68d7449c8510480fb5ebc93e34a02637.setContent(html_34209bb61c3a849a7664290318826231);
+                var html_0cd2c6394bae91f92ea8d8b38b2a1ecc = $(`<div id="html_0cd2c6394bae91f92ea8d8b38b2a1ecc" style="width: 100.0%; height: 100.0%;"><div style='width:250px'><b style='font-size:14px'>📍 Grid: JN86LL</b><br><b>1 QSO(s) from this location:</b><br><br><b>HA1BF</b> (Hungary) <small>[JN86→JN86LL]</small><br>📅 2026-01-29 📻 30M 🔊 FT8<br></div></div>`)[0];
+                popup_a3e22116c526dbd6d5c456edf559f854.setContent(html_0cd2c6394bae91f92ea8d8b38b2a1ecc);
             
         
 
-        marker_6cde795d553ed9f655dd5cbc3be23fc8.bindPopup(popup_68d7449c8510480fb5ebc93e34a02637)
+        marker_81f4c7f2047c06c36071b9a8a4bd221c.bindPopup(popup_a3e22116c526dbd6d5c456edf559f854)
         ;
 
         
     
     
-            marker_6cde795d553ed9f655dd5cbc3be23fc8.bindTooltip(
+            marker_81f4c7f2047c06c36071b9a8a4bd221c.bindTooltip(
                 `<div>
                      1 QSO(s) from JN86LL
                  </div>`,
@@ -641,23 +641,23 @@ Approximated: 37</small>
             );
         
     
-                marker_6cde795d553ed9f655dd5cbc3be23fc8.setIcon(icon_f335348fa3bd92a2dd9817eae0209024);
+                marker_81f4c7f2047c06c36071b9a8a4bd221c.setIcon(icon_22949cb0b2a06be4f99e600f5a192428);
             
     
-            var poly_line_b775f59f188f50307f14e38bc67f36b9 = L.polyline(
+            var poly_line_1772106c86c133617e86c961f3dd2c30 = L.polyline(
                 [[41.0653, 29.0291], [46.47916666666667, 16.958333333333336]],
                 {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.4, "smoothFactor": 1.0, "stroke": true, "weight": 1}
-            ).addTo(map_261692267b52cafa8e8e88c0491b48cd);
+            ).addTo(map_8d6f74bfaaeb884dc03ad3ac95eeb934);
         
     
-            var marker_b1556c500c6aaf73c1a2f4bac87f12a2 = L.marker(
+            var marker_01aae8817b522b69d2d43db28c6bae89 = L.marker(
                 [46.770833333333336, 16.875],
                 {
 }
-            ).addTo(map_261692267b52cafa8e8e88c0491b48cd);
+            ).addTo(map_8d6f74bfaaeb884dc03ad3ac95eeb934);
         
     
-            var icon_f18a246f8d1df6bcdf227e5aeb14b7ef = L.AwesomeMarkers.icon(
+            var icon_ba581e20cffcdd1d42e06d153f72a8eb = L.AwesomeMarkers.icon(
                 {
   "markerColor": "blue",
   "iconColor": "white",
@@ -668,24 +668,24 @@ Approximated: 37</small>
             );
         
     
-        var popup_89ade70a00cb35de1062a3c1f57ea912 = L.popup({
+        var popup_355713ef301ec57ef919b9bcd2901498 = L.popup({
   "maxWidth": 300,
 });
 
         
             
-                var html_ed28b5bd2351407ff8612e9d551e7182 = $(`<div id="html_ed28b5bd2351407ff8612e9d551e7182" style="width: 100.0%; height: 100.0%;"><div style='width:250px'><b style='font-size:14px'>📍 Grid: JN86KS</b><br><b>1 QSO(s) from this location:</b><br><br><b>HA1BF</b> (Hungary)<br>📅 2026-01-31 📻 20M 🔊 FT8<br></div></div>`)[0];
-                popup_89ade70a00cb35de1062a3c1f57ea912.setContent(html_ed28b5bd2351407ff8612e9d551e7182);
+                var html_b1280324eb93a1e4b46243c7929eb9d2 = $(`<div id="html_b1280324eb93a1e4b46243c7929eb9d2" style="width: 100.0%; height: 100.0%;"><div style='width:250px'><b style='font-size:14px'>📍 Grid: JN86KS</b><br><b>1 QSO(s) from this location:</b><br><br><b>HA1BF</b> (Hungary)<br>📅 2026-01-31 📻 20M 🔊 FT8<br></div></div>`)[0];
+                popup_355713ef301ec57ef919b9bcd2901498.setContent(html_b1280324eb93a1e4b46243c7929eb9d2);
             
         
 
-        marker_b1556c500c6aaf73c1a2f4bac87f12a2.bindPopup(popup_89ade70a00cb35de1062a3c1f57ea912)
+        marker_01aae8817b522b69d2d43db28c6bae89.bindPopup(popup_355713ef301ec57ef919b9bcd2901498)
         ;
 
         
     
     
-            marker_b1556c500c6aaf73c1a2f4bac87f12a2.bindTooltip(
+            marker_01aae8817b522b69d2d43db28c6bae89.bindTooltip(
                 `<div>
                      1 QSO(s) from JN86KS
                  </div>`,
@@ -695,23 +695,23 @@ Approximated: 37</small>
             );
         
     
-                marker_b1556c500c6aaf73c1a2f4bac87f12a2.setIcon(icon_f18a246f8d1df6bcdf227e5aeb14b7ef);
+                marker_01aae8817b522b69d2d43db28c6bae89.setIcon(icon_ba581e20cffcdd1d42e06d153f72a8eb);
             
     
-            var poly_line_830dfb340622fa8a7fb38b0db07a57fa = L.polyline(
+            var poly_line_8ca5ae671e42f0aeeb7858b45a388f88 = L.polyline(
                 [[41.0653, 29.0291], [46.770833333333336, 16.875]],
                 {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.4, "smoothFactor": 1.0, "stroke": true, "weight": 1}
-            ).addTo(map_261692267b52cafa8e8e88c0491b48cd);
+            ).addTo(map_8d6f74bfaaeb884dc03ad3ac95eeb934);
         
     
-            var marker_2b773f919f15815d3a18e17d78830ed5 = L.marker(
+            var marker_18b171b4a0d6d00f5e8ab2278a631de8 = L.marker(
                 [46.47916666666667, 22.958333333333336],
                 {
 }
-            ).addTo(map_261692267b52cafa8e8e88c0491b48cd);
+            ).addTo(map_8d6f74bfaaeb884dc03ad3ac95eeb934);
         
     
-            var icon_f9103684a6813545e4510a2fefde068a = L.AwesomeMarkers.icon(
+            var icon_2dce9bb84805abfba2001df258d227aa = L.AwesomeMarkers.icon(
                 {
   "markerColor": "blue",
   "iconColor": "white",
@@ -722,24 +722,24 @@ Approximated: 37</small>
             );
         
     
-        var popup_27a8859541ffb124eac83d4764ff477e = L.popup({
+        var popup_b1cfb2476252becdebcb480fa9ac4d70 = L.popup({
   "maxWidth": 300,
 });
 
         
             
-                var html_8575080402a7871f0b45324467751400 = $(`<div id="html_8575080402a7871f0b45324467751400" style="width: 100.0%; height: 100.0%;"><div style='width:250px'><b style='font-size:14px'>📍 Grid: KN16LL</b><br><b>1 QSO(s) from this location:</b><br><br><b>YO5PZ</b> (Romania) <small>[KN16→KN16LL]</small><br>📅 2026-01-31 📻 20M 🔊 FT8<br></div></div>`)[0];
-                popup_27a8859541ffb124eac83d4764ff477e.setContent(html_8575080402a7871f0b45324467751400);
+                var html_82a176fcb5a52e51736c3b3800e2f87c = $(`<div id="html_82a176fcb5a52e51736c3b3800e2f87c" style="width: 100.0%; height: 100.0%;"><div style='width:250px'><b style='font-size:14px'>📍 Grid: KN16LL</b><br><b>1 QSO(s) from this location:</b><br><br><b>YO5PZ</b> (Romania) <small>[KN16→KN16LL]</small><br>📅 2026-01-31 📻 20M 🔊 FT8<br></div></div>`)[0];
+                popup_b1cfb2476252becdebcb480fa9ac4d70.setContent(html_82a176fcb5a52e51736c3b3800e2f87c);
             
         
 
-        marker_2b773f919f15815d3a18e17d78830ed5.bindPopup(popup_27a8859541ffb124eac83d4764ff477e)
+        marker_18b171b4a0d6d00f5e8ab2278a631de8.bindPopup(popup_b1cfb2476252becdebcb480fa9ac4d70)
         ;
 
         
     
     
-            marker_2b773f919f15815d3a18e17d78830ed5.bindTooltip(
+            marker_18b171b4a0d6d00f5e8ab2278a631de8.bindTooltip(
                 `<div>
                      1 QSO(s) from KN16LL
                  </div>`,
@@ -749,23 +749,23 @@ Approximated: 37</small>
             );
         
     
-                marker_2b773f919f15815d3a18e17d78830ed5.setIcon(icon_f9103684a6813545e4510a2fefde068a);
+                marker_18b171b4a0d6d00f5e8ab2278a631de8.setIcon(icon_2dce9bb84805abfba2001df258d227aa);
             
     
-            var poly_line_fa45b0f509d531f582ab364e66513e22 = L.polyline(
+            var poly_line_b317d6666c07980e5907e06033a9ca28 = L.polyline(
                 [[41.0653, 29.0291], [46.47916666666667, 22.958333333333336]],
                 {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.4, "smoothFactor": 1.0, "stroke": true, "weight": 1}
-            ).addTo(map_261692267b52cafa8e8e88c0491b48cd);
+            ).addTo(map_8d6f74bfaaeb884dc03ad3ac95eeb934);
         
     
-            var marker_dcf112862abdefd1e793516707bfd09d = L.marker(
+            var marker_fe72074c70ee10bf6b5b5bee93b0f8b5 = L.marker(
                 [42.770833333333336, 12.875],
                 {
 }
-            ).addTo(map_261692267b52cafa8e8e88c0491b48cd);
+            ).addTo(map_8d6f74bfaaeb884dc03ad3ac95eeb934);
         
     
-            var icon_6392a7490acbd41f9c90033becc64007 = L.AwesomeMarkers.icon(
+            var icon_1402b81b3785d8fcb8d3b594f03ca245 = L.AwesomeMarkers.icon(
                 {
   "markerColor": "orange",
   "iconColor": "white",
@@ -776,24 +776,24 @@ Approximated: 37</small>
             );
         
     
-        var popup_34a54beff96f0946f081228ff2426416 = L.popup({
+        var popup_10a7e194ec3a5b7d5ceb299864bd8a8a = L.popup({
   "maxWidth": 300,
 });
 
         
             
-                var html_7944efd525d9b316aad273cc1b9fc310 = $(`<div id="html_7944efd525d9b316aad273cc1b9fc310" style="width: 100.0%; height: 100.0%;"><div style='width:250px'><b style='font-size:14px'>📍 Grid: JN62KS</b><br><b>3 QSO(s) from this location:</b><br><br><b>II3WWA</b> (Italy)<br>📅 2026-01-31 📻 15m 🔊 SSB<br><b>II2WWA</b> (Italy)<br>📅 2026-01-31 📻 15m 🔊 SSB<br><b>II4WWA</b> (Italy)<br>📅 2026-01-31 📻 15m 🔊 SSB<br></div></div>`)[0];
-                popup_34a54beff96f0946f081228ff2426416.setContent(html_7944efd525d9b316aad273cc1b9fc310);
+                var html_7590524d440899e784d3075d612c96c5 = $(`<div id="html_7590524d440899e784d3075d612c96c5" style="width: 100.0%; height: 100.0%;"><div style='width:250px'><b style='font-size:14px'>📍 Grid: JN62KS</b><br><b>3 QSO(s) from this location:</b><br><br><b>II3WWA</b> (Italy)<br>📅 2026-01-31 📻 15m 🔊 SSB<br><b>II2WWA</b> (Italy)<br>📅 2026-01-31 📻 15m 🔊 SSB<br><b>II4WWA</b> (Italy)<br>📅 2026-01-31 📻 15m 🔊 SSB<br></div></div>`)[0];
+                popup_10a7e194ec3a5b7d5ceb299864bd8a8a.setContent(html_7590524d440899e784d3075d612c96c5);
             
         
 
-        marker_dcf112862abdefd1e793516707bfd09d.bindPopup(popup_34a54beff96f0946f081228ff2426416)
+        marker_fe72074c70ee10bf6b5b5bee93b0f8b5.bindPopup(popup_10a7e194ec3a5b7d5ceb299864bd8a8a)
         ;
 
         
     
     
-            marker_dcf112862abdefd1e793516707bfd09d.bindTooltip(
+            marker_fe72074c70ee10bf6b5b5bee93b0f8b5.bindTooltip(
                 `<div>
                      3 QSO(s) from JN62KS
                  </div>`,
@@ -803,23 +803,23 @@ Approximated: 37</small>
             );
         
     
-                marker_dcf112862abdefd1e793516707bfd09d.setIcon(icon_6392a7490acbd41f9c90033becc64007);
+                marker_fe72074c70ee10bf6b5b5bee93b0f8b5.setIcon(icon_1402b81b3785d8fcb8d3b594f03ca245);
             
     
-            var poly_line_897b5bf3e9632dc38cb33def5d9a2fbd = L.polyline(
+            var poly_line_9ab9a3cb1b20e34b07ebd595fa351dda = L.polyline(
                 [[41.0653, 29.0291], [42.770833333333336, 12.875]],
                 {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.4, "smoothFactor": 1.0, "stroke": true, "weight": 1}
-            ).addTo(map_261692267b52cafa8e8e88c0491b48cd);
+            ).addTo(map_8d6f74bfaaeb884dc03ad3ac95eeb934);
         
     
-            var marker_6aa0a2c7f38bbb216faa386d242744a8 = L.marker(
+            var marker_6ea2e47dd47ab5412873be36a1b05b8b = L.marker(
                 [39.60416666666667, -8.125],
                 {
 }
-            ).addTo(map_261692267b52cafa8e8e88c0491b48cd);
+            ).addTo(map_8d6f74bfaaeb884dc03ad3ac95eeb934);
         
     
-            var icon_b1cee31799799860a97b37067fd500e7 = L.AwesomeMarkers.icon(
+            var icon_57d8b7e8dfd74637fccfa3c125565699 = L.AwesomeMarkers.icon(
                 {
   "markerColor": "orange",
   "iconColor": "white",
@@ -830,24 +830,24 @@ Approximated: 37</small>
             );
         
     
-        var popup_6d504989e7e59fa7e590228d6d0a7b7c = L.popup({
+        var popup_f054fe6106678477fba9ca2d38d635ea = L.popup({
   "maxWidth": 300,
 });
 
         
             
-                var html_243707b2d55cacf92b32ea60c0bf2068 = $(`<div id="html_243707b2d55cacf92b32ea60c0bf2068" style="width: 100.0%; height: 100.0%;"><div style='width:250px'><b style='font-size:14px'>📍 Grid: IM59WO</b><br><b>2 QSO(s) from this location:</b><br><br><b>CQ7WWA</b> (Portugal)<br>📅 2026-01-31 📻 15m 🔊 SSB<br><b>CQ7WWA</b> (Portugal)<br>📅 2026-01-31 📻 15M 🔊 FT8<br></div></div>`)[0];
-                popup_6d504989e7e59fa7e590228d6d0a7b7c.setContent(html_243707b2d55cacf92b32ea60c0bf2068);
+                var html_6db9b0fd52670422455782aa4c06fc34 = $(`<div id="html_6db9b0fd52670422455782aa4c06fc34" style="width: 100.0%; height: 100.0%;"><div style='width:250px'><b style='font-size:14px'>📍 Grid: IM59WO</b><br><b>2 QSO(s) from this location:</b><br><br><b>CQ7WWA</b> (Portugal)<br>📅 2026-01-31 📻 15m 🔊 SSB<br><b>CQ7WWA</b> (Portugal)<br>📅 2026-01-31 📻 15M 🔊 FT8<br></div></div>`)[0];
+                popup_f054fe6106678477fba9ca2d38d635ea.setContent(html_6db9b0fd52670422455782aa4c06fc34);
             
         
 
-        marker_6aa0a2c7f38bbb216faa386d242744a8.bindPopup(popup_6d504989e7e59fa7e590228d6d0a7b7c)
+        marker_6ea2e47dd47ab5412873be36a1b05b8b.bindPopup(popup_f054fe6106678477fba9ca2d38d635ea)
         ;
 
         
     
     
-            marker_6aa0a2c7f38bbb216faa386d242744a8.bindTooltip(
+            marker_6ea2e47dd47ab5412873be36a1b05b8b.bindTooltip(
                 `<div>
                      2 QSO(s) from IM59WO
                  </div>`,
@@ -857,23 +857,23 @@ Approximated: 37</small>
             );
         
     
-                marker_6aa0a2c7f38bbb216faa386d242744a8.setIcon(icon_b1cee31799799860a97b37067fd500e7);
+                marker_6ea2e47dd47ab5412873be36a1b05b8b.setIcon(icon_57d8b7e8dfd74637fccfa3c125565699);
             
     
-            var poly_line_d830a9c9696df1469e5fb2090bbb958a = L.polyline(
+            var poly_line_1f97f1503cd051ed0151d4504b11b905 = L.polyline(
                 [[41.0653, 29.0291], [39.60416666666667, -8.125]],
                 {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.4, "smoothFactor": 1.0, "stroke": true, "weight": 1}
-            ).addTo(map_261692267b52cafa8e8e88c0491b48cd);
+            ).addTo(map_8d6f74bfaaeb884dc03ad3ac95eeb934);
         
     
-            var marker_05476d6225c93c5453778656aec48871 = L.marker(
+            var marker_f2706c5ac9282c2240fea675332dc231 = L.marker(
                 [32.72916666666667, -16.958333333333332],
                 {
 }
-            ).addTo(map_261692267b52cafa8e8e88c0491b48cd);
+            ).addTo(map_8d6f74bfaaeb884dc03ad3ac95eeb934);
         
     
-            var icon_99cf298bf8343f6dba1107a672461e1b = L.AwesomeMarkers.icon(
+            var icon_d27c7e37a06e5f4c479ba2fbd8649d0f = L.AwesomeMarkers.icon(
                 {
   "markerColor": "blue",
   "iconColor": "white",
@@ -884,24 +884,24 @@ Approximated: 37</small>
             );
         
     
-        var popup_68c758afc5a59d82524ffb6716ef2bd3 = L.popup({
+        var popup_dc6fe93f3b49764c4969d59fc0c2a506 = L.popup({
   "maxWidth": 300,
 });
 
         
             
-                var html_254ac57afb65b18d4ef8226fcef07771 = $(`<div id="html_254ac57afb65b18d4ef8226fcef07771" style="width: 100.0%; height: 100.0%;"><div style='width:250px'><b style='font-size:14px'>📍 Grid: IM12MR</b><br><b>1 QSO(s) from this location:</b><br><br><b>CR3WWA</b> (Madeira Island)<br>📅 2026-01-31 📻 15m 🔊 SSB<br></div></div>`)[0];
-                popup_68c758afc5a59d82524ffb6716ef2bd3.setContent(html_254ac57afb65b18d4ef8226fcef07771);
+                var html_f72b5664fef831668e856275667e9c88 = $(`<div id="html_f72b5664fef831668e856275667e9c88" style="width: 100.0%; height: 100.0%;"><div style='width:250px'><b style='font-size:14px'>📍 Grid: IM12MR</b><br><b>1 QSO(s) from this location:</b><br><br><b>CR3WWA</b> (Madeira Island)<br>📅 2026-01-31 📻 15m 🔊 SSB<br></div></div>`)[0];
+                popup_dc6fe93f3b49764c4969d59fc0c2a506.setContent(html_f72b5664fef831668e856275667e9c88);
             
         
 
-        marker_05476d6225c93c5453778656aec48871.bindPopup(popup_68c758afc5a59d82524ffb6716ef2bd3)
+        marker_f2706c5ac9282c2240fea675332dc231.bindPopup(popup_dc6fe93f3b49764c4969d59fc0c2a506)
         ;
 
         
     
     
-            marker_05476d6225c93c5453778656aec48871.bindTooltip(
+            marker_f2706c5ac9282c2240fea675332dc231.bindTooltip(
                 `<div>
                      1 QSO(s) from IM12MR
                  </div>`,
@@ -911,23 +911,23 @@ Approximated: 37</small>
             );
         
     
-                marker_05476d6225c93c5453778656aec48871.setIcon(icon_99cf298bf8343f6dba1107a672461e1b);
+                marker_f2706c5ac9282c2240fea675332dc231.setIcon(icon_d27c7e37a06e5f4c479ba2fbd8649d0f);
             
     
-            var poly_line_97e8e6fdbe7fbb4dc708576f814e80f8 = L.polyline(
+            var poly_line_32ddd0a1422aa473431dfbfe3bca926d = L.polyline(
                 [[41.0653, 29.0291], [32.72916666666667, -16.958333333333332]],
                 {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.4, "smoothFactor": 1.0, "stroke": true, "weight": 1}
-            ).addTo(map_261692267b52cafa8e8e88c0491b48cd);
+            ).addTo(map_8d6f74bfaaeb884dc03ad3ac95eeb934);
         
     
-            var marker_be96e89daa36c84c73de4800edcc7049 = L.marker(
+            var marker_a7b8977ae7228e651fbd5bff4dc151d6 = L.marker(
                 [39.60416666666667, 2.958333333333333],
                 {
 }
-            ).addTo(map_261692267b52cafa8e8e88c0491b48cd);
+            ).addTo(map_8d6f74bfaaeb884dc03ad3ac95eeb934);
         
     
-            var icon_43efdb78b987f41ae42e51e79f9f5cae = L.AwesomeMarkers.icon(
+            var icon_1590171779bfbde5918b034920fc12e5 = L.AwesomeMarkers.icon(
                 {
   "markerColor": "blue",
   "iconColor": "white",
@@ -938,24 +938,24 @@ Approximated: 37</small>
             );
         
     
-        var popup_bee55498307928052aa0237959051b76 = L.popup({
+        var popup_782479de0f1caaca6c2925fc3289b4ca = L.popup({
   "maxWidth": 300,
 });
 
         
             
-                var html_e065651e7aa3a98472a25b0f9defbfe4 = $(`<div id="html_e065651e7aa3a98472a25b0f9defbfe4" style="width: 100.0%; height: 100.0%;"><div style='width:250px'><b style='font-size:14px'>📍 Grid: JM19LO</b><br><b>1 QSO(s) from this location:</b><br><br><b>EG6WWA</b> (Balearic Islands)<br>📅 2026-01-31 📻 15m 🔊 SSB<br></div></div>`)[0];
-                popup_bee55498307928052aa0237959051b76.setContent(html_e065651e7aa3a98472a25b0f9defbfe4);
+                var html_9a293c7803f9cb991aa866dee1bfadf8 = $(`<div id="html_9a293c7803f9cb991aa866dee1bfadf8" style="width: 100.0%; height: 100.0%;"><div style='width:250px'><b style='font-size:14px'>📍 Grid: JM19LO</b><br><b>1 QSO(s) from this location:</b><br><br><b>EG6WWA</b> (Balearic Islands)<br>📅 2026-01-31 📻 15m 🔊 SSB<br></div></div>`)[0];
+                popup_782479de0f1caaca6c2925fc3289b4ca.setContent(html_9a293c7803f9cb991aa866dee1bfadf8);
             
         
 
-        marker_be96e89daa36c84c73de4800edcc7049.bindPopup(popup_bee55498307928052aa0237959051b76)
+        marker_a7b8977ae7228e651fbd5bff4dc151d6.bindPopup(popup_782479de0f1caaca6c2925fc3289b4ca)
         ;
 
         
     
     
-            marker_be96e89daa36c84c73de4800edcc7049.bindTooltip(
+            marker_a7b8977ae7228e651fbd5bff4dc151d6.bindTooltip(
                 `<div>
                      1 QSO(s) from JM19LO
                  </div>`,
@@ -965,23 +965,23 @@ Approximated: 37</small>
             );
         
     
-                marker_be96e89daa36c84c73de4800edcc7049.setIcon(icon_43efdb78b987f41ae42e51e79f9f5cae);
+                marker_a7b8977ae7228e651fbd5bff4dc151d6.setIcon(icon_1590171779bfbde5918b034920fc12e5);
             
     
-            var poly_line_019460960e9093961cb12b01a4c5fc63 = L.polyline(
+            var poly_line_e631d4ce64bf4495606b5aa66836e1ee = L.polyline(
                 [[41.0653, 29.0291], [39.60416666666667, 2.958333333333333]],
                 {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.4, "smoothFactor": 1.0, "stroke": true, "weight": 1}
-            ).addTo(map_261692267b52cafa8e8e88c0491b48cd);
+            ).addTo(map_8d6f74bfaaeb884dc03ad3ac95eeb934);
         
     
-            var marker_87afc1a911e6bc21fe14be7dcda8c354 = L.marker(
+            var marker_dc54b88617a7ed086ffff5374606fb97 = L.marker(
                 [50.10416666666667, 8.708333333333332],
                 {
 }
-            ).addTo(map_261692267b52cafa8e8e88c0491b48cd);
+            ).addTo(map_8d6f74bfaaeb884dc03ad3ac95eeb934);
         
     
-            var icon_807376146268aa77cb9d86fe5105ccd7 = L.AwesomeMarkers.icon(
+            var icon_6dd26ed10a45dce6f92919b950653571 = L.AwesomeMarkers.icon(
                 {
   "markerColor": "blue",
   "iconColor": "white",
@@ -992,24 +992,24 @@ Approximated: 37</small>
             );
         
     
-        var popup_e4c534aa5f5a3163459886f6e163a3f9 = L.popup({
+        var popup_9378cff5b3a5ac5abd977401890b4d4c = L.popup({
   "maxWidth": 300,
 });
 
         
             
-                var html_1f96ea5c77cb18bfd472c20c5c228bd7 = $(`<div id="html_1f96ea5c77cb18bfd472c20c5c228bd7" style="width: 100.0%; height: 100.0%;"><div style='width:250px'><b style='font-size:14px'>📍 Grid: JO40IC</b><br><b>1 QSO(s) from this location:</b><br><br><b>DA0WWA</b> (Germany)<br>📅 2026-01-31 📻 15m 🔊 SSB<br></div></div>`)[0];
-                popup_e4c534aa5f5a3163459886f6e163a3f9.setContent(html_1f96ea5c77cb18bfd472c20c5c228bd7);
+                var html_1f8b2aef7771c0b6742fb0cea16843fc = $(`<div id="html_1f8b2aef7771c0b6742fb0cea16843fc" style="width: 100.0%; height: 100.0%;"><div style='width:250px'><b style='font-size:14px'>📍 Grid: JO40IC</b><br><b>1 QSO(s) from this location:</b><br><br><b>DA0WWA</b> (Germany)<br>📅 2026-01-31 📻 15m 🔊 SSB<br></div></div>`)[0];
+                popup_9378cff5b3a5ac5abd977401890b4d4c.setContent(html_1f8b2aef7771c0b6742fb0cea16843fc);
             
         
 
-        marker_87afc1a911e6bc21fe14be7dcda8c354.bindPopup(popup_e4c534aa5f5a3163459886f6e163a3f9)
+        marker_dc54b88617a7ed086ffff5374606fb97.bindPopup(popup_9378cff5b3a5ac5abd977401890b4d4c)
         ;
 
         
     
     
-            marker_87afc1a911e6bc21fe14be7dcda8c354.bindTooltip(
+            marker_dc54b88617a7ed086ffff5374606fb97.bindTooltip(
                 `<div>
                      1 QSO(s) from JO40IC
                  </div>`,
@@ -1019,23 +1019,23 @@ Approximated: 37</small>
             );
         
     
-                marker_87afc1a911e6bc21fe14be7dcda8c354.setIcon(icon_807376146268aa77cb9d86fe5105ccd7);
+                marker_dc54b88617a7ed086ffff5374606fb97.setIcon(icon_6dd26ed10a45dce6f92919b950653571);
             
     
-            var poly_line_f85b959a8cd1bae7ed8630297d16d8ae = L.polyline(
+            var poly_line_acd1fd62b524b7129671a94bdc9d3765 = L.polyline(
                 [[41.0653, 29.0291], [50.10416666666667, 8.708333333333332]],
                 {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.4, "smoothFactor": 1.0, "stroke": true, "weight": 1}
-            ).addTo(map_261692267b52cafa8e8e88c0491b48cd);
+            ).addTo(map_8d6f74bfaaeb884dc03ad3ac95eeb934);
         
     
-            var marker_0e1c8cf9a48cb41cd64a19297b422da8 = L.marker(
+            var marker_e43dd9b6c3f6d36a64c81a55382a28b7 = L.marker(
                 [44.47916666666667, 10.958333333333332],
                 {
 }
-            ).addTo(map_261692267b52cafa8e8e88c0491b48cd);
+            ).addTo(map_8d6f74bfaaeb884dc03ad3ac95eeb934);
         
     
-            var icon_ee17343fcaedb8aba543d729bc1cc097 = L.AwesomeMarkers.icon(
+            var icon_509a4e962b8d6fd6ca9883a6a384c80f = L.AwesomeMarkers.icon(
                 {
   "markerColor": "orange",
   "iconColor": "white",
@@ -1046,24 +1046,24 @@ Approximated: 37</small>
             );
         
     
-        var popup_100127140223ef6e64ed505ad6d49aa9 = L.popup({
+        var popup_4f51bd069908a4375b30a33e2988236c = L.popup({
   "maxWidth": 300,
 });
 
         
             
-                var html_2834e2645ee2111b9c49402e1e170836 = $(`<div id="html_2834e2645ee2111b9c49402e1e170836" style="width: 100.0%; height: 100.0%;"><div style='width:250px'><b style='font-size:14px'>📍 Grid: JN54LL</b><br><b>2 QSO(s) from this location:</b><br><br><b>IK4LZH</b> (Italy) <small>[JN54→JN54LL]</small><br>📅 2026-01-31 📻 15M 🔊 FT8<br><b>I4WQH</b> (Italy) <small>[JN54→JN54LL]</small><br>📅 2026-02-04 📻 40M 🔊 FT8<br></div></div>`)[0];
-                popup_100127140223ef6e64ed505ad6d49aa9.setContent(html_2834e2645ee2111b9c49402e1e170836);
+                var html_a25390447566a76f8bff0269917d0ca0 = $(`<div id="html_a25390447566a76f8bff0269917d0ca0" style="width: 100.0%; height: 100.0%;"><div style='width:250px'><b style='font-size:14px'>📍 Grid: JN54LL</b><br><b>2 QSO(s) from this location:</b><br><br><b>IK4LZH</b> (Italy) <small>[JN54→JN54LL]</small><br>📅 2026-01-31 📻 15M 🔊 FT8<br><b>I4WQH</b> (Italy) <small>[JN54→JN54LL]</small><br>📅 2026-02-04 📻 40M 🔊 FT8<br></div></div>`)[0];
+                popup_4f51bd069908a4375b30a33e2988236c.setContent(html_a25390447566a76f8bff0269917d0ca0);
             
         
 
-        marker_0e1c8cf9a48cb41cd64a19297b422da8.bindPopup(popup_100127140223ef6e64ed505ad6d49aa9)
+        marker_e43dd9b6c3f6d36a64c81a55382a28b7.bindPopup(popup_4f51bd069908a4375b30a33e2988236c)
         ;
 
         
     
     
-            marker_0e1c8cf9a48cb41cd64a19297b422da8.bindTooltip(
+            marker_e43dd9b6c3f6d36a64c81a55382a28b7.bindTooltip(
                 `<div>
                      2 QSO(s) from JN54LL
                  </div>`,
@@ -1073,23 +1073,23 @@ Approximated: 37</small>
             );
         
     
-                marker_0e1c8cf9a48cb41cd64a19297b422da8.setIcon(icon_ee17343fcaedb8aba543d729bc1cc097);
+                marker_e43dd9b6c3f6d36a64c81a55382a28b7.setIcon(icon_509a4e962b8d6fd6ca9883a6a384c80f);
             
     
-            var poly_line_ab9cfc537e0c9d6200e79ba41edcdd22 = L.polyline(
+            var poly_line_476604f63cd07f8fdb2d313bed339738 = L.polyline(
                 [[41.0653, 29.0291], [44.47916666666667, 10.958333333333332]],
                 {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.4, "smoothFactor": 1.0, "stroke": true, "weight": 1}
-            ).addTo(map_261692267b52cafa8e8e88c0491b48cd);
+            ).addTo(map_8d6f74bfaaeb884dc03ad3ac95eeb934);
         
     
-            var marker_ffe8f0e4c671d101e54b65c593ccb627 = L.marker(
+            var marker_954bd8575ebc3f916f56a12fcff378ae = L.marker(
                 [47.47916666666667, 20.958333333333336],
                 {
 }
-            ).addTo(map_261692267b52cafa8e8e88c0491b48cd);
+            ).addTo(map_8d6f74bfaaeb884dc03ad3ac95eeb934);
         
     
-            var icon_993c9c7640f8bf56058c7780e7a4fcdd = L.AwesomeMarkers.icon(
+            var icon_a8a84a53f2f14f31cf61272c490a55e1 = L.AwesomeMarkers.icon(
                 {
   "markerColor": "blue",
   "iconColor": "white",
@@ -1100,24 +1100,24 @@ Approximated: 37</small>
             );
         
     
-        var popup_2990e1b7b516776ed6ff6eb7d15bc3e5 = L.popup({
+        var popup_c0be809378f2a19851014e79e83421a2 = L.popup({
   "maxWidth": 300,
 });
 
         
             
-                var html_2917aeaf8e4ad2fe9072c709a11251bb = $(`<div id="html_2917aeaf8e4ad2fe9072c709a11251bb" style="width: 100.0%; height: 100.0%;"><div style='width:250px'><b style='font-size:14px'>📍 Grid: KN07LL</b><br><b>1 QSO(s) from this location:</b><br><br><b>YO5OAK</b> (Romania) <small>[KN07→KN07LL]</small><br>📅 2026-02-01 📻 20M 🔊 FT8<br></div></div>`)[0];
-                popup_2990e1b7b516776ed6ff6eb7d15bc3e5.setContent(html_2917aeaf8e4ad2fe9072c709a11251bb);
+                var html_e068bbf5ea8db3e2de37fac2c583a9de = $(`<div id="html_e068bbf5ea8db3e2de37fac2c583a9de" style="width: 100.0%; height: 100.0%;"><div style='width:250px'><b style='font-size:14px'>📍 Grid: KN07LL</b><br><b>1 QSO(s) from this location:</b><br><br><b>YO5OAK</b> (Romania) <small>[KN07→KN07LL]</small><br>📅 2026-02-01 📻 20M 🔊 FT8<br></div></div>`)[0];
+                popup_c0be809378f2a19851014e79e83421a2.setContent(html_e068bbf5ea8db3e2de37fac2c583a9de);
             
         
 
-        marker_ffe8f0e4c671d101e54b65c593ccb627.bindPopup(popup_2990e1b7b516776ed6ff6eb7d15bc3e5)
+        marker_954bd8575ebc3f916f56a12fcff378ae.bindPopup(popup_c0be809378f2a19851014e79e83421a2)
         ;
 
         
     
     
-            marker_ffe8f0e4c671d101e54b65c593ccb627.bindTooltip(
+            marker_954bd8575ebc3f916f56a12fcff378ae.bindTooltip(
                 `<div>
                      1 QSO(s) from KN07LL
                  </div>`,
@@ -1127,23 +1127,23 @@ Approximated: 37</small>
             );
         
     
-                marker_ffe8f0e4c671d101e54b65c593ccb627.setIcon(icon_993c9c7640f8bf56058c7780e7a4fcdd);
+                marker_954bd8575ebc3f916f56a12fcff378ae.setIcon(icon_a8a84a53f2f14f31cf61272c490a55e1);
             
     
-            var poly_line_298dfcd8dea0d289982c0ce3561a9c32 = L.polyline(
+            var poly_line_75cf646d2f681f982e763d79d2a27b6b = L.polyline(
                 [[41.0653, 29.0291], [47.47916666666667, 20.958333333333336]],
                 {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.4, "smoothFactor": 1.0, "stroke": true, "weight": 1}
-            ).addTo(map_261692267b52cafa8e8e88c0491b48cd);
+            ).addTo(map_8d6f74bfaaeb884dc03ad3ac95eeb934);
         
     
-            var marker_8b8a0a19aeaab8427ad0d66268dbb5f6 = L.marker(
+            var marker_1c1bba0fd15917c5d65079f486448774 = L.marker(
                 [46.47916666666667, 20.958333333333336],
                 {
 }
-            ).addTo(map_261692267b52cafa8e8e88c0491b48cd);
+            ).addTo(map_8d6f74bfaaeb884dc03ad3ac95eeb934);
         
     
-            var icon_f5233d71623a0ae4fa67bd27df03bacf = L.AwesomeMarkers.icon(
+            var icon_0d6eba8f0a5b574978b3ad5fe18db176 = L.AwesomeMarkers.icon(
                 {
   "markerColor": "orange",
   "iconColor": "white",
@@ -1154,24 +1154,24 @@ Approximated: 37</small>
             );
         
     
-        var popup_8504e9c69e8d4fc3960d3f96ca6873cc = L.popup({
+        var popup_8125a78084b2e07f0e19bf710ecbd6cf = L.popup({
   "maxWidth": 300,
 });
 
         
             
-                var html_805e2a64476fe0a4024eeaab832694b5 = $(`<div id="html_805e2a64476fe0a4024eeaab832694b5" style="width: 100.0%; height: 100.0%;"><div style='width:250px'><b style='font-size:14px'>📍 Grid: KN06LL</b><br><b>2 QSO(s) from this location:</b><br><br><b>HA8LN</b> (Hungary) <small>[KN06→KN06LL]</small><br>📅 2026-02-01 📻 20M 🔊 FT8<br><b>YO2MD</b> (Romania) <small>[KN06→KN06LL]</small><br>📅 2026-02-01 📻 20M 🔊 FT8<br></div></div>`)[0];
-                popup_8504e9c69e8d4fc3960d3f96ca6873cc.setContent(html_805e2a64476fe0a4024eeaab832694b5);
+                var html_449d0148cd854018fadc5b0f01295bfe = $(`<div id="html_449d0148cd854018fadc5b0f01295bfe" style="width: 100.0%; height: 100.0%;"><div style='width:250px'><b style='font-size:14px'>📍 Grid: KN06LL</b><br><b>2 QSO(s) from this location:</b><br><br><b>HA8LN</b> (Hungary) <small>[KN06→KN06LL]</small><br>📅 2026-02-01 📻 20M 🔊 FT8<br><b>YO2MD</b> (Romania) <small>[KN06→KN06LL]</small><br>📅 2026-02-01 📻 20M 🔊 FT8<br></div></div>`)[0];
+                popup_8125a78084b2e07f0e19bf710ecbd6cf.setContent(html_449d0148cd854018fadc5b0f01295bfe);
             
         
 
-        marker_8b8a0a19aeaab8427ad0d66268dbb5f6.bindPopup(popup_8504e9c69e8d4fc3960d3f96ca6873cc)
+        marker_1c1bba0fd15917c5d65079f486448774.bindPopup(popup_8125a78084b2e07f0e19bf710ecbd6cf)
         ;
 
         
     
     
-            marker_8b8a0a19aeaab8427ad0d66268dbb5f6.bindTooltip(
+            marker_1c1bba0fd15917c5d65079f486448774.bindTooltip(
                 `<div>
                      2 QSO(s) from KN06LL
                  </div>`,
@@ -1181,23 +1181,23 @@ Approximated: 37</small>
             );
         
     
-                marker_8b8a0a19aeaab8427ad0d66268dbb5f6.setIcon(icon_f5233d71623a0ae4fa67bd27df03bacf);
+                marker_1c1bba0fd15917c5d65079f486448774.setIcon(icon_0d6eba8f0a5b574978b3ad5fe18db176);
             
     
-            var poly_line_fa1157882ba4512c0a34457930c398e9 = L.polyline(
+            var poly_line_a0deedf2995fdb93f2c1a2473e5e8e8d = L.polyline(
                 [[41.0653, 29.0291], [46.47916666666667, 20.958333333333336]],
                 {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.4, "smoothFactor": 1.0, "stroke": true, "weight": 1}
-            ).addTo(map_261692267b52cafa8e8e88c0491b48cd);
+            ).addTo(map_8d6f74bfaaeb884dc03ad3ac95eeb934);
         
     
-            var marker_d37bfb5768824c377b4dbe15e3b9f75c = L.marker(
+            var marker_a4e0e5bba6a82cceb6ab1a285d77aacc = L.marker(
                 [42.47916666666667, 12.958333333333332],
                 {
 }
-            ).addTo(map_261692267b52cafa8e8e88c0491b48cd);
+            ).addTo(map_8d6f74bfaaeb884dc03ad3ac95eeb934);
         
     
-            var icon_2ae0e769c3bbd2f190d7ecd3082f9548 = L.AwesomeMarkers.icon(
+            var icon_678cb8405c4a30d4586419ec81f5f577 = L.AwesomeMarkers.icon(
                 {
   "markerColor": "orange",
   "iconColor": "white",
@@ -1208,24 +1208,24 @@ Approximated: 37</small>
             );
         
     
-        var popup_26735e2ef074e76611663cb6c82b4f60 = L.popup({
+        var popup_4d4bee218b72bb778b6667a024e143ec = L.popup({
   "maxWidth": 300,
 });
 
         
             
-                var html_bdca0d050f75c6854793912fbf9abd7c = $(`<div id="html_bdca0d050f75c6854793912fbf9abd7c" style="width: 100.0%; height: 100.0%;"><div style='width:250px'><b style='font-size:14px'>📍 Grid: JN62LL</b><br><b>2 QSO(s) from this location:</b><br><br><b>IZ6SCG</b> (Italy) <small>[JN62→JN62LL]</small><br>📅 2026-02-01 📻 20M 🔊 FT8<br><b>I0KMJ</b> (Italy) <small>[JN62→JN62LL]</small><br>📅 2026-02-04 📻 40M 🔊 FT8<br></div></div>`)[0];
-                popup_26735e2ef074e76611663cb6c82b4f60.setContent(html_bdca0d050f75c6854793912fbf9abd7c);
+                var html_85e5b750115aa8b8a898e8b51c92d621 = $(`<div id="html_85e5b750115aa8b8a898e8b51c92d621" style="width: 100.0%; height: 100.0%;"><div style='width:250px'><b style='font-size:14px'>📍 Grid: JN62LL</b><br><b>2 QSO(s) from this location:</b><br><br><b>IZ6SCG</b> (Italy) <small>[JN62→JN62LL]</small><br>📅 2026-02-01 📻 20M 🔊 FT8<br><b>I0KMJ</b> (Italy) <small>[JN62→JN62LL]</small><br>📅 2026-02-04 📻 40M 🔊 FT8<br></div></div>`)[0];
+                popup_4d4bee218b72bb778b6667a024e143ec.setContent(html_85e5b750115aa8b8a898e8b51c92d621);
             
         
 
-        marker_d37bfb5768824c377b4dbe15e3b9f75c.bindPopup(popup_26735e2ef074e76611663cb6c82b4f60)
+        marker_a4e0e5bba6a82cceb6ab1a285d77aacc.bindPopup(popup_4d4bee218b72bb778b6667a024e143ec)
         ;
 
         
     
     
-            marker_d37bfb5768824c377b4dbe15e3b9f75c.bindTooltip(
+            marker_a4e0e5bba6a82cceb6ab1a285d77aacc.bindTooltip(
                 `<div>
                      2 QSO(s) from JN62LL
                  </div>`,
@@ -1235,23 +1235,23 @@ Approximated: 37</small>
             );
         
     
-                marker_d37bfb5768824c377b4dbe15e3b9f75c.setIcon(icon_2ae0e769c3bbd2f190d7ecd3082f9548);
+                marker_a4e0e5bba6a82cceb6ab1a285d77aacc.setIcon(icon_678cb8405c4a30d4586419ec81f5f577);
             
     
-            var poly_line_e1323c4d5ba555bbda8b427c075b2d0b = L.polyline(
+            var poly_line_95ac210dfd2e260a0034f29d19dcc598 = L.polyline(
                 [[41.0653, 29.0291], [42.47916666666667, 12.958333333333332]],
                 {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.4, "smoothFactor": 1.0, "stroke": true, "weight": 1}
-            ).addTo(map_261692267b52cafa8e8e88c0491b48cd);
+            ).addTo(map_8d6f74bfaaeb884dc03ad3ac95eeb934);
         
     
-            var marker_d5937a7f889a74a2410a4ed479727550 = L.marker(
+            var marker_6511b9c5b04c670fb2401c87f97c7eaa = L.marker(
                 [43.47916666666667, 42.95833333333333],
                 {
 }
-            ).addTo(map_261692267b52cafa8e8e88c0491b48cd);
+            ).addTo(map_8d6f74bfaaeb884dc03ad3ac95eeb934);
         
     
-            var icon_6f726a63919aaed40923d6a8e9a526a9 = L.AwesomeMarkers.icon(
+            var icon_b953e2023f9a726b679d9201a3f2504f = L.AwesomeMarkers.icon(
                 {
   "markerColor": "blue",
   "iconColor": "white",
@@ -1262,24 +1262,24 @@ Approximated: 37</small>
             );
         
     
-        var popup_0559cd74be36849dedae5b4740ecf058 = L.popup({
+        var popup_580d4dafdc1aca033f2c5928cff63e99 = L.popup({
   "maxWidth": 300,
 });
 
         
             
-                var html_ef4e52ae612efe3df6bd3ad10c04e5d7 = $(`<div id="html_ef4e52ae612efe3df6bd3ad10c04e5d7" style="width: 100.0%; height: 100.0%;"><div style='width:250px'><b style='font-size:14px'>📍 Grid: LN13LL</b><br><b>1 QSO(s) from this location:</b><br><br><b>R6FMD</b> (Russia) <small>[LN13→LN13LL]</small><br>📅 2026-02-01 📻 20M 🔊 FT8<br></div></div>`)[0];
-                popup_0559cd74be36849dedae5b4740ecf058.setContent(html_ef4e52ae612efe3df6bd3ad10c04e5d7);
+                var html_9b836f6bfa55e1fce920ec3cd6ef1b5c = $(`<div id="html_9b836f6bfa55e1fce920ec3cd6ef1b5c" style="width: 100.0%; height: 100.0%;"><div style='width:250px'><b style='font-size:14px'>📍 Grid: LN13LL</b><br><b>1 QSO(s) from this location:</b><br><br><b>R6FMD</b> (Russia) <small>[LN13→LN13LL]</small><br>📅 2026-02-01 📻 20M 🔊 FT8<br></div></div>`)[0];
+                popup_580d4dafdc1aca033f2c5928cff63e99.setContent(html_9b836f6bfa55e1fce920ec3cd6ef1b5c);
             
         
 
-        marker_d5937a7f889a74a2410a4ed479727550.bindPopup(popup_0559cd74be36849dedae5b4740ecf058)
+        marker_6511b9c5b04c670fb2401c87f97c7eaa.bindPopup(popup_580d4dafdc1aca033f2c5928cff63e99)
         ;
 
         
     
     
-            marker_d5937a7f889a74a2410a4ed479727550.bindTooltip(
+            marker_6511b9c5b04c670fb2401c87f97c7eaa.bindTooltip(
                 `<div>
                      1 QSO(s) from LN13LL
                  </div>`,
@@ -1289,23 +1289,23 @@ Approximated: 37</small>
             );
         
     
-                marker_d5937a7f889a74a2410a4ed479727550.setIcon(icon_6f726a63919aaed40923d6a8e9a526a9);
+                marker_6511b9c5b04c670fb2401c87f97c7eaa.setIcon(icon_b953e2023f9a726b679d9201a3f2504f);
             
     
-            var poly_line_8b4ff8d01ef58c2c236f641e0f7bda0d = L.polyline(
+            var poly_line_86b0c929c92c46450ed643439071acff = L.polyline(
                 [[41.0653, 29.0291], [43.47916666666667, 42.95833333333333]],
                 {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.4, "smoothFactor": 1.0, "stroke": true, "weight": 1}
-            ).addTo(map_261692267b52cafa8e8e88c0491b48cd);
+            ).addTo(map_8d6f74bfaaeb884dc03ad3ac95eeb934);
         
     
-            var marker_29ba5383280b81152aea3a5c03e4262f = L.marker(
+            var marker_91212f918f82867733ddf9f4bf9c5240 = L.marker(
                 [45.47916666666667, 34.95833333333333],
                 {
 }
-            ).addTo(map_261692267b52cafa8e8e88c0491b48cd);
+            ).addTo(map_8d6f74bfaaeb884dc03ad3ac95eeb934);
         
     
-            var icon_148ca62b9410b258dd30ffc48755d411 = L.AwesomeMarkers.icon(
+            var icon_fb998c095b2e49f93f09efbec86caccf = L.AwesomeMarkers.icon(
                 {
   "markerColor": "blue",
   "iconColor": "white",
@@ -1316,24 +1316,24 @@ Approximated: 37</small>
             );
         
     
-        var popup_379971f510a8cfe505922e2b2b1ccac9 = L.popup({
+        var popup_931b9c0a0917956bbbe47ef1e63498f0 = L.popup({
   "maxWidth": 300,
 });
 
         
             
-                var html_8e728888ad7eaa83ac1a1de8ba51c8f9 = $(`<div id="html_8e728888ad7eaa83ac1a1de8ba51c8f9" style="width: 100.0%; height: 100.0%;"><div style='width:250px'><b style='font-size:14px'>📍 Grid: KN75LL</b><br><b>1 QSO(s) from this location:</b><br><br><b>RO6K</b> (Russia) <small>[KN75→KN75LL]</small><br>📅 2026-02-03 📻 20M 🔊 FT8<br></div></div>`)[0];
-                popup_379971f510a8cfe505922e2b2b1ccac9.setContent(html_8e728888ad7eaa83ac1a1de8ba51c8f9);
+                var html_da8a4e7bdb10c4f56bf55f4989937ef2 = $(`<div id="html_da8a4e7bdb10c4f56bf55f4989937ef2" style="width: 100.0%; height: 100.0%;"><div style='width:250px'><b style='font-size:14px'>📍 Grid: KN75LL</b><br><b>1 QSO(s) from this location:</b><br><br><b>RO6K</b> (Russia) <small>[KN75→KN75LL]</small><br>📅 2026-02-03 📻 20M 🔊 FT8<br></div></div>`)[0];
+                popup_931b9c0a0917956bbbe47ef1e63498f0.setContent(html_da8a4e7bdb10c4f56bf55f4989937ef2);
             
         
 
-        marker_29ba5383280b81152aea3a5c03e4262f.bindPopup(popup_379971f510a8cfe505922e2b2b1ccac9)
+        marker_91212f918f82867733ddf9f4bf9c5240.bindPopup(popup_931b9c0a0917956bbbe47ef1e63498f0)
         ;
 
         
     
     
-            marker_29ba5383280b81152aea3a5c03e4262f.bindTooltip(
+            marker_91212f918f82867733ddf9f4bf9c5240.bindTooltip(
                 `<div>
                      1 QSO(s) from KN75LL
                  </div>`,
@@ -1343,23 +1343,23 @@ Approximated: 37</small>
             );
         
     
-                marker_29ba5383280b81152aea3a5c03e4262f.setIcon(icon_148ca62b9410b258dd30ffc48755d411);
+                marker_91212f918f82867733ddf9f4bf9c5240.setIcon(icon_fb998c095b2e49f93f09efbec86caccf);
             
     
-            var poly_line_e58b32a68f16b0817c742991e32fc946 = L.polyline(
+            var poly_line_258ae7fc46f29efe280c7445845a0c98 = L.polyline(
                 [[41.0653, 29.0291], [45.47916666666667, 34.95833333333333]],
                 {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.4, "smoothFactor": 1.0, "stroke": true, "weight": 1}
-            ).addTo(map_261692267b52cafa8e8e88c0491b48cd);
+            ).addTo(map_8d6f74bfaaeb884dc03ad3ac95eeb934);
         
     
-            var marker_c85274d3aa4deebaf097dcb6e5ec51e2 = L.marker(
+            var marker_493bcfd515cc158f1a1e892d3a475e83 = L.marker(
                 [50.47916666666667, 38.95833333333333],
                 {
 }
-            ).addTo(map_261692267b52cafa8e8e88c0491b48cd);
+            ).addTo(map_8d6f74bfaaeb884dc03ad3ac95eeb934);
         
     
-            var icon_6292749909dac0e2aa7982969c108b9d = L.AwesomeMarkers.icon(
+            var icon_8d4798c540f0e65e4beba662e9f63f25 = L.AwesomeMarkers.icon(
                 {
   "markerColor": "blue",
   "iconColor": "white",
@@ -1370,24 +1370,24 @@ Approximated: 37</small>
             );
         
     
-        var popup_3f31f40ca0ce50b4c627fe461abe5e7a = L.popup({
+        var popup_94f0fdccc7566f8699d434e4eef875eb = L.popup({
   "maxWidth": 300,
 });
 
         
             
-                var html_2ccdd7af5ea3cc6f200b999bff799a9c = $(`<div id="html_2ccdd7af5ea3cc6f200b999bff799a9c" style="width: 100.0%; height: 100.0%;"><div style='width:250px'><b style='font-size:14px'>📍 Grid: KO90LL</b><br><b>1 QSO(s) from this location:</b><br><br><b>UA3ZMQ</b> (Russia) <small>[KO90→KO90LL]</small><br>📅 2026-02-03 📻 20M 🔊 FT8<br></div></div>`)[0];
-                popup_3f31f40ca0ce50b4c627fe461abe5e7a.setContent(html_2ccdd7af5ea3cc6f200b999bff799a9c);
+                var html_69bb0648bb9ec0873753eaa2a64ffabb = $(`<div id="html_69bb0648bb9ec0873753eaa2a64ffabb" style="width: 100.0%; height: 100.0%;"><div style='width:250px'><b style='font-size:14px'>📍 Grid: KO90LL</b><br><b>1 QSO(s) from this location:</b><br><br><b>UA3ZMQ</b> (Russia) <small>[KO90→KO90LL]</small><br>📅 2026-02-03 📻 20M 🔊 FT8<br></div></div>`)[0];
+                popup_94f0fdccc7566f8699d434e4eef875eb.setContent(html_69bb0648bb9ec0873753eaa2a64ffabb);
             
         
 
-        marker_c85274d3aa4deebaf097dcb6e5ec51e2.bindPopup(popup_3f31f40ca0ce50b4c627fe461abe5e7a)
+        marker_493bcfd515cc158f1a1e892d3a475e83.bindPopup(popup_94f0fdccc7566f8699d434e4eef875eb)
         ;
 
         
     
     
-            marker_c85274d3aa4deebaf097dcb6e5ec51e2.bindTooltip(
+            marker_493bcfd515cc158f1a1e892d3a475e83.bindTooltip(
                 `<div>
                      1 QSO(s) from KO90LL
                  </div>`,
@@ -1397,23 +1397,23 @@ Approximated: 37</small>
             );
         
     
-                marker_c85274d3aa4deebaf097dcb6e5ec51e2.setIcon(icon_6292749909dac0e2aa7982969c108b9d);
+                marker_493bcfd515cc158f1a1e892d3a475e83.setIcon(icon_8d4798c540f0e65e4beba662e9f63f25);
             
     
-            var poly_line_2106e9eee7619a24bdbeb5500269622a = L.polyline(
+            var poly_line_137295f1f42f341641d1baed7958b334 = L.polyline(
                 [[41.0653, 29.0291], [50.47916666666667, 38.95833333333333]],
                 {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.4, "smoothFactor": 1.0, "stroke": true, "weight": 1}
-            ).addTo(map_261692267b52cafa8e8e88c0491b48cd);
+            ).addTo(map_8d6f74bfaaeb884dc03ad3ac95eeb934);
         
     
-            var marker_c1fda646ea42a418bd6d1ca1daf21296 = L.marker(
+            var marker_c27c894d3d97f24d663d202370e2d0f9 = L.marker(
                 [46.47916666666667, 6.958333333333334],
                 {
 }
-            ).addTo(map_261692267b52cafa8e8e88c0491b48cd);
+            ).addTo(map_8d6f74bfaaeb884dc03ad3ac95eeb934);
         
     
-            var icon_df1f161c6a7e07b605ba7d97475e6013 = L.AwesomeMarkers.icon(
+            var icon_30ece1e2663d9c0f741a750c96ad47d7 = L.AwesomeMarkers.icon(
                 {
   "markerColor": "blue",
   "iconColor": "white",
@@ -1424,24 +1424,24 @@ Approximated: 37</small>
             );
         
     
-        var popup_e468a0feb6b5f6625ebffa6576a593e4 = L.popup({
+        var popup_5f1f862de511657b6bcc1122961934c2 = L.popup({
   "maxWidth": 300,
 });
 
         
             
-                var html_d8c19ef62d2b17f1fe97ff6453d21f00 = $(`<div id="html_d8c19ef62d2b17f1fe97ff6453d21f00" style="width: 100.0%; height: 100.0%;"><div style='width:250px'><b style='font-size:14px'>📍 Grid: JN36LL</b><br><b>1 QSO(s) from this location:</b><br><br><b>F5RRS</b> (France) <small>[JN36→JN36LL]</small><br>📅 2026-02-03 📻 20M 🔊 FT4<br></div></div>`)[0];
-                popup_e468a0feb6b5f6625ebffa6576a593e4.setContent(html_d8c19ef62d2b17f1fe97ff6453d21f00);
+                var html_8f8a022e630484e96baea3c2234eb034 = $(`<div id="html_8f8a022e630484e96baea3c2234eb034" style="width: 100.0%; height: 100.0%;"><div style='width:250px'><b style='font-size:14px'>📍 Grid: JN36LL</b><br><b>1 QSO(s) from this location:</b><br><br><b>F5RRS</b> (France) <small>[JN36→JN36LL]</small><br>📅 2026-02-03 📻 20M 🔊 FT4<br></div></div>`)[0];
+                popup_5f1f862de511657b6bcc1122961934c2.setContent(html_8f8a022e630484e96baea3c2234eb034);
             
         
 
-        marker_c1fda646ea42a418bd6d1ca1daf21296.bindPopup(popup_e468a0feb6b5f6625ebffa6576a593e4)
+        marker_c27c894d3d97f24d663d202370e2d0f9.bindPopup(popup_5f1f862de511657b6bcc1122961934c2)
         ;
 
         
     
     
-            marker_c1fda646ea42a418bd6d1ca1daf21296.bindTooltip(
+            marker_c27c894d3d97f24d663d202370e2d0f9.bindTooltip(
                 `<div>
                      1 QSO(s) from JN36LL
                  </div>`,
@@ -1451,23 +1451,23 @@ Approximated: 37</small>
             );
         
     
-                marker_c1fda646ea42a418bd6d1ca1daf21296.setIcon(icon_df1f161c6a7e07b605ba7d97475e6013);
+                marker_c27c894d3d97f24d663d202370e2d0f9.setIcon(icon_30ece1e2663d9c0f741a750c96ad47d7);
             
     
-            var poly_line_7acdcdfb49de578012a5c6c08dcbff4c = L.polyline(
+            var poly_line_26762f7a985a0e19018d34346c13a26d = L.polyline(
                 [[41.0653, 29.0291], [46.47916666666667, 6.958333333333334]],
                 {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.4, "smoothFactor": 1.0, "stroke": true, "weight": 1}
-            ).addTo(map_261692267b52cafa8e8e88c0491b48cd);
+            ).addTo(map_8d6f74bfaaeb884dc03ad3ac95eeb934);
         
     
-            var marker_fe871da0aaad97b75637eded116e3f58 = L.marker(
+            var marker_c9469a63d4389799d7b60a25216affad = L.marker(
                 [51.47916666666667, 4.958333333333334],
                 {
 }
-            ).addTo(map_261692267b52cafa8e8e88c0491b48cd);
+            ).addTo(map_8d6f74bfaaeb884dc03ad3ac95eeb934);
         
     
-            var icon_0c70361833126f42e8d81ec456f2631c = L.AwesomeMarkers.icon(
+            var icon_13e2867c3d1ebb4c00a8349567d8035f = L.AwesomeMarkers.icon(
                 {
   "markerColor": "blue",
   "iconColor": "white",
@@ -1478,24 +1478,24 @@ Approximated: 37</small>
             );
         
     
-        var popup_b26e39e1a8537e9078af1e9f6769b56a = L.popup({
+        var popup_d735d5f110f128b5ab19cd0b4d626700 = L.popup({
   "maxWidth": 300,
 });
 
         
             
-                var html_75b496d6f6b08f32f93467b2811c429e = $(`<div id="html_75b496d6f6b08f32f93467b2811c429e" style="width: 100.0%; height: 100.0%;"><div style='width:250px'><b style='font-size:14px'>📍 Grid: JO21LL</b><br><b>1 QSO(s) from this location:</b><br><br><b>PF7DKW</b> (Netherlands) <small>[JO21→JO21LL]</small><br>📅 2026-02-03 📻 20M 🔊 FT4<br></div></div>`)[0];
-                popup_b26e39e1a8537e9078af1e9f6769b56a.setContent(html_75b496d6f6b08f32f93467b2811c429e);
+                var html_798cf09fc1632f8f58e9979efb255588 = $(`<div id="html_798cf09fc1632f8f58e9979efb255588" style="width: 100.0%; height: 100.0%;"><div style='width:250px'><b style='font-size:14px'>📍 Grid: JO21LL</b><br><b>1 QSO(s) from this location:</b><br><br><b>PF7DKW</b> (Netherlands) <small>[JO21→JO21LL]</small><br>📅 2026-02-03 📻 20M 🔊 FT4<br></div></div>`)[0];
+                popup_d735d5f110f128b5ab19cd0b4d626700.setContent(html_798cf09fc1632f8f58e9979efb255588);
             
         
 
-        marker_fe871da0aaad97b75637eded116e3f58.bindPopup(popup_b26e39e1a8537e9078af1e9f6769b56a)
+        marker_c9469a63d4389799d7b60a25216affad.bindPopup(popup_d735d5f110f128b5ab19cd0b4d626700)
         ;
 
         
     
     
-            marker_fe871da0aaad97b75637eded116e3f58.bindTooltip(
+            marker_c9469a63d4389799d7b60a25216affad.bindTooltip(
                 `<div>
                      1 QSO(s) from JO21LL
                  </div>`,
@@ -1505,23 +1505,23 @@ Approximated: 37</small>
             );
         
     
-                marker_fe871da0aaad97b75637eded116e3f58.setIcon(icon_0c70361833126f42e8d81ec456f2631c);
+                marker_c9469a63d4389799d7b60a25216affad.setIcon(icon_13e2867c3d1ebb4c00a8349567d8035f);
             
     
-            var poly_line_44efcb6a17b76f32ca82b099e558433f = L.polyline(
+            var poly_line_071bf360dee379281cdb32bca65e24be = L.polyline(
                 [[41.0653, 29.0291], [51.47916666666667, 4.958333333333334]],
                 {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.4, "smoothFactor": 1.0, "stroke": true, "weight": 1}
-            ).addTo(map_261692267b52cafa8e8e88c0491b48cd);
+            ).addTo(map_8d6f74bfaaeb884dc03ad3ac95eeb934);
         
     
-            var marker_b3fbe8299d78c2e2e52ef5b09ca948c6 = L.marker(
+            var marker_b393945e2a04aae594898e119a9339d9 = L.marker(
                 [47.47916666666667, 10.958333333333332],
                 {
 }
-            ).addTo(map_261692267b52cafa8e8e88c0491b48cd);
+            ).addTo(map_8d6f74bfaaeb884dc03ad3ac95eeb934);
         
     
-            var icon_0ae1d0c29c3b708a579a70a5c3bac341 = L.AwesomeMarkers.icon(
+            var icon_1f1e87488475c41ea431f894994b0934 = L.AwesomeMarkers.icon(
                 {
   "markerColor": "blue",
   "iconColor": "white",
@@ -1532,24 +1532,24 @@ Approximated: 37</small>
             );
         
     
-        var popup_88caab570532c97254fd982648e7fe80 = L.popup({
+        var popup_d2f13fbf8d4880748e5bddda4c397b97 = L.popup({
   "maxWidth": 300,
 });
 
         
             
-                var html_af29a85b3b9973484248f87b2dd84e0b = $(`<div id="html_af29a85b3b9973484248f87b2dd84e0b" style="width: 100.0%; height: 100.0%;"><div style='width:250px'><b style='font-size:14px'>📍 Grid: JN57LL</b><br><b>1 QSO(s) from this location:</b><br><br><b>OE7LVI</b> (Austria) <small>[JN57→JN57LL]</small><br>📅 2026-02-03 📻 30M 🔊 FT4<br></div></div>`)[0];
-                popup_88caab570532c97254fd982648e7fe80.setContent(html_af29a85b3b9973484248f87b2dd84e0b);
+                var html_850c6019be4bd379c99c01684aa3b1f2 = $(`<div id="html_850c6019be4bd379c99c01684aa3b1f2" style="width: 100.0%; height: 100.0%;"><div style='width:250px'><b style='font-size:14px'>📍 Grid: JN57LL</b><br><b>1 QSO(s) from this location:</b><br><br><b>OE7LVI</b> (Austria) <small>[JN57→JN57LL]</small><br>📅 2026-02-03 📻 30M 🔊 FT4<br></div></div>`)[0];
+                popup_d2f13fbf8d4880748e5bddda4c397b97.setContent(html_850c6019be4bd379c99c01684aa3b1f2);
             
         
 
-        marker_b3fbe8299d78c2e2e52ef5b09ca948c6.bindPopup(popup_88caab570532c97254fd982648e7fe80)
+        marker_b393945e2a04aae594898e119a9339d9.bindPopup(popup_d2f13fbf8d4880748e5bddda4c397b97)
         ;
 
         
     
     
-            marker_b3fbe8299d78c2e2e52ef5b09ca948c6.bindTooltip(
+            marker_b393945e2a04aae594898e119a9339d9.bindTooltip(
                 `<div>
                      1 QSO(s) from JN57LL
                  </div>`,
@@ -1559,23 +1559,23 @@ Approximated: 37</small>
             );
         
     
-                marker_b3fbe8299d78c2e2e52ef5b09ca948c6.setIcon(icon_0ae1d0c29c3b708a579a70a5c3bac341);
+                marker_b393945e2a04aae594898e119a9339d9.setIcon(icon_1f1e87488475c41ea431f894994b0934);
             
     
-            var poly_line_92918cf946173a17258954c5999a1d05 = L.polyline(
+            var poly_line_eea91510bbc1931fa84affdd8f845f30 = L.polyline(
                 [[41.0653, 29.0291], [47.47916666666667, 10.958333333333332]],
                 {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.4, "smoothFactor": 1.0, "stroke": true, "weight": 1}
-            ).addTo(map_261692267b52cafa8e8e88c0491b48cd);
+            ).addTo(map_8d6f74bfaaeb884dc03ad3ac95eeb934);
         
     
-            var marker_df82046af4d48b951f2da3be55845d0a = L.marker(
+            var marker_7cd3ecd2b69fcf29662145b38b2cd198 = L.marker(
                 [44.47916666666667, 18.958333333333336],
                 {
 }
-            ).addTo(map_261692267b52cafa8e8e88c0491b48cd);
+            ).addTo(map_8d6f74bfaaeb884dc03ad3ac95eeb934);
         
     
-            var icon_1ceb558d5e5b3c639d60a3e09b0c1410 = L.AwesomeMarkers.icon(
+            var icon_244ef77e1c03f180d72448c31f2d3cf3 = L.AwesomeMarkers.icon(
                 {
   "markerColor": "blue",
   "iconColor": "white",
@@ -1586,24 +1586,24 @@ Approximated: 37</small>
             );
         
     
-        var popup_9b4694c3e38e525f58c9f1b05c19d8dc = L.popup({
+        var popup_22f6e573beddbbf0b81b5087e0b06a10 = L.popup({
   "maxWidth": 300,
 });
 
         
             
-                var html_0bbdfd537fd6e353400bd2e75dd05455 = $(`<div id="html_0bbdfd537fd6e353400bd2e75dd05455" style="width: 100.0%; height: 100.0%;"><div style='width:250px'><b style='font-size:14px'>📍 Grid: JN94LL</b><br><b>1 QSO(s) from this location:</b><br><br><b>E70A</b> (Bosnia and Herzegovina) <small>[JN94→JN94LL]</small><br>📅 2026-02-03 📻 40M 🔊 FT8<br></div></div>`)[0];
-                popup_9b4694c3e38e525f58c9f1b05c19d8dc.setContent(html_0bbdfd537fd6e353400bd2e75dd05455);
+                var html_c6ed3ca2a1a8a15b6672335e3b9dd922 = $(`<div id="html_c6ed3ca2a1a8a15b6672335e3b9dd922" style="width: 100.0%; height: 100.0%;"><div style='width:250px'><b style='font-size:14px'>📍 Grid: JN94LL</b><br><b>1 QSO(s) from this location:</b><br><br><b>E70A</b> (Bosnia and Herzegovina) <small>[JN94→JN94LL]</small><br>📅 2026-02-03 📻 40M 🔊 FT8<br></div></div>`)[0];
+                popup_22f6e573beddbbf0b81b5087e0b06a10.setContent(html_c6ed3ca2a1a8a15b6672335e3b9dd922);
             
         
 
-        marker_df82046af4d48b951f2da3be55845d0a.bindPopup(popup_9b4694c3e38e525f58c9f1b05c19d8dc)
+        marker_7cd3ecd2b69fcf29662145b38b2cd198.bindPopup(popup_22f6e573beddbbf0b81b5087e0b06a10)
         ;
 
         
     
     
-            marker_df82046af4d48b951f2da3be55845d0a.bindTooltip(
+            marker_7cd3ecd2b69fcf29662145b38b2cd198.bindTooltip(
                 `<div>
                      1 QSO(s) from JN94LL
                  </div>`,
@@ -1613,23 +1613,23 @@ Approximated: 37</small>
             );
         
     
-                marker_df82046af4d48b951f2da3be55845d0a.setIcon(icon_1ceb558d5e5b3c639d60a3e09b0c1410);
+                marker_7cd3ecd2b69fcf29662145b38b2cd198.setIcon(icon_244ef77e1c03f180d72448c31f2d3cf3);
             
     
-            var poly_line_1d4dbd4dcc3bd94a9c8551f68a7d7c92 = L.polyline(
+            var poly_line_6ecc805c4d8d1a1c8097a012d1c74086 = L.polyline(
                 [[41.0653, 29.0291], [44.47916666666667, 18.958333333333336]],
                 {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.4, "smoothFactor": 1.0, "stroke": true, "weight": 1}
-            ).addTo(map_261692267b52cafa8e8e88c0491b48cd);
+            ).addTo(map_8d6f74bfaaeb884dc03ad3ac95eeb934);
         
     
-            var marker_1a0132bd635e8336e264ea15644517b9 = L.marker(
+            var marker_9ec521b7cb5bcd3aa45b8fa6719a6aab = L.marker(
                 [47.47916666666667, 18.958333333333336],
                 {
 }
-            ).addTo(map_261692267b52cafa8e8e88c0491b48cd);
+            ).addTo(map_8d6f74bfaaeb884dc03ad3ac95eeb934);
         
     
-            var icon_b1ae4b4d2a00a93b33acbf6c592af155 = L.AwesomeMarkers.icon(
+            var icon_83c478a3b075a671d1fa3aa0265aa25f = L.AwesomeMarkers.icon(
                 {
   "markerColor": "blue",
   "iconColor": "white",
@@ -1640,24 +1640,24 @@ Approximated: 37</small>
             );
         
     
-        var popup_f6fd21fc50ebd1da52558003e385f669 = L.popup({
+        var popup_af69c2c208123363959c9a35d8a64af6 = L.popup({
   "maxWidth": 300,
 });
 
         
             
-                var html_992049e8f4d7706261b353b583200b78 = $(`<div id="html_992049e8f4d7706261b353b583200b78" style="width: 100.0%; height: 100.0%;"><div style='width:250px'><b style='font-size:14px'>📍 Grid: JN97LL</b><br><b>1 QSO(s) from this location:</b><br><br><b>OM5TX</b> (Slovak Republic) <small>[JN97→JN97LL]</small><br>📅 2026-02-04 📻 40M 🔊 FT8<br></div></div>`)[0];
-                popup_f6fd21fc50ebd1da52558003e385f669.setContent(html_992049e8f4d7706261b353b583200b78);
+                var html_5066b48ad1dee3d67655e87655e30718 = $(`<div id="html_5066b48ad1dee3d67655e87655e30718" style="width: 100.0%; height: 100.0%;"><div style='width:250px'><b style='font-size:14px'>📍 Grid: JN97LL</b><br><b>1 QSO(s) from this location:</b><br><br><b>OM5TX</b> (Slovak Republic) <small>[JN97→JN97LL]</small><br>📅 2026-02-04 📻 40M 🔊 FT8<br></div></div>`)[0];
+                popup_af69c2c208123363959c9a35d8a64af6.setContent(html_5066b48ad1dee3d67655e87655e30718);
             
         
 
-        marker_1a0132bd635e8336e264ea15644517b9.bindPopup(popup_f6fd21fc50ebd1da52558003e385f669)
+        marker_9ec521b7cb5bcd3aa45b8fa6719a6aab.bindPopup(popup_af69c2c208123363959c9a35d8a64af6)
         ;
 
         
     
     
-            marker_1a0132bd635e8336e264ea15644517b9.bindTooltip(
+            marker_9ec521b7cb5bcd3aa45b8fa6719a6aab.bindTooltip(
                 `<div>
                      1 QSO(s) from JN97LL
                  </div>`,
@@ -1667,23 +1667,23 @@ Approximated: 37</small>
             );
         
     
-                marker_1a0132bd635e8336e264ea15644517b9.setIcon(icon_b1ae4b4d2a00a93b33acbf6c592af155);
+                marker_9ec521b7cb5bcd3aa45b8fa6719a6aab.setIcon(icon_83c478a3b075a671d1fa3aa0265aa25f);
             
     
-            var poly_line_2d52c5b79576b20700d3d4f932a58d8d = L.polyline(
+            var poly_line_d31b754ec2a576e283c0dc483bdb981f = L.polyline(
                 [[41.0653, 29.0291], [47.47916666666667, 18.958333333333336]],
                 {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.4, "smoothFactor": 1.0, "stroke": true, "weight": 1}
-            ).addTo(map_261692267b52cafa8e8e88c0491b48cd);
+            ).addTo(map_8d6f74bfaaeb884dc03ad3ac95eeb934);
         
     
-            var marker_1bf312508f0fd2cdbfc6a706482eb502 = L.marker(
+            var marker_551fc8da7953a3397d20949f58440a69 = L.marker(
                 [45.47916666666667, 18.958333333333336],
                 {
 }
-            ).addTo(map_261692267b52cafa8e8e88c0491b48cd);
+            ).addTo(map_8d6f74bfaaeb884dc03ad3ac95eeb934);
         
     
-            var icon_cfbe81782a331297e46ad55d78a0a17a = L.AwesomeMarkers.icon(
+            var icon_5f1144fed432374f33fe3e3834961306 = L.AwesomeMarkers.icon(
                 {
   "markerColor": "blue",
   "iconColor": "white",
@@ -1694,24 +1694,24 @@ Approximated: 37</small>
             );
         
     
-        var popup_a2feead65fbf85679095b084222c4207 = L.popup({
+        var popup_455456d68a46a5701d6c9e20d69ec0ba = L.popup({
   "maxWidth": 300,
 });
 
         
             
-                var html_6ec439215ced23eb5d4b08a5a301c05f = $(`<div id="html_6ec439215ced23eb5d4b08a5a301c05f" style="width: 100.0%; height: 100.0%;"><div style='width:250px'><b style='font-size:14px'>📍 Grid: JN95LL</b><br><b>1 QSO(s) from this location:</b><br><br><b>HA3MQ</b> (Hungary) <small>[JN95→JN95LL]</small><br>📅 2026-02-04 📻 40M 🔊 FT8<br></div></div>`)[0];
-                popup_a2feead65fbf85679095b084222c4207.setContent(html_6ec439215ced23eb5d4b08a5a301c05f);
+                var html_2af926f63cf098279459a87bfeee4754 = $(`<div id="html_2af926f63cf098279459a87bfeee4754" style="width: 100.0%; height: 100.0%;"><div style='width:250px'><b style='font-size:14px'>📍 Grid: JN95LL</b><br><b>1 QSO(s) from this location:</b><br><br><b>HA3MQ</b> (Hungary) <small>[JN95→JN95LL]</small><br>📅 2026-02-04 📻 40M 🔊 FT8<br></div></div>`)[0];
+                popup_455456d68a46a5701d6c9e20d69ec0ba.setContent(html_2af926f63cf098279459a87bfeee4754);
             
         
 
-        marker_1bf312508f0fd2cdbfc6a706482eb502.bindPopup(popup_a2feead65fbf85679095b084222c4207)
+        marker_551fc8da7953a3397d20949f58440a69.bindPopup(popup_455456d68a46a5701d6c9e20d69ec0ba)
         ;
 
         
     
     
-            marker_1bf312508f0fd2cdbfc6a706482eb502.bindTooltip(
+            marker_551fc8da7953a3397d20949f58440a69.bindTooltip(
                 `<div>
                      1 QSO(s) from JN95LL
                  </div>`,
@@ -1721,23 +1721,23 @@ Approximated: 37</small>
             );
         
     
-                marker_1bf312508f0fd2cdbfc6a706482eb502.setIcon(icon_cfbe81782a331297e46ad55d78a0a17a);
+                marker_551fc8da7953a3397d20949f58440a69.setIcon(icon_5f1144fed432374f33fe3e3834961306);
             
     
-            var poly_line_cd1f6245013d03affa37a06a702b601d = L.polyline(
+            var poly_line_460e42983ed58bdba7abd40b3c3656a8 = L.polyline(
                 [[41.0653, 29.0291], [45.47916666666667, 18.958333333333336]],
                 {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.4, "smoothFactor": 1.0, "stroke": true, "weight": 1}
-            ).addTo(map_261692267b52cafa8e8e88c0491b48cd);
+            ).addTo(map_8d6f74bfaaeb884dc03ad3ac95eeb934);
         
     
-            var marker_ca8d7491cc41f90d0f49d2444f2cd971 = L.marker(
+            var marker_23c71d4047fc3a9c033b69d5d695e283 = L.marker(
                 [38.47916666666667, 22.958333333333336],
                 {
 }
-            ).addTo(map_261692267b52cafa8e8e88c0491b48cd);
+            ).addTo(map_8d6f74bfaaeb884dc03ad3ac95eeb934);
         
     
-            var icon_9409c4d6d5cffadaccb9f72e58c0ca16 = L.AwesomeMarkers.icon(
+            var icon_fe49c50f4eb6e48f074372e190543d7b = L.AwesomeMarkers.icon(
                 {
   "markerColor": "blue",
   "iconColor": "white",
@@ -1748,24 +1748,24 @@ Approximated: 37</small>
             );
         
     
-        var popup_b0238872bdcbbbf9562634c2dbd8193e = L.popup({
+        var popup_d27cc14db89a2496ebbe17c8f443fdc8 = L.popup({
   "maxWidth": 300,
 });
 
         
             
-                var html_ef35fa13fcbed15d85e3c2fb1b6219ce = $(`<div id="html_ef35fa13fcbed15d85e3c2fb1b6219ce" style="width: 100.0%; height: 100.0%;"><div style='width:250px'><b style='font-size:14px'>📍 Grid: KM18LL</b><br><b>1 QSO(s) from this location:</b><br><br><b>SV1DKR</b> (Greece) <small>[KM18→KM18LL]</small><br>📅 2026-02-04 📻 40M 🔊 FT8<br></div></div>`)[0];
-                popup_b0238872bdcbbbf9562634c2dbd8193e.setContent(html_ef35fa13fcbed15d85e3c2fb1b6219ce);
+                var html_fe583546bf6f0602a39bda8c9ba33c82 = $(`<div id="html_fe583546bf6f0602a39bda8c9ba33c82" style="width: 100.0%; height: 100.0%;"><div style='width:250px'><b style='font-size:14px'>📍 Grid: KM18LL</b><br><b>1 QSO(s) from this location:</b><br><br><b>SV1DKR</b> (Greece) <small>[KM18→KM18LL]</small><br>📅 2026-02-04 📻 40M 🔊 FT8<br></div></div>`)[0];
+                popup_d27cc14db89a2496ebbe17c8f443fdc8.setContent(html_fe583546bf6f0602a39bda8c9ba33c82);
             
         
 
-        marker_ca8d7491cc41f90d0f49d2444f2cd971.bindPopup(popup_b0238872bdcbbbf9562634c2dbd8193e)
+        marker_23c71d4047fc3a9c033b69d5d695e283.bindPopup(popup_d27cc14db89a2496ebbe17c8f443fdc8)
         ;
 
         
     
     
-            marker_ca8d7491cc41f90d0f49d2444f2cd971.bindTooltip(
+            marker_23c71d4047fc3a9c033b69d5d695e283.bindTooltip(
                 `<div>
                      1 QSO(s) from KM18LL
                  </div>`,
@@ -1775,23 +1775,23 @@ Approximated: 37</small>
             );
         
     
-                marker_ca8d7491cc41f90d0f49d2444f2cd971.setIcon(icon_9409c4d6d5cffadaccb9f72e58c0ca16);
+                marker_23c71d4047fc3a9c033b69d5d695e283.setIcon(icon_fe49c50f4eb6e48f074372e190543d7b);
             
     
-            var poly_line_00ffb80e45ceeb881208f6f5657c98af = L.polyline(
+            var poly_line_3a2d017cdb4094d0f6d34c950b86133b = L.polyline(
                 [[41.0653, 29.0291], [38.47916666666667, 22.958333333333336]],
                 {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.4, "smoothFactor": 1.0, "stroke": true, "weight": 1}
-            ).addTo(map_261692267b52cafa8e8e88c0491b48cd);
+            ).addTo(map_8d6f74bfaaeb884dc03ad3ac95eeb934);
         
     
-            var marker_78f28ff5337d6a659e03d5761dce0c57 = L.marker(
+            var marker_98e6327e3645f3fef7e8f5e786a84235 = L.marker(
                 [37.47916666666667, 14.958333333333332],
                 {
 }
-            ).addTo(map_261692267b52cafa8e8e88c0491b48cd);
+            ).addTo(map_8d6f74bfaaeb884dc03ad3ac95eeb934);
         
     
-            var icon_020c1f2915ed0b61f295b20563a6b4d9 = L.AwesomeMarkers.icon(
+            var icon_a17cc8db264e53a22bc4ba3d07f66b5f = L.AwesomeMarkers.icon(
                 {
   "markerColor": "blue",
   "iconColor": "white",
@@ -1802,24 +1802,24 @@ Approximated: 37</small>
             );
         
     
-        var popup_c8499296ce6e97d36f253e08eb4b6f4c = L.popup({
+        var popup_7d60a5e64f2da84eb20aeea9bba95419 = L.popup({
   "maxWidth": 300,
 });
 
         
             
-                var html_4271ad81e9f91d4b0962e405a010b2d6 = $(`<div id="html_4271ad81e9f91d4b0962e405a010b2d6" style="width: 100.0%; height: 100.0%;"><div style='width:250px'><b style='font-size:14px'>📍 Grid: JM77LL</b><br><b>1 QSO(s) from this location:</b><br><br><b>IT9VCE</b> (Italy) <small>[JM77→JM77LL]</small><br>📅 2026-02-04 📻 40M 🔊 FT8<br></div></div>`)[0];
-                popup_c8499296ce6e97d36f253e08eb4b6f4c.setContent(html_4271ad81e9f91d4b0962e405a010b2d6);
+                var html_a44eb19d481d1dad40d42975bf655821 = $(`<div id="html_a44eb19d481d1dad40d42975bf655821" style="width: 100.0%; height: 100.0%;"><div style='width:250px'><b style='font-size:14px'>📍 Grid: JM77LL</b><br><b>1 QSO(s) from this location:</b><br><br><b>IT9VCE</b> (Italy) <small>[JM77→JM77LL]</small><br>📅 2026-02-04 📻 40M 🔊 FT8<br></div></div>`)[0];
+                popup_7d60a5e64f2da84eb20aeea9bba95419.setContent(html_a44eb19d481d1dad40d42975bf655821);
             
         
 
-        marker_78f28ff5337d6a659e03d5761dce0c57.bindPopup(popup_c8499296ce6e97d36f253e08eb4b6f4c)
+        marker_98e6327e3645f3fef7e8f5e786a84235.bindPopup(popup_7d60a5e64f2da84eb20aeea9bba95419)
         ;
 
         
     
     
-            marker_78f28ff5337d6a659e03d5761dce0c57.bindTooltip(
+            marker_98e6327e3645f3fef7e8f5e786a84235.bindTooltip(
                 `<div>
                      1 QSO(s) from JM77LL
                  </div>`,
@@ -1829,23 +1829,23 @@ Approximated: 37</small>
             );
         
     
-                marker_78f28ff5337d6a659e03d5761dce0c57.setIcon(icon_020c1f2915ed0b61f295b20563a6b4d9);
+                marker_98e6327e3645f3fef7e8f5e786a84235.setIcon(icon_a17cc8db264e53a22bc4ba3d07f66b5f);
             
     
-            var poly_line_1d6e29150c376cac244882d56a34467d = L.polyline(
+            var poly_line_428a3ec14eaa6cf84258cf12183fdb0c = L.polyline(
                 [[41.0653, 29.0291], [37.47916666666667, 14.958333333333332]],
                 {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.4, "smoothFactor": 1.0, "stroke": true, "weight": 1}
-            ).addTo(map_261692267b52cafa8e8e88c0491b48cd);
+            ).addTo(map_8d6f74bfaaeb884dc03ad3ac95eeb934);
         
     
-            var marker_ed1c360da9ca8e6f4c66f02e329805eb = L.marker(
+            var marker_90d1a9b9378e39737fc563aae2d8158f = L.marker(
                 [46.6875, 20.208333333333336],
                 {
 }
-            ).addTo(map_261692267b52cafa8e8e88c0491b48cd);
+            ).addTo(map_8d6f74bfaaeb884dc03ad3ac95eeb934);
         
     
-            var icon_e684b8e890c31fb8165d136e30e58d50 = L.AwesomeMarkers.icon(
+            var icon_df16d6af68318f938345853633f60295 = L.AwesomeMarkers.icon(
                 {
   "markerColor": "blue",
   "iconColor": "white",
@@ -1856,24 +1856,24 @@ Approximated: 37</small>
             );
         
     
-        var popup_c85b397897fa9dce28cc8d7d0eec4f6d = L.popup({
+        var popup_e4fec216da7dbae7cc0c229fe04a14b4 = L.popup({
   "maxWidth": 300,
 });
 
         
             
-                var html_a78789b06aa25de02a22c91b9bc0b4fe = $(`<div id="html_a78789b06aa25de02a22c91b9bc0b4fe" style="width: 100.0%; height: 100.0%;"><div style='width:250px'><b style='font-size:14px'>📍 Grid: KN06CQ</b><br><b>1 QSO(s) from this location:</b><br><br><b>HG2DX</b> (Hungary)<br>📅 2026-02-04 📻 17M 🔊 FT8<br></div></div>`)[0];
-                popup_c85b397897fa9dce28cc8d7d0eec4f6d.setContent(html_a78789b06aa25de02a22c91b9bc0b4fe);
+                var html_98cde9322c0f835f5bfa5f4cace6bd4a = $(`<div id="html_98cde9322c0f835f5bfa5f4cace6bd4a" style="width: 100.0%; height: 100.0%;"><div style='width:250px'><b style='font-size:14px'>📍 Grid: KN06CQ</b><br><b>1 QSO(s) from this location:</b><br><br><b>HG2DX</b> (Hungary)<br>📅 2026-02-04 📻 17M 🔊 FT8<br></div></div>`)[0];
+                popup_e4fec216da7dbae7cc0c229fe04a14b4.setContent(html_98cde9322c0f835f5bfa5f4cace6bd4a);
             
         
 
-        marker_ed1c360da9ca8e6f4c66f02e329805eb.bindPopup(popup_c85b397897fa9dce28cc8d7d0eec4f6d)
+        marker_90d1a9b9378e39737fc563aae2d8158f.bindPopup(popup_e4fec216da7dbae7cc0c229fe04a14b4)
         ;
 
         
     
     
-            marker_ed1c360da9ca8e6f4c66f02e329805eb.bindTooltip(
+            marker_90d1a9b9378e39737fc563aae2d8158f.bindTooltip(
                 `<div>
                      1 QSO(s) from KN06CQ
                  </div>`,
@@ -1883,23 +1883,23 @@ Approximated: 37</small>
             );
         
     
-                marker_ed1c360da9ca8e6f4c66f02e329805eb.setIcon(icon_e684b8e890c31fb8165d136e30e58d50);
+                marker_90d1a9b9378e39737fc563aae2d8158f.setIcon(icon_df16d6af68318f938345853633f60295);
             
     
-            var poly_line_b509a386f005da920bbb10cf2b22b7db = L.polyline(
+            var poly_line_cae167fc03584326fdd4ac9d36739a27 = L.polyline(
                 [[41.0653, 29.0291], [46.6875, 20.208333333333336]],
                 {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.4, "smoothFactor": 1.0, "stroke": true, "weight": 1}
-            ).addTo(map_261692267b52cafa8e8e88c0491b48cd);
+            ).addTo(map_8d6f74bfaaeb884dc03ad3ac95eeb934);
         
     
-            var marker_a331017d8973efc2b06d04dd644818e5 = L.marker(
+            var marker_6f2d64b594037f72da30afbc394274b2 = L.marker(
                 [46.47916666666667, 14.958333333333332],
                 {
 }
-            ).addTo(map_261692267b52cafa8e8e88c0491b48cd);
+            ).addTo(map_8d6f74bfaaeb884dc03ad3ac95eeb934);
         
     
-            var icon_cd0ae7ecc1b3172a8aa6e873857e0af0 = L.AwesomeMarkers.icon(
+            var icon_94b415690864dbd48b6cc42bf0e678d4 = L.AwesomeMarkers.icon(
                 {
   "markerColor": "blue",
   "iconColor": "white",
@@ -1910,24 +1910,24 @@ Approximated: 37</small>
             );
         
     
-        var popup_d73fb2866bfb65c7a4ead646210fb4dc = L.popup({
+        var popup_c9503351772e9889b1e50fc47e8db0f1 = L.popup({
   "maxWidth": 300,
 });
 
         
             
-                var html_90b2fba5521c507df7ec05b61c7007f2 = $(`<div id="html_90b2fba5521c507df7ec05b61c7007f2" style="width: 100.0%; height: 100.0%;"><div style='width:250px'><b style='font-size:14px'>📍 Grid: JN76LL</b><br><b>1 QSO(s) from this location:</b><br><br><b>S52BT</b> (Slovenia) <small>[JN76→JN76LL]</small><br>📅 2026-02-04 📻 17M 🔊 FT8<br></div></div>`)[0];
-                popup_d73fb2866bfb65c7a4ead646210fb4dc.setContent(html_90b2fba5521c507df7ec05b61c7007f2);
+                var html_8a1ef59a71f67b5e3ee253c60c3a4104 = $(`<div id="html_8a1ef59a71f67b5e3ee253c60c3a4104" style="width: 100.0%; height: 100.0%;"><div style='width:250px'><b style='font-size:14px'>📍 Grid: JN76LL</b><br><b>1 QSO(s) from this location:</b><br><br><b>S52BT</b> (Slovenia) <small>[JN76→JN76LL]</small><br>📅 2026-02-04 📻 17M 🔊 FT8<br></div></div>`)[0];
+                popup_c9503351772e9889b1e50fc47e8db0f1.setContent(html_8a1ef59a71f67b5e3ee253c60c3a4104);
             
         
 
-        marker_a331017d8973efc2b06d04dd644818e5.bindPopup(popup_d73fb2866bfb65c7a4ead646210fb4dc)
+        marker_6f2d64b594037f72da30afbc394274b2.bindPopup(popup_c9503351772e9889b1e50fc47e8db0f1)
         ;
 
         
     
     
-            marker_a331017d8973efc2b06d04dd644818e5.bindTooltip(
+            marker_6f2d64b594037f72da30afbc394274b2.bindTooltip(
                 `<div>
                      1 QSO(s) from JN76LL
                  </div>`,
@@ -1937,23 +1937,23 @@ Approximated: 37</small>
             );
         
     
-                marker_a331017d8973efc2b06d04dd644818e5.setIcon(icon_cd0ae7ecc1b3172a8aa6e873857e0af0);
+                marker_6f2d64b594037f72da30afbc394274b2.setIcon(icon_94b415690864dbd48b6cc42bf0e678d4);
             
     
-            var poly_line_b5f8b30452ba5a7fb7146c7e59d821ab = L.polyline(
+            var poly_line_e87c6bee139dee9459f38fee651548e0 = L.polyline(
                 [[41.0653, 29.0291], [46.47916666666667, 14.958333333333332]],
                 {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.4, "smoothFactor": 1.0, "stroke": true, "weight": 1}
-            ).addTo(map_261692267b52cafa8e8e88c0491b48cd);
+            ).addTo(map_8d6f74bfaaeb884dc03ad3ac95eeb934);
         
     
-            var marker_379aeaf640bf91a5c7513b00b889c630 = L.marker(
+            var marker_9f0e95dc595690f028dda06f8645c50b = L.marker(
                 [49.47916666666667, 0.9583333333333333],
                 {
 }
-            ).addTo(map_261692267b52cafa8e8e88c0491b48cd);
+            ).addTo(map_8d6f74bfaaeb884dc03ad3ac95eeb934);
         
     
-            var icon_5d7f2bafe98163a8dac94b10ea6aae80 = L.AwesomeMarkers.icon(
+            var icon_0518dcfb72d5ced06cde9ce1d0abf941 = L.AwesomeMarkers.icon(
                 {
   "markerColor": "blue",
   "iconColor": "white",
@@ -1964,24 +1964,24 @@ Approximated: 37</small>
             );
         
     
-        var popup_0ce119286ef240812e246254b7bf09bd = L.popup({
+        var popup_d0c18db391e03b6346179c14d9bddd77 = L.popup({
   "maxWidth": 300,
 });
 
         
             
-                var html_05f46425636136d17a8af383d7e51d33 = $(`<div id="html_05f46425636136d17a8af383d7e51d33" style="width: 100.0%; height: 100.0%;"><div style='width:250px'><b style='font-size:14px'>📍 Grid: JN09LL</b><br><b>1 QSO(s) from this location:</b><br><br><b>F5RAV</b> (France) <small>[JN09→JN09LL]</small><br>📅 2026-02-04 📻 17M 🔊 FT8<br></div></div>`)[0];
-                popup_0ce119286ef240812e246254b7bf09bd.setContent(html_05f46425636136d17a8af383d7e51d33);
+                var html_fc2789c6999e1c89eff1949e2d0a5365 = $(`<div id="html_fc2789c6999e1c89eff1949e2d0a5365" style="width: 100.0%; height: 100.0%;"><div style='width:250px'><b style='font-size:14px'>📍 Grid: JN09LL</b><br><b>1 QSO(s) from this location:</b><br><br><b>F5RAV</b> (France) <small>[JN09→JN09LL]</small><br>📅 2026-02-04 📻 17M 🔊 FT8<br></div></div>`)[0];
+                popup_d0c18db391e03b6346179c14d9bddd77.setContent(html_fc2789c6999e1c89eff1949e2d0a5365);
             
         
 
-        marker_379aeaf640bf91a5c7513b00b889c630.bindPopup(popup_0ce119286ef240812e246254b7bf09bd)
+        marker_9f0e95dc595690f028dda06f8645c50b.bindPopup(popup_d0c18db391e03b6346179c14d9bddd77)
         ;
 
         
     
     
-            marker_379aeaf640bf91a5c7513b00b889c630.bindTooltip(
+            marker_9f0e95dc595690f028dda06f8645c50b.bindTooltip(
                 `<div>
                      1 QSO(s) from JN09LL
                  </div>`,
@@ -1991,23 +1991,23 @@ Approximated: 37</small>
             );
         
     
-                marker_379aeaf640bf91a5c7513b00b889c630.setIcon(icon_5d7f2bafe98163a8dac94b10ea6aae80);
+                marker_9f0e95dc595690f028dda06f8645c50b.setIcon(icon_0518dcfb72d5ced06cde9ce1d0abf941);
             
     
-            var poly_line_1298189af55697b6281530b44f51779c = L.polyline(
+            var poly_line_45d0f571bcc78464d118af6860c856f7 = L.polyline(
                 [[41.0653, 29.0291], [49.47916666666667, 0.9583333333333333]],
                 {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.4, "smoothFactor": 1.0, "stroke": true, "weight": 1}
-            ).addTo(map_261692267b52cafa8e8e88c0491b48cd);
+            ).addTo(map_8d6f74bfaaeb884dc03ad3ac95eeb934);
         
     
-            var marker_56d31d371ea7878e4662772999e868cd = L.marker(
+            var marker_69d1b0ba04a9caeb975cf62b75caa1ed = L.marker(
                 [43.47916666666667, 26.958333333333336],
                 {
 }
-            ).addTo(map_261692267b52cafa8e8e88c0491b48cd);
+            ).addTo(map_8d6f74bfaaeb884dc03ad3ac95eeb934);
         
     
-            var icon_d1d75074e0d72130d7a828e88fb52561 = L.AwesomeMarkers.icon(
+            var icon_50e95b8adff3989938d14f70efe7d004 = L.AwesomeMarkers.icon(
                 {
   "markerColor": "blue",
   "iconColor": "white",
@@ -2018,24 +2018,24 @@ Approximated: 37</small>
             );
         
     
-        var popup_1eece89f0b9fa6b365d9d31ee4d7232f = L.popup({
+        var popup_b44519080cc833c2003ba5a272ee62c1 = L.popup({
   "maxWidth": 300,
 });
 
         
             
-                var html_ecb680d75c0d276cd59082df07fcd4d7 = $(`<div id="html_ecb680d75c0d276cd59082df07fcd4d7" style="width: 100.0%; height: 100.0%;"><div style='width:250px'><b style='font-size:14px'>📍 Grid: KN33LL</b><br><b>1 QSO(s) from this location:</b><br><br><b>LZ2KV</b> (Bulgaria) <small>[KN33→KN33LL]</small><br>📅 2026-02-05 📻 30M 🔊 FT8<br></div></div>`)[0];
-                popup_1eece89f0b9fa6b365d9d31ee4d7232f.setContent(html_ecb680d75c0d276cd59082df07fcd4d7);
+                var html_da7bfd73dce63ea78971bcc12f95cbf0 = $(`<div id="html_da7bfd73dce63ea78971bcc12f95cbf0" style="width: 100.0%; height: 100.0%;"><div style='width:250px'><b style='font-size:14px'>📍 Grid: KN33LL</b><br><b>1 QSO(s) from this location:</b><br><br><b>LZ2KV</b> (Bulgaria) <small>[KN33→KN33LL]</small><br>📅 2026-02-05 📻 30M 🔊 FT8<br></div></div>`)[0];
+                popup_b44519080cc833c2003ba5a272ee62c1.setContent(html_da7bfd73dce63ea78971bcc12f95cbf0);
             
         
 
-        marker_56d31d371ea7878e4662772999e868cd.bindPopup(popup_1eece89f0b9fa6b365d9d31ee4d7232f)
+        marker_69d1b0ba04a9caeb975cf62b75caa1ed.bindPopup(popup_b44519080cc833c2003ba5a272ee62c1)
         ;
 
         
     
     
-            marker_56d31d371ea7878e4662772999e868cd.bindTooltip(
+            marker_69d1b0ba04a9caeb975cf62b75caa1ed.bindTooltip(
                 `<div>
                      1 QSO(s) from KN33LL
                  </div>`,
@@ -2045,23 +2045,23 @@ Approximated: 37</small>
             );
         
     
-                marker_56d31d371ea7878e4662772999e868cd.setIcon(icon_d1d75074e0d72130d7a828e88fb52561);
+                marker_69d1b0ba04a9caeb975cf62b75caa1ed.setIcon(icon_50e95b8adff3989938d14f70efe7d004);
             
     
-            var poly_line_96aebfca51062c4c2a46c5fecbbb8f41 = L.polyline(
+            var poly_line_fd5d585829d9ca533ae857eb1d9286e7 = L.polyline(
                 [[41.0653, 29.0291], [43.47916666666667, 26.958333333333336]],
                 {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.4, "smoothFactor": 1.0, "stroke": true, "weight": 1}
-            ).addTo(map_261692267b52cafa8e8e88c0491b48cd);
+            ).addTo(map_8d6f74bfaaeb884dc03ad3ac95eeb934);
         
     
-            var marker_1a637b25aecf7e2a5f2add7aff7c4fae = L.marker(
+            var marker_527877f7b33cc4ec7f29bc03f169c8a8 = L.marker(
                 [45.47916666666667, 26.958333333333336],
                 {
 }
-            ).addTo(map_261692267b52cafa8e8e88c0491b48cd);
+            ).addTo(map_8d6f74bfaaeb884dc03ad3ac95eeb934);
         
     
-            var icon_299bc8f08bad81a8940b618fa51d56d5 = L.AwesomeMarkers.icon(
+            var icon_8b633efc32fef7640e3b1c1d8974da90 = L.AwesomeMarkers.icon(
                 {
   "markerColor": "blue",
   "iconColor": "white",
@@ -2072,24 +2072,24 @@ Approximated: 37</small>
             );
         
     
-        var popup_18f15fd9936ff7d6eeb1ad5a4561c3d6 = L.popup({
+        var popup_c29d575ae68517e24e16de064a4b8356 = L.popup({
   "maxWidth": 300,
 });
 
         
             
-                var html_447d08d7341962a2f9fb97238e84c6ad = $(`<div id="html_447d08d7341962a2f9fb97238e84c6ad" style="width: 100.0%; height: 100.0%;"><div style='width:250px'><b style='font-size:14px'>📍 Grid: KN35LL</b><br><b>1 QSO(s) from this location:</b><br><br><b>YO9HP</b> (Romania) <small>[KN35→KN35LL]</small><br>📅 2026-02-05 📻 30M 🔊 FT8<br></div></div>`)[0];
-                popup_18f15fd9936ff7d6eeb1ad5a4561c3d6.setContent(html_447d08d7341962a2f9fb97238e84c6ad);
+                var html_9f1d78a2bd60780435552db2bfc0e3cd = $(`<div id="html_9f1d78a2bd60780435552db2bfc0e3cd" style="width: 100.0%; height: 100.0%;"><div style='width:250px'><b style='font-size:14px'>📍 Grid: KN35LL</b><br><b>1 QSO(s) from this location:</b><br><br><b>YO9HP</b> (Romania) <small>[KN35→KN35LL]</small><br>📅 2026-02-05 📻 30M 🔊 FT8<br></div></div>`)[0];
+                popup_c29d575ae68517e24e16de064a4b8356.setContent(html_9f1d78a2bd60780435552db2bfc0e3cd);
             
         
 
-        marker_1a637b25aecf7e2a5f2add7aff7c4fae.bindPopup(popup_18f15fd9936ff7d6eeb1ad5a4561c3d6)
+        marker_527877f7b33cc4ec7f29bc03f169c8a8.bindPopup(popup_c29d575ae68517e24e16de064a4b8356)
         ;
 
         
     
     
-            marker_1a637b25aecf7e2a5f2add7aff7c4fae.bindTooltip(
+            marker_527877f7b33cc4ec7f29bc03f169c8a8.bindTooltip(
                 `<div>
                      1 QSO(s) from KN35LL
                  </div>`,
@@ -2099,23 +2099,23 @@ Approximated: 37</small>
             );
         
     
-                marker_1a637b25aecf7e2a5f2add7aff7c4fae.setIcon(icon_299bc8f08bad81a8940b618fa51d56d5);
+                marker_527877f7b33cc4ec7f29bc03f169c8a8.setIcon(icon_8b633efc32fef7640e3b1c1d8974da90);
             
     
-            var poly_line_bb8bfa008df117dc9d1c14d8452e556f = L.polyline(
+            var poly_line_25c944bfe88bb36008e37d14e3863d21 = L.polyline(
                 [[41.0653, 29.0291], [45.47916666666667, 26.958333333333336]],
                 {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.4, "smoothFactor": 1.0, "stroke": true, "weight": 1}
-            ).addTo(map_261692267b52cafa8e8e88c0491b48cd);
+            ).addTo(map_8d6f74bfaaeb884dc03ad3ac95eeb934);
         
     
-            var marker_3051b5d6c7adbadc6e06efe3c77c322a = L.marker(
+            var marker_3903d7d8497d7fe9fd2b5ec72c746716 = L.marker(
                 [49.47916666666667, 10.958333333333332],
                 {
 }
-            ).addTo(map_261692267b52cafa8e8e88c0491b48cd);
+            ).addTo(map_8d6f74bfaaeb884dc03ad3ac95eeb934);
         
     
-            var icon_34a0fffa1049bad815e2a65f4acc06ae = L.AwesomeMarkers.icon(
+            var icon_4e894ba7c774c84ee0b07f1dae55c954 = L.AwesomeMarkers.icon(
                 {
   "markerColor": "blue",
   "iconColor": "white",
@@ -2126,24 +2126,24 @@ Approximated: 37</small>
             );
         
     
-        var popup_4315d55f408d9baff066eed1c70a9d7d = L.popup({
+        var popup_10c84d81b623a862fc9515c08cc8dd2c = L.popup({
   "maxWidth": 300,
 });
 
         
             
-                var html_c2e0b14166b7697bcf1a4c6d36df5dad = $(`<div id="html_c2e0b14166b7697bcf1a4c6d36df5dad" style="width: 100.0%; height: 100.0%;"><div style='width:250px'><b style='font-size:14px'>📍 Grid: JN59LL</b><br><b>1 QSO(s) from this location:</b><br><br><b>DL5AO</b> (Germany) <small>[JN59→JN59LL]</small><br>📅 2026-02-05 📻 30M 🔊 FT8<br></div></div>`)[0];
-                popup_4315d55f408d9baff066eed1c70a9d7d.setContent(html_c2e0b14166b7697bcf1a4c6d36df5dad);
+                var html_f63ad4fe8797a98e8a4cc754731ca9a1 = $(`<div id="html_f63ad4fe8797a98e8a4cc754731ca9a1" style="width: 100.0%; height: 100.0%;"><div style='width:250px'><b style='font-size:14px'>📍 Grid: JN59LL</b><br><b>1 QSO(s) from this location:</b><br><br><b>DL5AO</b> (Germany) <small>[JN59→JN59LL]</small><br>📅 2026-02-05 📻 30M 🔊 FT8<br></div></div>`)[0];
+                popup_10c84d81b623a862fc9515c08cc8dd2c.setContent(html_f63ad4fe8797a98e8a4cc754731ca9a1);
             
         
 
-        marker_3051b5d6c7adbadc6e06efe3c77c322a.bindPopup(popup_4315d55f408d9baff066eed1c70a9d7d)
+        marker_3903d7d8497d7fe9fd2b5ec72c746716.bindPopup(popup_10c84d81b623a862fc9515c08cc8dd2c)
         ;
 
         
     
     
-            marker_3051b5d6c7adbadc6e06efe3c77c322a.bindTooltip(
+            marker_3903d7d8497d7fe9fd2b5ec72c746716.bindTooltip(
                 `<div>
                      1 QSO(s) from JN59LL
                  </div>`,
@@ -2153,23 +2153,23 @@ Approximated: 37</small>
             );
         
     
-                marker_3051b5d6c7adbadc6e06efe3c77c322a.setIcon(icon_34a0fffa1049bad815e2a65f4acc06ae);
+                marker_3903d7d8497d7fe9fd2b5ec72c746716.setIcon(icon_4e894ba7c774c84ee0b07f1dae55c954);
             
     
-            var poly_line_d116ff4025af2ff1b161646098099e0a = L.polyline(
+            var poly_line_76956bce3935a8d466b425dea32645d4 = L.polyline(
                 [[41.0653, 29.0291], [49.47916666666667, 10.958333333333332]],
                 {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.4, "smoothFactor": 1.0, "stroke": true, "weight": 1}
-            ).addTo(map_261692267b52cafa8e8e88c0491b48cd);
+            ).addTo(map_8d6f74bfaaeb884dc03ad3ac95eeb934);
         
     
-            var marker_b9cef71992b7f182bc59fee620e0e59a = L.marker(
+            var marker_1d6c96e6a64bde3f9e0ba9a44b142aea = L.marker(
                 [50.8125, 8.625],
                 {
 }
-            ).addTo(map_261692267b52cafa8e8e88c0491b48cd);
+            ).addTo(map_8d6f74bfaaeb884dc03ad3ac95eeb934);
         
     
-            var icon_b0e879fcf18caf1333fe8e3cc3bb341d = L.AwesomeMarkers.icon(
+            var icon_1a6981458cf2dc9e3b5ba50ecc98fb3f = L.AwesomeMarkers.icon(
                 {
   "markerColor": "blue",
   "iconColor": "white",
@@ -2180,24 +2180,24 @@ Approximated: 37</small>
             );
         
     
-        var popup_72665f945b6cbc2536c97e668f955bd0 = L.popup({
+        var popup_f1fcd71e4a6680c457a378fa340af0da = L.popup({
   "maxWidth": 300,
 });
 
         
             
-                var html_986a9141202673356fca69c14dbf5a4c = $(`<div id="html_986a9141202673356fca69c14dbf5a4c" style="width: 100.0%; height: 100.0%;"><div style='width:250px'><b style='font-size:14px'>📍 Grid: JO40HT</b><br><b>1 QSO(s) from this location:</b><br><br><b>DK7ZT</b> (Germany)<br>📅 2026-02-05 📻 30M 🔊 FT8<br></div></div>`)[0];
-                popup_72665f945b6cbc2536c97e668f955bd0.setContent(html_986a9141202673356fca69c14dbf5a4c);
+                var html_b944c95d162f6e9e4de2b34d2b110512 = $(`<div id="html_b944c95d162f6e9e4de2b34d2b110512" style="width: 100.0%; height: 100.0%;"><div style='width:250px'><b style='font-size:14px'>📍 Grid: JO40HT</b><br><b>1 QSO(s) from this location:</b><br><br><b>DK7ZT</b> (Germany)<br>📅 2026-02-05 📻 30M 🔊 FT8<br></div></div>`)[0];
+                popup_f1fcd71e4a6680c457a378fa340af0da.setContent(html_b944c95d162f6e9e4de2b34d2b110512);
             
         
 
-        marker_b9cef71992b7f182bc59fee620e0e59a.bindPopup(popup_72665f945b6cbc2536c97e668f955bd0)
+        marker_1d6c96e6a64bde3f9e0ba9a44b142aea.bindPopup(popup_f1fcd71e4a6680c457a378fa340af0da)
         ;
 
         
     
     
-            marker_b9cef71992b7f182bc59fee620e0e59a.bindTooltip(
+            marker_1d6c96e6a64bde3f9e0ba9a44b142aea.bindTooltip(
                 `<div>
                      1 QSO(s) from JO40HT
                  </div>`,
@@ -2207,23 +2207,23 @@ Approximated: 37</small>
             );
         
     
-                marker_b9cef71992b7f182bc59fee620e0e59a.setIcon(icon_b0e879fcf18caf1333fe8e3cc3bb341d);
+                marker_1d6c96e6a64bde3f9e0ba9a44b142aea.setIcon(icon_1a6981458cf2dc9e3b5ba50ecc98fb3f);
             
     
-            var poly_line_001b511b2f799ea621b94bd7d3a74906 = L.polyline(
+            var poly_line_d0613d8af2aa883789ec42a9140412a8 = L.polyline(
                 [[41.0653, 29.0291], [50.8125, 8.625]],
                 {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.4, "smoothFactor": 1.0, "stroke": true, "weight": 1}
-            ).addTo(map_261692267b52cafa8e8e88c0491b48cd);
+            ).addTo(map_8d6f74bfaaeb884dc03ad3ac95eeb934);
         
     
-            var marker_f9748a456c3dfe1075c651e8ea112589 = L.marker(
+            var marker_32b468d6e30d9ed708433da91b2b339f = L.marker(
                 [38.47916666666667, 14.958333333333332],
                 {
 }
-            ).addTo(map_261692267b52cafa8e8e88c0491b48cd);
+            ).addTo(map_8d6f74bfaaeb884dc03ad3ac95eeb934);
         
     
-            var icon_b0a6a8c49a261f8fc19f51e4635b755b = L.AwesomeMarkers.icon(
+            var icon_ab077b60f909a431a249324cd1e37788 = L.AwesomeMarkers.icon(
                 {
   "markerColor": "blue",
   "iconColor": "white",
@@ -2234,24 +2234,24 @@ Approximated: 37</small>
             );
         
     
-        var popup_e96a7f5ef6202e5c8cfc5ff11d231f21 = L.popup({
+        var popup_27b5b6216dd1bb1bb8cc57c7024ecd3e = L.popup({
   "maxWidth": 300,
 });
 
         
             
-                var html_4a4eb4797810d39af049174fb8d5971a = $(`<div id="html_4a4eb4797810d39af049174fb8d5971a" style="width: 100.0%; height: 100.0%;"><div style='width:250px'><b style='font-size:14px'>📍 Grid: JM78LL</b><br><b>1 QSO(s) from this location:</b><br><br><b>IK8VGS</b> (Italy) <small>[JM78→JM78LL]</small><br>📅 2026-02-06 📻 40M 🔊 FT8<br></div></div>`)[0];
-                popup_e96a7f5ef6202e5c8cfc5ff11d231f21.setContent(html_4a4eb4797810d39af049174fb8d5971a);
+                var html_6f02bf3295ac233713d7853fd39c207c = $(`<div id="html_6f02bf3295ac233713d7853fd39c207c" style="width: 100.0%; height: 100.0%;"><div style='width:250px'><b style='font-size:14px'>📍 Grid: JM78LL</b><br><b>1 QSO(s) from this location:</b><br><br><b>IK8VGS</b> (Italy) <small>[JM78→JM78LL]</small><br>📅 2026-02-06 📻 40M 🔊 FT8<br></div></div>`)[0];
+                popup_27b5b6216dd1bb1bb8cc57c7024ecd3e.setContent(html_6f02bf3295ac233713d7853fd39c207c);
             
         
 
-        marker_f9748a456c3dfe1075c651e8ea112589.bindPopup(popup_e96a7f5ef6202e5c8cfc5ff11d231f21)
+        marker_32b468d6e30d9ed708433da91b2b339f.bindPopup(popup_27b5b6216dd1bb1bb8cc57c7024ecd3e)
         ;
 
         
     
     
-            marker_f9748a456c3dfe1075c651e8ea112589.bindTooltip(
+            marker_32b468d6e30d9ed708433da91b2b339f.bindTooltip(
                 `<div>
                      1 QSO(s) from JM78LL
                  </div>`,
@@ -2261,23 +2261,23 @@ Approximated: 37</small>
             );
         
     
-                marker_f9748a456c3dfe1075c651e8ea112589.setIcon(icon_b0a6a8c49a261f8fc19f51e4635b755b);
+                marker_32b468d6e30d9ed708433da91b2b339f.setIcon(icon_ab077b60f909a431a249324cd1e37788);
             
     
-            var poly_line_2949d36f4b170b2a4800d147b05ed483 = L.polyline(
+            var poly_line_552d497a3598a84544cb1784a160fc68 = L.polyline(
                 [[41.0653, 29.0291], [38.47916666666667, 14.958333333333332]],
                 {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.4, "smoothFactor": 1.0, "stroke": true, "weight": 1}
-            ).addTo(map_261692267b52cafa8e8e88c0491b48cd);
+            ).addTo(map_8d6f74bfaaeb884dc03ad3ac95eeb934);
         
     
-            var marker_8afa857effca7da5990bb756472e08af = L.marker(
+            var marker_e1b3d7b2dc27771a738224d5a94d629d = L.marker(
                 [56.47916666666667, 26.958333333333336],
                 {
 }
-            ).addTo(map_261692267b52cafa8e8e88c0491b48cd);
+            ).addTo(map_8d6f74bfaaeb884dc03ad3ac95eeb934);
         
     
-            var icon_e8502edbded5b192cdb011068992f0ee = L.AwesomeMarkers.icon(
+            var icon_925d612b1822d83871f679a03050120c = L.AwesomeMarkers.icon(
                 {
   "markerColor": "blue",
   "iconColor": "white",
@@ -2288,24 +2288,24 @@ Approximated: 37</small>
             );
         
     
-        var popup_6346834c9f3a1c79bc098d281df865c0 = L.popup({
+        var popup_fd0ce82a8e11456e6d10c47ae4b5aeb2 = L.popup({
   "maxWidth": 300,
 });
 
         
             
-                var html_b0f4a3138a38d502ec1ea89f9b81b879 = $(`<div id="html_b0f4a3138a38d502ec1ea89f9b81b879" style="width: 100.0%; height: 100.0%;"><div style='width:250px'><b style='font-size:14px'>📍 Grid: KO36LL</b><br><b>1 QSO(s) from this location:</b><br><br><b>YL3CW</b> (Latvia) <small>[KO36→KO36LL]</small><br>📅 2026-02-06 📻 40M 🔊 FT8<br></div></div>`)[0];
-                popup_6346834c9f3a1c79bc098d281df865c0.setContent(html_b0f4a3138a38d502ec1ea89f9b81b879);
+                var html_91dc6e4bd117b069d199f0df18bc53de = $(`<div id="html_91dc6e4bd117b069d199f0df18bc53de" style="width: 100.0%; height: 100.0%;"><div style='width:250px'><b style='font-size:14px'>📍 Grid: KO36LL</b><br><b>1 QSO(s) from this location:</b><br><br><b>YL3CW</b> (Latvia) <small>[KO36→KO36LL]</small><br>📅 2026-02-06 📻 40M 🔊 FT8<br></div></div>`)[0];
+                popup_fd0ce82a8e11456e6d10c47ae4b5aeb2.setContent(html_91dc6e4bd117b069d199f0df18bc53de);
             
         
 
-        marker_8afa857effca7da5990bb756472e08af.bindPopup(popup_6346834c9f3a1c79bc098d281df865c0)
+        marker_e1b3d7b2dc27771a738224d5a94d629d.bindPopup(popup_fd0ce82a8e11456e6d10c47ae4b5aeb2)
         ;
 
         
     
     
-            marker_8afa857effca7da5990bb756472e08af.bindTooltip(
+            marker_e1b3d7b2dc27771a738224d5a94d629d.bindTooltip(
                 `<div>
                      1 QSO(s) from KO36LL
                  </div>`,
@@ -2315,23 +2315,23 @@ Approximated: 37</small>
             );
         
     
-                marker_8afa857effca7da5990bb756472e08af.setIcon(icon_e8502edbded5b192cdb011068992f0ee);
+                marker_e1b3d7b2dc27771a738224d5a94d629d.setIcon(icon_925d612b1822d83871f679a03050120c);
             
     
-            var poly_line_3d8a7148387e3d6ac403f6abe4e2bd2b = L.polyline(
+            var poly_line_c26926236f99038917ca11aa81ad05ca = L.polyline(
                 [[41.0653, 29.0291], [56.47916666666667, 26.958333333333336]],
                 {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.4, "smoothFactor": 1.0, "stroke": true, "weight": 1}
-            ).addTo(map_261692267b52cafa8e8e88c0491b48cd);
+            ).addTo(map_8d6f74bfaaeb884dc03ad3ac95eeb934);
         
     
-            var marker_3e338901d128d08a531e95ef3be71c35 = L.marker(
+            var marker_2b6c1c577ee992fac3b8cf10cbb8bf4a = L.marker(
                 [45.47916666666667, 8.958333333333332],
                 {
 }
-            ).addTo(map_261692267b52cafa8e8e88c0491b48cd);
+            ).addTo(map_8d6f74bfaaeb884dc03ad3ac95eeb934);
         
     
-            var icon_3ec2361a8bab969655d8c961e2fcb386 = L.AwesomeMarkers.icon(
+            var icon_f7fc3b65b89f6b5222bb9095f3f1e510 = L.AwesomeMarkers.icon(
                 {
   "markerColor": "blue",
   "iconColor": "white",
@@ -2342,24 +2342,24 @@ Approximated: 37</small>
             );
         
     
-        var popup_17dff45271f28a4d5b3cbc12734f15b0 = L.popup({
+        var popup_3c7de147d8496e0a060b90d65a1f7242 = L.popup({
   "maxWidth": 300,
 });
 
         
             
-                var html_66e05067e29835f39cce16982d401901 = $(`<div id="html_66e05067e29835f39cce16982d401901" style="width: 100.0%; height: 100.0%;"><div style='width:250px'><b style='font-size:14px'>📍 Grid: JN45LL</b><br><b>1 QSO(s) from this location:</b><br><br><b>IK2ZJR</b> (Italy) <small>[JN45→JN45LL]</small><br>📅 2026-02-06 📻 40M 🔊 FT8<br></div></div>`)[0];
-                popup_17dff45271f28a4d5b3cbc12734f15b0.setContent(html_66e05067e29835f39cce16982d401901);
+                var html_48babfa511608beea471b3829cbc0d49 = $(`<div id="html_48babfa511608beea471b3829cbc0d49" style="width: 100.0%; height: 100.0%;"><div style='width:250px'><b style='font-size:14px'>📍 Grid: JN45LL</b><br><b>1 QSO(s) from this location:</b><br><br><b>IK2ZJR</b> (Italy) <small>[JN45→JN45LL]</small><br>📅 2026-02-06 📻 40M 🔊 FT8<br></div></div>`)[0];
+                popup_3c7de147d8496e0a060b90d65a1f7242.setContent(html_48babfa511608beea471b3829cbc0d49);
             
         
 
-        marker_3e338901d128d08a531e95ef3be71c35.bindPopup(popup_17dff45271f28a4d5b3cbc12734f15b0)
+        marker_2b6c1c577ee992fac3b8cf10cbb8bf4a.bindPopup(popup_3c7de147d8496e0a060b90d65a1f7242)
         ;
 
         
     
     
-            marker_3e338901d128d08a531e95ef3be71c35.bindTooltip(
+            marker_2b6c1c577ee992fac3b8cf10cbb8bf4a.bindTooltip(
                 `<div>
                      1 QSO(s) from JN45LL
                  </div>`,
@@ -2369,23 +2369,23 @@ Approximated: 37</small>
             );
         
     
-                marker_3e338901d128d08a531e95ef3be71c35.setIcon(icon_3ec2361a8bab969655d8c961e2fcb386);
+                marker_2b6c1c577ee992fac3b8cf10cbb8bf4a.setIcon(icon_f7fc3b65b89f6b5222bb9095f3f1e510);
             
     
-            var poly_line_a30b81295d235e0f90f516b416185673 = L.polyline(
+            var poly_line_9989560f8820724482865e12619ae6af = L.polyline(
                 [[41.0653, 29.0291], [45.47916666666667, 8.958333333333332]],
                 {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.4, "smoothFactor": 1.0, "stroke": true, "weight": 1}
-            ).addTo(map_261692267b52cafa8e8e88c0491b48cd);
+            ).addTo(map_8d6f74bfaaeb884dc03ad3ac95eeb934);
         
     
-            var marker_90e7fb1f486b8108a78af26c174d0d43 = L.marker(
+            var marker_69a96be5ee6915099c00a205b8e97c58 = L.marker(
                 [44.47916666666667, 4.958333333333334],
                 {
 }
-            ).addTo(map_261692267b52cafa8e8e88c0491b48cd);
+            ).addTo(map_8d6f74bfaaeb884dc03ad3ac95eeb934);
         
     
-            var icon_fe9e5c1b2d0c26dbd5b6d82906ee2f72 = L.AwesomeMarkers.icon(
+            var icon_0e6f8e8f38c1805334e2798047773e67 = L.AwesomeMarkers.icon(
                 {
   "markerColor": "blue",
   "iconColor": "white",
@@ -2396,24 +2396,24 @@ Approximated: 37</small>
             );
         
     
-        var popup_8fd007e129724f8dcfb2293ba6af47c9 = L.popup({
+        var popup_7ebfeb228cf823fe1dc41dc8178a92b5 = L.popup({
   "maxWidth": 300,
 });
 
         
             
-                var html_67d31d9c06bbf4806d14898e8a4e8dd2 = $(`<div id="html_67d31d9c06bbf4806d14898e8a4e8dd2" style="width: 100.0%; height: 100.0%;"><div style='width:250px'><b style='font-size:14px'>📍 Grid: JN24LL</b><br><b>1 QSO(s) from this location:</b><br><br><b>F6BHK</b> (France) <small>[JN24→JN24LL]</small><br>📅 2026-02-06 📻 40M 🔊 FT8<br></div></div>`)[0];
-                popup_8fd007e129724f8dcfb2293ba6af47c9.setContent(html_67d31d9c06bbf4806d14898e8a4e8dd2);
+                var html_3688d5f07e50b1f78a99f6bcf7f371d7 = $(`<div id="html_3688d5f07e50b1f78a99f6bcf7f371d7" style="width: 100.0%; height: 100.0%;"><div style='width:250px'><b style='font-size:14px'>📍 Grid: JN24LL</b><br><b>1 QSO(s) from this location:</b><br><br><b>F6BHK</b> (France) <small>[JN24→JN24LL]</small><br>📅 2026-02-06 📻 40M 🔊 FT8<br></div></div>`)[0];
+                popup_7ebfeb228cf823fe1dc41dc8178a92b5.setContent(html_3688d5f07e50b1f78a99f6bcf7f371d7);
             
         
 
-        marker_90e7fb1f486b8108a78af26c174d0d43.bindPopup(popup_8fd007e129724f8dcfb2293ba6af47c9)
+        marker_69a96be5ee6915099c00a205b8e97c58.bindPopup(popup_7ebfeb228cf823fe1dc41dc8178a92b5)
         ;
 
         
     
     
-            marker_90e7fb1f486b8108a78af26c174d0d43.bindTooltip(
+            marker_69a96be5ee6915099c00a205b8e97c58.bindTooltip(
                 `<div>
                      1 QSO(s) from JN24LL
                  </div>`,
@@ -2423,23 +2423,23 @@ Approximated: 37</small>
             );
         
     
-                marker_90e7fb1f486b8108a78af26c174d0d43.setIcon(icon_fe9e5c1b2d0c26dbd5b6d82906ee2f72);
+                marker_69a96be5ee6915099c00a205b8e97c58.setIcon(icon_0e6f8e8f38c1805334e2798047773e67);
             
     
-            var poly_line_2d26fee17dcc9c34ed0bd2c2c6e42bd0 = L.polyline(
+            var poly_line_6834e77a3fdedb42329a3f7e53948d24 = L.polyline(
                 [[41.0653, 29.0291], [44.47916666666667, 4.958333333333334]],
                 {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.4, "smoothFactor": 1.0, "stroke": true, "weight": 1}
-            ).addTo(map_261692267b52cafa8e8e88c0491b48cd);
+            ).addTo(map_8d6f74bfaaeb884dc03ad3ac95eeb934);
         
     
-            var marker_9c15d3005ede2eeb2dc9c402364e6941 = L.marker(
+            var marker_84827b5964fe4329db80e4b52785912c = L.marker(
                 [36.47916666666667, -7.041666666666666],
                 {
 }
-            ).addTo(map_261692267b52cafa8e8e88c0491b48cd);
+            ).addTo(map_8d6f74bfaaeb884dc03ad3ac95eeb934);
         
     
-            var icon_892f877ec0b9300802969b1bd8c7cce9 = L.AwesomeMarkers.icon(
+            var icon_a63a7d40186c047c2cc16c5f26f34e7e = L.AwesomeMarkers.icon(
                 {
   "markerColor": "blue",
   "iconColor": "white",
@@ -2450,24 +2450,24 @@ Approximated: 37</small>
             );
         
     
-        var popup_e45d09eae21ca69d0db07a7a3e19e81e = L.popup({
+        var popup_748167ac0fe3be6ff17e40fd157b4d94 = L.popup({
   "maxWidth": 300,
 });
 
         
             
-                var html_a5ac4c9294e2df29950234659d5bcbbe = $(`<div id="html_a5ac4c9294e2df29950234659d5bcbbe" style="width: 100.0%; height: 100.0%;"><div style='width:250px'><b style='font-size:14px'>📍 Grid: IM66LL</b><br><b>1 QSO(s) from this location:</b><br><br><b>EA7GHD</b> (Spain) <small>[IM66→IM66LL]</small><br>📅 2026-02-06 📻 40M 🔊 FT8<br></div></div>`)[0];
-                popup_e45d09eae21ca69d0db07a7a3e19e81e.setContent(html_a5ac4c9294e2df29950234659d5bcbbe);
+                var html_131823edbc3d007ae3b2a99e29736b92 = $(`<div id="html_131823edbc3d007ae3b2a99e29736b92" style="width: 100.0%; height: 100.0%;"><div style='width:250px'><b style='font-size:14px'>📍 Grid: IM66LL</b><br><b>1 QSO(s) from this location:</b><br><br><b>EA7GHD</b> (Spain) <small>[IM66→IM66LL]</small><br>📅 2026-02-06 📻 40M 🔊 FT8<br></div></div>`)[0];
+                popup_748167ac0fe3be6ff17e40fd157b4d94.setContent(html_131823edbc3d007ae3b2a99e29736b92);
             
         
 
-        marker_9c15d3005ede2eeb2dc9c402364e6941.bindPopup(popup_e45d09eae21ca69d0db07a7a3e19e81e)
+        marker_84827b5964fe4329db80e4b52785912c.bindPopup(popup_748167ac0fe3be6ff17e40fd157b4d94)
         ;
 
         
     
     
-            marker_9c15d3005ede2eeb2dc9c402364e6941.bindTooltip(
+            marker_84827b5964fe4329db80e4b52785912c.bindTooltip(
                 `<div>
                      1 QSO(s) from IM66LL
                  </div>`,
@@ -2477,23 +2477,23 @@ Approximated: 37</small>
             );
         
     
-                marker_9c15d3005ede2eeb2dc9c402364e6941.setIcon(icon_892f877ec0b9300802969b1bd8c7cce9);
+                marker_84827b5964fe4329db80e4b52785912c.setIcon(icon_a63a7d40186c047c2cc16c5f26f34e7e);
             
     
-            var poly_line_ad68cdc6214cf605c7f8cce4401f3a44 = L.polyline(
+            var poly_line_e3fd3439e21e46fbb2b6efda1cb5db19 = L.polyline(
                 [[41.0653, 29.0291], [36.47916666666667, -7.041666666666666]],
                 {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.4, "smoothFactor": 1.0, "stroke": true, "weight": 1}
-            ).addTo(map_261692267b52cafa8e8e88c0491b48cd);
+            ).addTo(map_8d6f74bfaaeb884dc03ad3ac95eeb934);
         
     
-            var marker_eac61cebeb99b884dacbdb966815c264 = L.marker(
+            var marker_ddea037b7ca693c11aca97818265c7b2 = L.marker(
                 [48.47916666666667, 2.958333333333333],
                 {
 }
-            ).addTo(map_261692267b52cafa8e8e88c0491b48cd);
+            ).addTo(map_8d6f74bfaaeb884dc03ad3ac95eeb934);
         
     
-            var icon_b94d60172461dfb20e14ef2cf059aeb3 = L.AwesomeMarkers.icon(
+            var icon_5bca225afbb549de9817fbefb9bde740 = L.AwesomeMarkers.icon(
                 {
   "markerColor": "blue",
   "iconColor": "white",
@@ -2504,24 +2504,24 @@ Approximated: 37</small>
             );
         
     
-        var popup_2d17dd8425e9f856efd565a8d0208ccd = L.popup({
+        var popup_fbc71af7b78259a1734fa1ac47f061c2 = L.popup({
   "maxWidth": 300,
 });
 
         
             
-                var html_881401d2f21bc2864676dda677ee6bb1 = $(`<div id="html_881401d2f21bc2864676dda677ee6bb1" style="width: 100.0%; height: 100.0%;"><div style='width:250px'><b style='font-size:14px'>📍 Grid: JN18LL</b><br><b>1 QSO(s) from this location:</b><br><br><b>F4GTB</b> (France) <small>[JN18→JN18LL]</small><br>📅 2026-02-06 📻 40M 🔊 FT8<br></div></div>`)[0];
-                popup_2d17dd8425e9f856efd565a8d0208ccd.setContent(html_881401d2f21bc2864676dda677ee6bb1);
+                var html_4ee8e056b2d1e7649a1d785d9ce7667e = $(`<div id="html_4ee8e056b2d1e7649a1d785d9ce7667e" style="width: 100.0%; height: 100.0%;"><div style='width:250px'><b style='font-size:14px'>📍 Grid: JN18LL</b><br><b>1 QSO(s) from this location:</b><br><br><b>F4GTB</b> (France) <small>[JN18→JN18LL]</small><br>📅 2026-02-06 📻 40M 🔊 FT8<br></div></div>`)[0];
+                popup_fbc71af7b78259a1734fa1ac47f061c2.setContent(html_4ee8e056b2d1e7649a1d785d9ce7667e);
             
         
 
-        marker_eac61cebeb99b884dacbdb966815c264.bindPopup(popup_2d17dd8425e9f856efd565a8d0208ccd)
+        marker_ddea037b7ca693c11aca97818265c7b2.bindPopup(popup_fbc71af7b78259a1734fa1ac47f061c2)
         ;
 
         
     
     
-            marker_eac61cebeb99b884dacbdb966815c264.bindTooltip(
+            marker_ddea037b7ca693c11aca97818265c7b2.bindTooltip(
                 `<div>
                      1 QSO(s) from JN18LL
                  </div>`,
@@ -2531,31 +2531,193 @@ Approximated: 37</small>
             );
         
     
-                marker_eac61cebeb99b884dacbdb966815c264.setIcon(icon_b94d60172461dfb20e14ef2cf059aeb3);
+                marker_ddea037b7ca693c11aca97818265c7b2.setIcon(icon_5bca225afbb549de9817fbefb9bde740);
             
     
-            var poly_line_f6d9da84f3709c25d6021c7387c6a8fa = L.polyline(
+            var poly_line_6c17dc05298c51ec95656f39957a911e = L.polyline(
                 [[41.0653, 29.0291], [48.47916666666667, 2.958333333333333]],
                 {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.4, "smoothFactor": 1.0, "stroke": true, "weight": 1}
-            ).addTo(map_261692267b52cafa8e8e88c0491b48cd);
+            ).addTo(map_8d6f74bfaaeb884dc03ad3ac95eeb934);
         
     
-            var layer_control_94ef10c8a75c527d7ae6a0f067c28588_layers = {
+            var marker_0b8be8480f6b4e38f646c31ee21002cc = L.marker(
+                [47.47916666666667, 34.95833333333333],
+                {
+}
+            ).addTo(map_8d6f74bfaaeb884dc03ad3ac95eeb934);
+        
+    
+            var icon_20e6dad3d5bd8dc06570b72a0eb53273 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_3f1010f1b7ba66ecb3f0ed9e86c2ac44 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_d06a5bf4b43f8b1d82b0f03bc6dbfa2f = $(`<div id="html_d06a5bf4b43f8b1d82b0f03bc6dbfa2f" style="width: 100.0%; height: 100.0%;"><div style='width:250px'><b style='font-size:14px'>📍 Grid: KN77LL</b><br><b>1 QSO(s) from this location:</b><br><br><b>UR3QBJ</b> (Ukraine) <small>[KN77→KN77LL]</small><br>📅 2026-03-07 📻 20M 🔊 FT8<br></div></div>`)[0];
+                popup_3f1010f1b7ba66ecb3f0ed9e86c2ac44.setContent(html_d06a5bf4b43f8b1d82b0f03bc6dbfa2f);
+            
+        
+
+        marker_0b8be8480f6b4e38f646c31ee21002cc.bindPopup(popup_3f1010f1b7ba66ecb3f0ed9e86c2ac44)
+        ;
+
+        
+    
+    
+            marker_0b8be8480f6b4e38f646c31ee21002cc.bindTooltip(
+                `<div>
+                     1 QSO(s) from KN77LL
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_0b8be8480f6b4e38f646c31ee21002cc.setIcon(icon_20e6dad3d5bd8dc06570b72a0eb53273);
+            
+    
+            var poly_line_3de3ed47a798c5d0667dcb86f5a0e510 = L.polyline(
+                [[41.0653, 29.0291], [47.47916666666667, 34.95833333333333]],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.4, "smoothFactor": 1.0, "stroke": true, "weight": 1}
+            ).addTo(map_8d6f74bfaaeb884dc03ad3ac95eeb934);
+        
+    
+            var marker_3857b3370b25c1c7cd3d6f178ee1c8be = L.marker(
+                [44.47916666666667, 36.95833333333333],
+                {
+}
+            ).addTo(map_8d6f74bfaaeb884dc03ad3ac95eeb934);
+        
+    
+            var icon_6ebdfde63a0e7554bbb96d889cc8b037 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_3bb106edbd9459ed673e198c9de2a797 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_8f953e31f5805ccdf3a3356490ffe5df = $(`<div id="html_8f953e31f5805ccdf3a3356490ffe5df" style="width: 100.0%; height: 100.0%;"><div style='width:250px'><b style='font-size:14px'>📍 Grid: KN84LL</b><br><b>1 QSO(s) from this location:</b><br><br><b>R6DZR</b> (Russia) <small>[KN84→KN84LL]</small><br>📅 2026-03-07 📻 20m 🔊 FT8<br></div></div>`)[0];
+                popup_3bb106edbd9459ed673e198c9de2a797.setContent(html_8f953e31f5805ccdf3a3356490ffe5df);
+            
+        
+
+        marker_3857b3370b25c1c7cd3d6f178ee1c8be.bindPopup(popup_3bb106edbd9459ed673e198c9de2a797)
+        ;
+
+        
+    
+    
+            marker_3857b3370b25c1c7cd3d6f178ee1c8be.bindTooltip(
+                `<div>
+                     1 QSO(s) from KN84LL
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_3857b3370b25c1c7cd3d6f178ee1c8be.setIcon(icon_6ebdfde63a0e7554bbb96d889cc8b037);
+            
+    
+            var poly_line_aa911f32fb604e9111af850011186f6b = L.polyline(
+                [[41.0653, 29.0291], [44.47916666666667, 36.95833333333333]],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.4, "smoothFactor": 1.0, "stroke": true, "weight": 1}
+            ).addTo(map_8d6f74bfaaeb884dc03ad3ac95eeb934);
+        
+    
+            var marker_87e01da8388f1ee956a8f6288de2d096 = L.marker(
+                [38.47916666666667, 24.958333333333336],
+                {
+}
+            ).addTo(map_8d6f74bfaaeb884dc03ad3ac95eeb934);
+        
+    
+            var icon_de36959273e6741cdc964ec7af8d566a = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_16d228b8445c069e4f50106e5d5e5d81 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_73c825f0fd699ed79e772adf56aa1803 = $(`<div id="html_73c825f0fd699ed79e772adf56aa1803" style="width: 100.0%; height: 100.0%;"><div style='width:250px'><b style='font-size:14px'>📍 Grid: KM28LL</b><br><b>1 QSO(s) from this location:</b><br><br><b>SV0TPN</b> (Greece) <small>[KM28→KM28LL]</small><br>📅 2026-03-07 📻 20M 🔊 FT8<br></div></div>`)[0];
+                popup_16d228b8445c069e4f50106e5d5e5d81.setContent(html_73c825f0fd699ed79e772adf56aa1803);
+            
+        
+
+        marker_87e01da8388f1ee956a8f6288de2d096.bindPopup(popup_16d228b8445c069e4f50106e5d5e5d81)
+        ;
+
+        
+    
+    
+            marker_87e01da8388f1ee956a8f6288de2d096.bindTooltip(
+                `<div>
+                     1 QSO(s) from KM28LL
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_87e01da8388f1ee956a8f6288de2d096.setIcon(icon_de36959273e6741cdc964ec7af8d566a);
+            
+    
+            var poly_line_50797f8af4717ea1d0afbbc7c2269997 = L.polyline(
+                [[41.0653, 29.0291], [38.47916666666667, 24.958333333333336]],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.4, "smoothFactor": 1.0, "stroke": true, "weight": 1}
+            ).addTo(map_8d6f74bfaaeb884dc03ad3ac95eeb934);
+        
+    
+            var layer_control_e3609a62513e03443d8a283683e52e3e_layers = {
                 base_layers : {
-                    "openstreetmap" : tile_layer_558dabf3cdb8c6b2f42ff6e5f540afec,
+                    "openstreetmap" : tile_layer_bd760f0ecb2c5055f1e55034d80baaad,
                 },
                 overlays :  {
                 },
             };
-            let layer_control_94ef10c8a75c527d7ae6a0f067c28588 = L.control.layers(
-                layer_control_94ef10c8a75c527d7ae6a0f067c28588_layers.base_layers,
-                layer_control_94ef10c8a75c527d7ae6a0f067c28588_layers.overlays,
+            let layer_control_e3609a62513e03443d8a283683e52e3e = L.control.layers(
+                layer_control_e3609a62513e03443d8a283683e52e3e_layers.base_layers,
+                layer_control_e3609a62513e03443d8a283683e52e3e_layers.overlays,
                 {
   "position": "topright",
   "collapsed": true,
   "autoZIndex": true,
 }
-            ).addTo(map_261692267b52cafa8e8e88c0491b48cd);
+            ).addTo(map_8d6f74bfaaeb884dc03ad3ac95eeb934);
 
         
     
@@ -2566,7 +2728,7 @@ Approximated: 37</small>
   "titleCancel": "Exit Full Screen",
   "forceSeparateButton": false,
 }
-            ).addTo(map_261692267b52cafa8e8e88c0491b48cd);
+            ).addTo(map_8d6f74bfaaeb884dc03ad3ac95eeb934);
         
 </script>
 </html>
