@@ -257,23 +257,28 @@ def public_records(qsos):
 
 PANEL_HTML = """
 <div id="qso-panel">
-  <h4>QSO Statistics</h4>
-  <div class="periods" role="group" aria-label="Period">
-    <button type="button" class="period active" data-period="all">All</button>
-    <button type="button" class="period" data-period="year">Last year</button>
-    <button type="button" class="period" data-period="month">Last month</button>
-    <button type="button" class="period" data-period="day">Day</button>
+  <div class="panel-head">
+    <h4>QSO Statistics</h4>
+    <button type="button" id="qso-panel-toggle" aria-expanded="true" aria-controls="qso-panel-body" title="Toggle statistics">▾</button>
   </div>
-  <input id="qso-day" type="date" aria-label="Day">
-  <p id="qso-range"></p>
-  <button type="button" class="stat" data-kind="qsos"><span>Total QSOs</span><b id="stat-qsos">0</b></button>
-  <button type="button" class="stat" data-kind="grids"><span>Unique Grids</span><b id="stat-grids">0</b></button>
-  <button type="button" class="stat" data-kind="countries"><span>Countries</span><b id="stat-countries">0</b></button>
-  <button type="button" class="stat" data-kind="bands"><span>Bands</span><b id="stat-bands">0</b></button>
-  <button type="button" class="stat" data-kind="modes"><span>Modes</span><b id="stat-modes">0</b></button>
-  <p class="hint">Click a row to open the table.</p>
-  <hr>
-  <small id="qso-grid-note"></small>
+  <div id="qso-panel-body">
+    <div class="periods" role="group" aria-label="Period">
+      <button type="button" class="period active" data-period="all">All</button>
+      <button type="button" class="period" data-period="year">Last year</button>
+      <button type="button" class="period" data-period="month">Last month</button>
+      <button type="button" class="period" data-period="day">Day</button>
+    </div>
+    <input id="qso-day" type="date" aria-label="Day">
+    <p id="qso-range"></p>
+    <button type="button" class="stat" data-kind="qsos"><span>Total QSOs</span><b id="stat-qsos">0</b></button>
+    <button type="button" class="stat" data-kind="grids"><span>Unique Grids</span><b id="stat-grids">0</b></button>
+    <button type="button" class="stat" data-kind="countries"><span>Countries</span><b id="stat-countries">0</b></button>
+    <button type="button" class="stat" data-kind="bands"><span>Bands</span><b id="stat-bands">0</b></button>
+    <button type="button" class="stat" data-kind="modes"><span>Modes</span><b id="stat-modes">0</b></button>
+    <p class="hint">Click a row to open the table.</p>
+    <hr>
+    <small id="qso-grid-note"></small>
+  </div>
 </div>
 <div id="qso-modal" role="dialog" aria-modal="true" aria-labelledby="qso-modal-title">
   <div id="qso-sheet">
@@ -293,8 +298,10 @@ PANEL_CSS = """
   position: fixed;
   top: 10px;
   right: 10px;
-  width: 250px;
+  box-sizing: border-box;
+  width: min(250px, calc(100vw - 20px));
   max-height: calc(100vh - 20px);
+  max-height: calc(100dvh - 20px);
   overflow: auto;
   background: #fff;
   z-index: 9999;
@@ -305,10 +312,30 @@ PANEL_CSS = """
   font-size: 13px;
   box-shadow: 0 2px 10px rgba(0,0,0,.12);
 }
-#qso-panel h4 { margin: 0 0 8px; font-size: 15px; }
+#qso-panel .panel-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+#qso-panel h4 { margin: 0; font-size: 15px; }
+#qso-panel-toggle {
+  display: none;
+  flex: 0 0 auto;
+  width: 32px;
+  height: 28px;
+  border: 1px solid #c5cdd8;
+  border-radius: 4px;
+  background: #fff;
+  cursor: pointer;
+  font: inherit;
+  line-height: 1;
+}
 #qso-panel .periods { display: flex; flex-wrap: wrap; gap: 4px; }
 #qso-panel .period {
-  flex: 1 1 auto;
+  flex: 1 1 calc(50% - 4px);
+  min-width: 0;
   border: 1px solid #c5cdd8;
   background: #fff;
   border-radius: 4px;
@@ -333,6 +360,7 @@ PANEL_CSS = """
   font: inherit;
   cursor: pointer;
   text-align: left;
+  box-sizing: border-box;
 }
 #qso-panel .stat:hover, #qso-panel .stat:focus { background: #eef3ff; outline: none; }
 #qso-panel .hint { margin: 6px 0 0; color: #68788c; font-size: 11px; }
@@ -347,12 +375,14 @@ PANEL_CSS = """
   align-items: flex-start;
   justify-content: center;
   padding: 32px 12px;
+  box-sizing: border-box;
 }
 #qso-modal.open { display: flex; }
 #qso-sheet {
   background: #fff;
   width: min(980px, 100%);
   max-height: min(82vh, 760px);
+  max-height: min(82dvh, 760px);
   display: flex;
   flex-direction: column;
   border-radius: 8px;
@@ -367,7 +397,7 @@ PANEL_CSS = """
   padding: 10px 12px;
   border-bottom: 1px solid #e6ebf2;
 }
-.sheet-head h3 { flex: 1; margin: 0; font-size: 16px; }
+.sheet-head h3 { flex: 1; margin: 0; font-size: 16px; min-width: 0; overflow-wrap: anywhere; }
 .sheet-head button {
   border: 1px solid #c5cdd8;
   background: #fff;
@@ -378,7 +408,11 @@ PANEL_CSS = """
 }
 #qso-back[hidden] { display: none; }
 #qso-close { font-size: 18px; line-height: 1; }
-.sheet-scroll { overflow: auto; }
+.sheet-scroll {
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+  max-width: 100%;
+}
 #qso-modal table { width: 100%; border-collapse: collapse; font-size: 13px; }
 #qso-modal th, #qso-modal td {
   padding: 6px 8px;
@@ -397,6 +431,40 @@ PANEL_CSS = """
 #qso-modal tr.clickable:hover { background: #eef3ff; }
 #qso-modal a { color: #1d4f91; }
 .qso-empty { margin: 16px; color: #526070; }
+@media (max-width: 700px) {
+  #qso-panel {
+    top: 8px;
+    left: 8px;
+    right: 8px;
+    width: auto;
+    max-width: none;
+    max-height: min(42vh, calc(100dvh - 16px));
+    padding: 8px 10px;
+    font-size: 12px;
+  }
+  #qso-panel.collapsed {
+    max-height: none;
+    overflow: hidden;
+  }
+  #qso-panel.collapsed #qso-panel-body { display: none; }
+  #qso-panel.collapsed .panel-head { margin-bottom: 0; }
+  #qso-panel-toggle { display: inline-flex; align-items: center; justify-content: center; }
+  #qso-panel.collapsed #qso-panel-toggle { transform: rotate(-90deg); }
+  #qso-panel h4 { font-size: 14px; }
+  #qso-panel .period { padding: 6px 4px; font-size: 12px; }
+  #qso-panel .stat { padding: 6px 2px; }
+  #qso-modal {
+    padding: 0;
+    align-items: stretch;
+  }
+  #qso-sheet {
+    width: 100%;
+    max-height: none;
+    height: 100%;
+    border-radius: 0;
+  }
+  #qso-modal table { font-size: 12px; }
+}
 </style>
 """
 
@@ -425,6 +493,28 @@ ANALYSIS_TEMPLATE = r"""
     var modalBody = document.getElementById("qso-modal-body");
     var backBtn = document.getElementById("qso-back");
     var dayInput = document.getElementById("qso-day");
+    var panel = document.getElementById("qso-panel");
+    var panelToggle = document.getElementById("qso-panel-toggle");
+    var mobileQuery = window.matchMedia("(max-width: 700px)");
+
+    function setPanelCollapsed(collapsed) {
+      panel.classList.toggle("collapsed", collapsed);
+      panelToggle.setAttribute("aria-expanded", collapsed ? "false" : "true");
+    }
+
+    function syncPanelForViewport() {
+      setPanelCollapsed(mobileQuery.matches);
+    }
+
+    panelToggle.addEventListener("click", function () {
+      setPanelCollapsed(!panel.classList.contains("collapsed"));
+    });
+    if (mobileQuery.addEventListener) {
+      mobileQuery.addEventListener("change", syncPanelForViewport);
+    } else if (mobileQuery.addListener) {
+      mobileQuery.addListener(syncPanelForViewport);
+    }
+    syncPanelForViewport();
 
     document.getElementById("qso-grid-note").innerHTML =
       "Grid enriched: {{ this.enriched_count }} from QRZ<br>Approximated: {{ this.approximated_count }}";
