@@ -434,8 +434,8 @@ PANEL_CSS = """
 @media (max-width: 700px) {
   #qso-panel {
     top: 8px;
-    left: 8px;
     right: 8px;
+    left: 54px;
     width: auto;
     max-width: none;
     max-height: min(42vh, calc(100dvh - 16px));
@@ -443,6 +443,9 @@ PANEL_CSS = """
     font-size: 12px;
   }
   #qso-panel.collapsed {
+    left: auto;
+    width: auto;
+    max-width: calc(100vw - 70px);
     max-height: none;
     overflow: hidden;
   }
