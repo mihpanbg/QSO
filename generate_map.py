@@ -381,6 +381,7 @@ PANEL_CSS = """
 #qso-sheet {
   background: #fff;
   width: min(980px, 100%);
+  max-width: 100%;
   max-height: min(82vh, 760px);
   max-height: min(82dvh, 760px);
   display: flex;
@@ -389,6 +390,8 @@ PANEL_CSS = """
   overflow: hidden;
   box-shadow: 0 12px 40px rgba(0,0,0,.28);
   font-family: Arial, sans-serif;
+  min-width: 0;
+  box-sizing: border-box;
 }
 .sheet-head {
   display: flex;
@@ -396,9 +399,13 @@ PANEL_CSS = """
   gap: 8px;
   padding: 10px 12px;
   border-bottom: 1px solid #e6ebf2;
+  flex: 0 0 auto;
+  background: #fff;
+  z-index: 2;
 }
 .sheet-head h3 { flex: 1; margin: 0; font-size: 16px; min-width: 0; overflow-wrap: anywhere; }
 .sheet-head button {
+  flex: 0 0 auto;
   border: 1px solid #c5cdd8;
   background: #fff;
   border-radius: 4px;
@@ -409,11 +416,14 @@ PANEL_CSS = """
 #qso-back[hidden] { display: none; }
 #qso-close { font-size: 18px; line-height: 1; }
 .sheet-scroll {
+  flex: 1 1 auto;
+  min-height: 0;
+  min-width: 0;
   overflow: auto;
   -webkit-overflow-scrolling: touch;
   max-width: 100%;
 }
-#qso-modal table { width: 100%; border-collapse: collapse; font-size: 13px; }
+#qso-modal table { width: max-content; min-width: 100%; border-collapse: collapse; font-size: 13px; }
 #qso-modal th, #qso-modal td {
   padding: 6px 8px;
   border-bottom: 1px solid #eef1f6;
@@ -467,6 +477,7 @@ PANEL_CSS = """
     border-radius: 0;
   }
   #qso-modal table { font-size: 12px; }
+  #qso-modal th, #qso-modal td { padding: 6px; }
 }
 </style>
 """
